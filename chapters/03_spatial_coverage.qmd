@@ -1,0 +1,115 @@
+---
+title: "Spatial Coverage of Monitoring Stations"
+prefer-html: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r setup}
+library(dataRetrieval)
+library(dplyr)
+library(sf)
+library(leaflet)
+library(ggplot2)
+
+# All five HUC8s in the Nushagak drainage
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+
+# Fetch station inventory
+message("Querying WQP for all five HUC8 sub-basins...")
+wq_inventory <- data.frame()
+
+for (huc in nushagak_hucs) {
+  temp <- whatWQPdata(huc = huc)
+  temp$HUC <- huc
+  wq_inventory <- rbind(wq_inventory, temp)
+}
+
+# Convert to spatial object
+wq_sf <- wq_inventory %>%
+  filter(!is.na(lon), !is.na(lat)) %>%
+  st_as_sf(coords = c("lon", "lat"), crs = 4326)
+```
+
+## Overview
+
+Monitoring stations in the Nushagak drainage are distributed across streams and lakes in five HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.
+
+```{r map}
+#| eval: !expr knitr::is_html_output()
+leaflet(wq_sf) %>%
+  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topo") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+  addCircleMarkers(
+    radius = 6,
+    color = "#0072B2",
+    weight = 1,
+    fillOpacity = 0.7,
+    popup = ~paste0(
+      "<b>", MonitoringLocationName, "</b><br>",
+      "ID: ", MonitoringLocationIdentifier, "<br>",
+      "Org: ", OrganizationFormalName, "<br>",
+      "Results: ", resultCount
+    ),
+    clusterOptions = markerClusterOptions()
+  ) %>%
+  addLayersControl(
+    baseGroups = c("Topo", "Satellite"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+```
+
+## Summary by HUC
+
+```{r summary_table}
+huc_summary <- wq_inventory %>%
+  group_by(HUC) %>%
+  summarize(
+    Stations = n_distinct(MonitoringLocationIdentifier),
+    Total_Results = sum(resultCount, na.rm = TRUE),
+    Organizations = n_distinct(OrganizationFormalName),
+    .groups = "drop"
+  ) %>%
+  arrange(HUC) %>%
+  mutate(
+    HUC_Name = case_when(
+      HUC == "19030301" ~ "Upper Nushagak",
+      HUC == "19030302" ~ "Mulchatna",
+      HUC == "19030303" ~ "Nuyakuk",
+      HUC == "19030304" ~ "Wood",
+      HUC == "19030305" ~ "Lower Nushagak/Snake",
+      TRUE ~ HUC
+    )
+  ) %>%
+  select(HUC, HUC_Name, Stations, Total_Results, Organizations) %>%
+  rename("Sub-basin" = HUC_Name, "Monitoring\nLocations" = Stations, "Total\nObservations" = Total_Results, "Data\nProviders" = Organizations)
+
+knitr::kable(huc_summary, caption = "Monitoring Coverage by HUC8 Sub-basin")
+```
+
+## Data Provider Distribution
+
+```{r provider_summary}
+provider_summary <- wq_inventory %>%
+  group_by(OrganizationFormalName) %>%
+  summarize(
+    Stations = n_distinct(MonitoringLocationIdentifier),
+    Total_Results = sum(resultCount, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(Total_Results)) %>%
+  rename("Organization" = OrganizationFormalName, "Stations" = Stations, "Observations" = Total_Results)
+
+knitr::kable(provider_summary, caption = "Data Contributions by Organization")
+```
+
+## Observations
+
+The coverage varies by sub-basin, with the Upper Nushagak (19030301) and Lower Nushagak/Snake (19030305) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Nuyakuk and Wood River drainages (19030303, 19030304) have fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
+
+USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.
+
+------------------------------------------------------------------------
+
+The next chapter examines what water quality parameters have been measured and identifies temporal and spatial gaps in the existing data.

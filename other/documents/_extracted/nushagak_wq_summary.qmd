@@ -1,0 +1,139 @@
+---
+title: "Nushagak River Watershed: Water Quality Data Summary & Baseline Assessment"
+author: "Prepared via Gemini for RStudio & Posit Assistant Migration"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    embed-resources: true
+    theme: cosmo
+execute:
+  warning: false
+  message: false
+---
+
+## Project Context & Objectives
+
+This document forms the core analytical component of a comprehensive water quality synthesis for the **Nushagak River Watershed** (HUC6: 190303) in southwestern Alaska.
+
+### Core Project Goals:
+1. **Data Aggregation**: Compile available water quality records across both major public repositories (EPA WQX/CDX, USGS NWIS) and non-repository literature (grey literature, regulatory baseline reports like the Pebble EIS EBD, and tribal monitoring).
+2. **Spatial Assessment**: Map all historical and active sampling stations across the constituent HUC8 sub-basins:
+   * **19030301** – Upper Nushagak River
+   * **19030302** – Mulchatna River
+   * **19030303** – Nuyakuk River
+   * **19030304** – Wood River
+   * **19030305** – Snake River / Lower Nushagak
+3. **Workflow Migration**: Transition initial exploratory work from Gemini into a standalone **RStudio Project** to execute advanced data retrieval, parameter filtering (pH, dissolved oxygen, metals, nutrients), and statistical modeling with **Posit Assistant**.
+
+---
+
+## Setup & Dependencies
+
+```{r setup}
+# Required packages for API querying, spatial analysis, and dynamic reporting
+required_pkgs <- c("dataRetrieval", "sf", "leaflet", "dplyr", "ggplot2", "DT", "tidyr")
+
+# Install any missing dependencies automatically
+new_pkgs <- required_pkgs[!(required_pkgs %in% installed.packages()[,"Package"])]
+if(length(new_pkgs)) install.packages(new_pkgs)
+
+# Load libraries
+library(dataRetrieval) # USGS / WQP REST API interface
+library(sf)            # Spatial data frame management
+library(leaflet)       # Interactive spatial visualization
+library(dplyr)         # Data manipulation
+library(ggplot2)       # Data visualization
+library(DT)            # Interactive HTML data tables
+library(tidyr)         # Tidy data transformation
+```
+
+---
+
+## 1. Public Repository Inventory Query
+
+Using the `dataRetrieval` package, we query the Water Quality Portal (WQP) to build a site inventory across all five target HUC8 sub-basins without downloading full measurement payloads immediately.
+
+```{r get_wqp_inventory}
+# Target HUC8 basins in the Nushagak drainage
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+
+# Fetch location metadata for all stations in these HUCs
+wq_inventory <- whatWQPdata(huc = nushagak_hucs)
+
+# Convert inventory to sf spatial object for mapping
+wq_sf <- wq_inventory %>%
+  filter(!is.na(dec_lon_va), !is.na(dec_lat_va)) %>%
+  st_as_sf(coords = c("dec_lon_va", "dec_lat_va"), crs = 4326)
+```
+
+---
+
+## 2. Watershed Interactive Site Map
+
+The interactive map below displays monitoring stations retrieved from WQP across the Nushagak watershed. Click any marker to view station details and total recorded sample counts.
+
+```{r site_map}
+leaflet(wq_sf) %>%
+  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topo") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
+  addCircleMarkers(
+    radius = 5,
+    color = "#1f78b4",
+    stroke = TRUE,
+    weight = 1,
+    fillOpacity = 0.7,
+    popup = ~paste0(
+      "<b>Organization:</b> ", OrganizationFormalName, "<br>",
+      "<b>Site Name:</b> ", MonitoringLocationName, "<br>",
+      "<b>Site ID:</b> ", MonitoringLocationIdentifier, "<br>",
+      "<b>Site Type:</b> ", ResolvedMonitoringLocationTypeName, "<br>",
+      "<b>Result Count:</b> ", resultCount
+    )
+  ) %>%
+  addLayersControl(
+    baseGroups = c("Topo", "Satellite"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+```
+
+---
+
+## 3. Monitoring Effort by Organization
+
+The table below summarizes total sampling locations and observation counts across providing organizations (e.g., USGS, EPA, Alaska DEC, Tribal entities).
+
+```{r summarize_data}
+org_summary <- wq_inventory %>%
+  group_by(OrganizationFormalName) %>%
+  summarize(
+    Total_Sites = n_distinct(MonitoringLocationIdentifier),
+    Total_Results_Available = sum(resultCount, na.rm = TRUE)
+  ) %>%
+  arrange(desc(Total_Results_Available))
+
+datatable(org_summary, rownames = FALSE, 
+          options = list(pageLength = 10, autoWidth = TRUE))
+```
+
+---
+
+## 4. Next Steps: Parameter Downloading via Posit Assistant
+
+To fetch actual parameter measurements (e.g., pH, metals, temperature, dissolved oxygen) for focused sub-basins like the Mulchatna River (HUC 19030302), run the script below in RStudio or prompt Posit Assistant.
+
+```{r fetch_raw_data, eval=FALSE}
+# Retrieve full surface water dataset for HUC 19030302
+mulchatna_wq_data <- readWQPdata(
+  huc = "19030302",
+  sampleMedia = "Water"
+)
+
+# Extract key parameters of interest
+key_params <- mulchatna_wq_data %>% 
+  filter(CharacteristicName %in% c("pH", "Dissolved oxygen (DO)", "Temperature, water", "Copper", "Turbidity"))
+
+# Parameter frequency table
+table(key_params$CharacteristicName)
+```

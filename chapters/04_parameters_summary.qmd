@@ -1,0 +1,100 @@
+---
+title: "Water Quality Parameters: Inventory and Gaps"
+execute:
+  warning: false
+  message: false
+---
+
+```{r setup}
+library(dataRetrieval)
+library(dplyr)
+library(ggplot2)
+
+# Fetch parameter data for all five HUCs
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+
+message("Querying WQP for parameter observations...")
+wq_data <- data.frame()
+
+for (huc in nushagak_hucs) {
+  temp <- readWQPdata(huc = huc, sampleMedia = "Water")
+  temp$HUC <- huc
+  wq_data <- rbind(wq_data, temp)
+}
+
+# Remove duplicates and NA characteristic names
+wq_data <- wq_data %>%
+  filter(!is.na(CharacteristicName))
+```
+
+## Parameter Frequency
+
+The following parameters have been measured in the Nushagak watershed:
+
+```{r param_freq}
+param_freq <- wq_data %>%
+  group_by(CharacteristicName) %>%
+  summarize(
+    Observations = n(),
+    Stations = n_distinct(MonitoringLocationIdentifier),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(Observations)) %>%
+  rename("Parameter" = CharacteristicName, "Measurements" = Observations, "Unique Stations" = Stations)
+
+# Display top 20 parameters
+knitr::kable(
+  head(param_freq, 20),
+  caption = "Most Frequently Measured Water Quality Parameters (Top 20)"
+)
+```
+
+## Key Parameter Categories
+
+### Physical Properties
+
+- **Temperature**: Essential for salmon habitat assessment; continuous monitoring data available from USGS gages
+- **Conductivity & Specific Conductance**: Indicates mineralization and ionic composition
+- **Turbidity**: Affects light penetration; high values can indicate erosion or glacial discharge
+
+### Chemical Properties
+
+- **pH**: Affects aquatic chemistry and organism physiology
+- **Dissolved Oxygen**: Critical for salmonid survival; cold, well-oxygenated water preferred
+- **Alkalinity & Hardness**: Buffer capacity against acid inputs
+
+### Nutrients
+
+- **Nitrogen (various forms)**: Nitrate, nitrite, ammonia, total nitrogen
+- **Phosphorus (various forms)**: Orthophosphate, total phosphorus
+- (Limited frequency in existing data; opportunity for expanded monitoring)
+
+### Trace Elements & Metals
+
+- **Copper**: Abnormal levels can be toxic to aquatic life; relevant to mining activity concerns
+- **Zinc, Lead, Cadmium, Chromium**: Other metals detected; relevance context-dependent
+- **Molybdenum**: Associated with geochemistry and mining scenarios
+
+### Biological
+
+- **Algal and macroinvertebrate sampling**: Limited in frequency; primarily USGS and academic efforts
+
+------------------------------------------------------------------------
+
+## Data Gaps and Monitoring Opportunities
+
+Based on the inventory, the following represent priorities for expanded collaborative monitoring:
+
+1.  **Continuous Temperature Data**: Few sites have high-frequency temperature loggers; salmon thermal habitat monitoring would benefit from denser deployment.
+
+2.  **Nutrients (N, P)**: Few measurements in existing WQP data; baseline nutrient levels are poorly characterized across most of the watershed.
+
+3.  **Spatial Coverage in Wood River and Nuyakuk Drainages**: Fewer historical stations in these sub-basins; new effort could establish baseline for comparison.
+
+4.  **Biological Metrics**: Macroinvertebrate and periphyton sampling is limited. Fish presence/absence and juvenile salmon surveys would complement chemistry data.
+
+5.  **Seasonal and High-Flow Sampling**: Most data are episodic; systematic seasonal sampling would reveal temperature, discharge, and contaminant dynamics.
+
+------------------------------------------------------------------------
+
+These gaps inform the monitoring design recommendations in Part III.

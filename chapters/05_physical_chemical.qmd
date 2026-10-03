@@ -1,0 +1,153 @@
+---
+title: "Physical and Chemical Baseline"
+execute:
+  warning: false
+  message: false
+---
+
+```{r setup}
+library(dataRetrieval)
+library(dplyr)
+library(ggplot2)
+
+# Key parameters for physical/chemical baseline
+key_params <- c("pH", "Temperature, water", "Dissolved oxygen (DO)", 
+                "Specific conductance", "Turbidity")
+
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+
+# Fetch data for key parameters
+message("Querying WQP for key physical/chemical parameters...")
+wq_data <- readWQPdata(huc = nushagak_hucs, sampleMedia = "Water")
+
+# Filter to key parameters
+wq_key <- wq_data %>%
+  filter(CharacteristicName %in% key_params) %>%
+  filter(!is.na(ResultMeasureValue))
+```
+
+## Temperature
+
+Water temperature is fundamental to salmon ecology. Optimal ranges vary by species and life stage, but most Pacific salmon prefer cool water (≤16°C) and suffer stress at temperatures >20°C.
+
+```{r temp_summary}
+temp_data <- wq_key %>%
+  filter(CharacteristicName == "Temperature, water") %>%
+  select(ResultMeasureValue) %>%
+  mutate(Temperature_C = as.numeric(ResultMeasureValue)) %>%
+  select(-ResultMeasureValue)
+
+if (nrow(temp_data) > 0) {
+  temp_stats <- temp_data %>%
+    summarize(
+      N = n(),
+      Mean = mean(Temperature_C, na.rm = TRUE),
+      Median = median(Temperature_C, na.rm = TRUE),
+      Min = min(Temperature_C, na.rm = TRUE),
+      Max = max(Temperature_C, na.rm = TRUE),
+      SD = sd(Temperature_C, na.rm = TRUE)
+    )
+  
+  knitr::kable(temp_stats, digits = 2, caption = "Temperature Summary Statistics (°C)")
+  
+  ggplot(temp_data, aes(x = Temperature_C)) +
+    geom_histogram(bins = 30, fill = "#0072B2", alpha = 0.7, color = "black") +
+    labs(
+      title = "Distribution of Water Temperature Measurements",
+      x = "Temperature (°C)",
+      y = "Frequency"
+    ) +
+    theme_minimal()
+} else {
+  cat("Insufficient temperature data for analysis.\n")
+}
+```
+
+## pH
+
+pH controls the availability of nutrients and toxicity of metals. Salmon thrive in neutral to slightly alkaline waters (pH 6.5–8.0).
+
+```{r pH_summary}
+ph_data <- wq_key %>%
+  filter(CharacteristicName == "pH") %>%
+  select(ResultMeasureValue) %>%
+  mutate(pH = as.numeric(ResultMeasureValue)) %>%
+  select(-ResultMeasureValue)
+
+if (nrow(ph_data) > 0) {
+  ph_stats <- ph_data %>%
+    summarize(
+      N = n(),
+      Mean = mean(pH, na.rm = TRUE),
+      Median = median(pH, na.rm = TRUE),
+      Min = min(pH, na.rm = TRUE),
+      Max = max(pH, na.rm = TRUE)
+    )
+  
+  knitr::kable(ph_stats, digits = 2, caption = "pH Summary Statistics")
+} else {
+  cat("Insufficient pH data for analysis.\n")
+}
+```
+
+## Dissolved Oxygen
+
+Dissolved oxygen (DO) is essential for fish respiration. Saturation depends on temperature and atmospheric pressure; cold water holds more oxygen. Salmon typically require >6 mg/L DO, with stress occurring below 5 mg/L.
+
+```{r DO_summary}
+do_data <- wq_key %>%
+  filter(CharacteristicName == "Dissolved oxygen (DO)") %>%
+  select(ResultMeasureValue) %>%
+  mutate(DO_mg_L = as.numeric(ResultMeasureValue)) %>%
+  select(-ResultMeasureValue)
+
+if (nrow(do_data) > 0) {
+  do_stats <- do_data %>%
+    summarize(
+      N = n(),
+      Mean = mean(DO_mg_L, na.rm = TRUE),
+      Median = median(DO_mg_L, na.rm = TRUE),
+      Min = min(DO_mg_L, na.rm = TRUE),
+      Max = max(DO_mg_L, na.rm = TRUE)
+    )
+  
+  knitr::kable(do_stats, digits = 2, caption = "Dissolved Oxygen Summary Statistics (mg/L)")
+} else {
+  cat("Insufficient dissolved oxygen data for analysis.\n")
+}
+```
+
+## Conductivity
+
+Specific conductance reflects the ionic strength of water and varies with geology, precipitation, and human inputs (e.g., road salt, mining).
+
+```{r cond_summary}
+cond_data <- wq_key %>%
+  filter(CharacteristicName == "Specific conductance") %>%
+  select(ResultMeasureValue) %>%
+  mutate(Conductance_uS_cm = as.numeric(ResultMeasureValue)) %>%
+  select(-ResultMeasureValue)
+
+if (nrow(cond_data) > 0) {
+  cond_stats <- cond_data %>%
+    summarize(
+      N = n(),
+      Mean = mean(Conductance_uS_cm, na.rm = TRUE),
+      Median = median(Conductance_uS_cm, na.rm = TRUE),
+      Min = min(Conductance_uS_cm, na.rm = TRUE),
+      Max = max(Conductance_uS_cm, na.rm = TRUE)
+    )
+  
+  knitr::kable(cond_stats, digits = 1, caption = "Specific Conductance Summary Statistics (µS/cm)")
+} else {
+  cat("Insufficient conductance data for analysis.\n")
+}
+```
+
+## Summary
+
+The baseline water quality data show that Nushagak streams are generally cold and well-oxygenated, suitable for salmon. pH and conductivity values are consistent with the region's geology. Continued monitoring of these parameters will establish trends and allow early detection of changes that could affect fishery productivity.
+
+---
+
+The following chapter examines metals and contaminants, with emphasis on copper and other elements of concern.

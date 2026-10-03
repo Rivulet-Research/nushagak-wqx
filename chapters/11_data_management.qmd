@@ -1,0 +1,143 @@
+---
+title: "Data Management and Visualization Systems"
+---
+
+## Overview
+
+The RFP's second goal emphasizes establishing systems for secure storage, quality assurance, visualization, and sharing of environmental data. A functional data management system is essential for:
+
+- Consolidating monitoring data from three separate tribes into a unified database
+- Ensuring data quality and traceability (QA/QC audit trails)
+- Making results accessible to tribal leadership, regulators, and community members
+- Supporting long-term trend analysis and decision-making
+
+------------------------------------------------------------------------
+
+## Data Workflow Architecture
+
+A typical workflow includes:
+
+```         
+Field Data Collection
+    ↓
+Electronic Entry (ESRI Survey123 or Field Maps)
+    ↓
+Automated Validation & QC Flagging
+    ↓
+Human Review & Approval
+    ↓
+Database Storage (ArcGIS Online)
+    ↓
+Data Visualization (web report) & Sharing (EPA CDX respoitory)
+    ↓
+Archival & Backup (local servers)
+```
+
+------------------------------------------------------------------------
+
+## Database Design
+
+### Schema Considerations
+
+The database should store:
+
+1.  **Site Information**: Name, location (lat/lon), HUC, river/tributary, elevation, accessibility
+2.  **Sample Events**: Date, time, observer, field conditions, notes
+3.  **Measurements**: Parameter, value, unit, detection limit, method, laboratory (if applicable)
+4.  **QA/QC Data**: Blanks, duplicates, standards, reference samples, flag comments
+
+The database template should use standardized column names identical to those in use in the destination repository (e.g. EPA CDX).
+
+### Technology Options
+
+| Platform | Pros | Cons | Fit |
+|------------------|------------------|------------------|------------------|
+| **ArcGIS Online** | Intuitive; ESRI support; hosted | License cost; less customizable | Good for visualization-focused systems |
+| **Google Sheets + Shiny** | Low cost; familiar to many | Limited scalability; security concerns | Suitable for pilot phase |
+| **EPA TADA Framework** | Free and open-source; WQX-certified; integrated QA/QC; national visibility | Requires R knowledge; WQP-specific (not other data sources) | Excellent for data validation and submission workflow |
+
+### Data Validation and WQP Submission: TADA Framework
+
+The EPA's **Tools for Automated Data Analysis (TADA)** is a free, open-source toolkit specifically designed for organizations submitting water quality data to the EPA Water Quality Portal (WQP). TADA includes three integrated modules:
+
+1. **Module 1 (TADAShiny)**: Automated data discovery, cleaning, and validation. Screens for invalid metadata using EPA WQX domain standards, handles unit conversion, manages censored (detection limit) observations, and flags suspect or incomplete entries.
+
+2. **Module 2 (TADAShinyJoinToAU)**: Links monitoring locations to EPA assessment units and designated uses (aquatic life support, recreation, subsistence), ensuring data are properly contextualized for regulatory analysis.
+
+3. **Module 3 (TADAShinyAnalyze)**: Compares data against applicable water quality standards and supports assessment-level analysis.
+
+TADA can be used either as a web-based interface (no coding required) or as an R package (`EPATADA`) for integration into custom workflows. For the Nushagak collaborative monitoring program, TADA should be incorporated into the data submission workflow: after field QC and database entry, data are processed through TADA's validation screens before uploading to WQP. This ensures that data meet EPA standards and are compatible with national visualization tools (e.g., "How's My Waterway?").
+
+### Recommendation
+
+A phased approach is pragmatic: start with accessible tools for data collection and management (e.g., ArcGIS Online, Google Sheets), then route data through TADA's validation workflows before final submission to WQP. As the program matures and data volumes grow, consider investing in a dedicated database administrator and GIS specialist to manage the full pipeline (collection → TADA validation → WQP → archival).
+
+------------------------------------------------------------------------
+
+## Data Sharing and Visualization
+
+### Real-Time or Near-Real-Time Dashboard
+
+A web-based dashboard (built with ESRI apps or R Shiny) should display:
+
+- **Current Conditions**: Latest temperature, DO, and chemistry readings at each site
+- **Time Series**: Graphs of each parameter over the baseline period
+- **Interactive Map**: Monitoring locations, site information, access to raw data
+- **Alert System**: Automated flags if measurements exceed thresholds (e.g., DO \<5 mg/L, temperature \>18°C)
+
+Note: data properly archived in the EPA CDX will display in the interactive online interface, "[How's My Waterway?](https://mywaterway.epa.gov/)" At present, not all historic data in the EPA CDX properly displays in this interface due to historic naming conventions. One optional bonus goal of data management for this project could be to work towards seeing that existing historic water quality data properly displays in this interface.
+
+### Data Download and Integration
+
+The system should allow:
+
+- Bulk download of data in standard formats (CSV, GeoJSON, Excel)
+- Integration with the EPA Water Quality Portal for national visibility
+
+------------------------------------------------------------------------
+
+## Quality Assurance and Data Certification
+
+### Data Review Process
+
+1.  **Field QC**: Duplicate samples, field blanks, replicate measurements
+2.  **Laboratory QC** (if samples are analyzed): Blanks, matrix spikes, standard curves
+3.  **Data Review**: Comparison against historical ranges, seasonal patterns, and other sites
+4.  **Certification**: Designate "approved" data once QC is complete; note any flags or caveats
+
+### Metadata Documentation
+
+All data should include:
+
+- Method references (EPA, USGS SOPs)
+- Analytical laboratory accreditation (if applicable)
+- QC summary (% duplicates, passing QC criteria)
+- Validation notes (e.g., "sample collected during high-flow event")
+
+------------------------------------------------------------------------
+
+## Governance and Data Sharing Agreements
+
+### Multi-Tribal Data Governance
+
+Establish agreements clarifying:
+
+- **Ownership**: Who owns the raw data? (typically, the collecting organization)
+- **Sharing**: Under what conditions are data shared with co-implementers, EPA, USGS, public?
+- **Attribution**: How will data providers be credited?
+- **Confidentiality**: Are any sensitive tribal data withheld or restricted?
+
+### Recommended Practice
+
+Data collected using public funding (EPA, USGS) should be made publicly available (e.g., via WQP, NWIS, or dedicated portal) within 1–2 years of collection, with exception for sensitive cultural or proprietary information.
+
+------------------------------------------------------------------------
+
+## Capacity Building and Technical Support
+
+The program should budget for:
+
+1.  **Database Administrator**: Part-time or full-time support for system maintenance and backups
+2.  **Data Quality Coordinator**: Reviews data, coordinates QC across sites, manages metadata
+3.  **GIS/Visualization Specialist**: Maintains dashboard, produces summary reports, trains users
+

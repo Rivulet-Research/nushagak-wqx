@@ -1,0 +1,42 @@
+---
+title: "agent_context"
+format: html
+---
+
+This document is for the user to record detailed instructions for Posit Assistant. Posit Assistant may not modify this document unless instructed by the user.
+
+10/3/2026
+
+examine the nushagak river materials in the zip folder in other/documents/. the goal is to prepare a quarto book that summarises existing water quality data in the nushagak river, and then later uses this data to assess appropriate plans and choice of parameters for the bid described in the RFP located in other/documents. proceed step-by-step in such a way that the user is educated and informed by posit assistant as we make coding decisions. proceed in such a way to minimize token expense as feasible.
+
+Additional notes:
+
+- For all current and future pdfs in this repo, it may be a good choice to convert to md to save on token use
+
+- Ensure all writing avoids use of ai tropes such as overuse of em-dashes. an example of a sentence that you wrote that sounds full of ai voice is "Water quality parameters—temperature, pH, dissolved oxygen, nutrient levels, and contaminant concentrations—affect fish survival, growth, and reproduction."
+
+- We want to encompass any water quality data in the nushagak watershed, but if there is interesting focus around areas near the comminities in the RFP especially, highlight those
+
+- [Run a minimal `whatWQPdata()` test for HUC 19030301 or 19030305 to confirm API access and station counts before building anything.]{.underline}
+
+- [Sketch a proposed Quarto book outline (parts/chapters) mirroring the RFP's two goals, for your approval before scaffolding files.]{.underline}
+
+- [Identify which data sources in the catalog are directly queryable via R (WQP, NWIS) versus which require manual literature review (Pebble EIS, BBNA, tribal monitoring). describe why this may be the case in each instance (e.g data is private/proprietary) (or in some cases, data may be public but published only in PDF tables, which could be scraped and made in to usable tables at some point)]{.underline}
+
+Additional notes 2
+
+- A stated goal drafted by posit assistant is "Identification of gaps where new monitoring efforts would be most valuable." This is the aspect that i have least trust in for posit assistant to make good suggestions. ensure that this goal is thoroughly guided by choice and advice from the user and from documented, cited external sources
+
+- Ensure all writing avoids use of ai tropes such as overuse of em-dashes. an example of a sentence that you wrote that sounds full of ai voice is "Water quality parameters—temperature, pH, dissolved oxygen, nutrient levels, and contaminant concentrations—affect fish survival, growth, and reproduction."
+
+additional notes 3
+
+- note and examine materials described at <https://www.epa.gov/waterdata/TADA>. it seems like this could be very useful for the examinations and descriptions and goals being outlined in this repo
+
+- in data_management, remove the empty rows in the technology options table
+
+- a potential data source i was expecting to see suggested is the university of washington alaska salmon program: <https://alaskasalmonprogram.org/data-request/>. it is likely they have extensive water quality data, but maybe not all in public repositories, i do not know. it looks like a i need to make a detailed request via email. if is this is a useful pursuit, help me prepare this email request. prepare it as a txt file i can paste into an email in other/documents/data_requests.
+
+- i want the root level of this repo to be less messy. restructure to place all chapters inside a "chapters" folder and any other modifications towards this goal
+
+- do not bother to try to render this report as a pdf

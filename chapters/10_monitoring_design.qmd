@@ -1,0 +1,92 @@
+---
+title: "Monitoring Program Design and QAPP Fundamentals"
+---
+
+## Overview
+
+A Quality Assurance Project Plan (QAPP) is the foundational technical document that describes how monitoring data will be collected, managed, and assured to meet defined objectives. For the Nushagak collaborative effort, the QAPP will specify:
+
+- **Project objectives and data quality objectives (DQOs)**
+- **Sampling design**: locations, frequency, and parameters
+- **Standard operating procedures (SOPs)** for field and laboratory methods
+- **Quality control and quality assurance** protocols
+- **Data management, validation, and archiving procedures**
+- **Roles and responsibilities** of participating agencies and tribes
+
+---
+
+## Monitoring Station Selection
+
+::: {.callout-important}
+## Station counts and tiers are not prescribed here
+
+Earlier drafts specified exact numbers of stations per tier (e.g., "5-8 core stations"). Those counts were not derived from any cited source or community decision, so they have been removed. The DQO process referenced in Chapter 8 is the appropriate mechanism for setting station counts, once monitoring objectives and resource constraints are defined with the participating tribes [@EPA2006DQO].
+:::
+
+What can be stated generally, consistent with standard watershed monitoring design, is that stations are typically organized by monitoring purpose rather than placed uniformly:
+
+- **Integrator stations**: Mainstem or lower-tributary sites that reflect cumulative upstream conditions
+- **Tributary or headwater stations**: Sites targeting sub-basins or reaches identified as data-poor
+- **Special-purpose stations**: Sites targeting a specific concern (e.g., geochemistry near areas of mineral development interest)
+
+How many stations of each type, and exactly where, depends on the decisions described in Chapter 8 and should be documented with reference to tribal input and the final RFP scope, not fixed in advance here.
+
+---
+
+## Candidate Parameters and Rationale
+
+The parameters below are commonly included in salmon-stream water quality monitoring programs; whether to include each, and at what frequency, is a DQO-process decision. Numeric water quality thresholds (e.g., dissolved oxygen criteria protective of salmon) should be taken directly from EPA's Aquatic Life Ambient Water Quality Criteria rather than restated informally here, since criteria vary by life stage and exposure duration [@EPA2016AquaticLife].
+
+| Parameter | Typical Monitoring Approach | Rationale |
+|---|---|---|
+| **Water Temperature** | Continuous loggers; grab samples | Salmon thermal habitat; diurnal and seasonal patterns |
+| **Dissolved Oxygen** | Continuous loggers | Salmon survival threshold; see EPA aquatic life criteria for life-stage-specific values [@EPA2016AquaticLife] |
+| **pH** | Periodic grab samples | Controls trace metal solubility; salmon physiology |
+| **Conductivity** | Periodic grab samples | Indicator of mineralization and baseline geochemistry |
+| **Nitrate + Ammonia** | Periodic grab, filtered | Primary productivity; salmon nutrient contributions |
+| **Orthophosphate** | Periodic grab, filtered | Limiting nutrient in many streams; productivity indicator |
+| **Copper (dissolved/total)** | Periodic grab | Mining-related concern; see EPA aquatic life criteria [@EPA2016AquaticLife] |
+| **Zinc, Lead, Cadmium** | Periodic grab | Contaminant baseline |
+| **Fish Surveys** | Seasonal field observations | Juvenile salmon density, species composition, health |
+| **Macroinvertebrates** | Periodic kick-net sampling | Bioassessment; community response to water quality |
+
+Exact sampling frequencies (monthly, quarterly, etc.) are a design decision pending the DQO process; placeholders above have been replaced with "periodic" and "continuous" to avoid presenting unverified choices as recommendations.
+
+---
+
+## Quality Objectives
+
+EPA's QA/G-5 guidance structures data quality objectives around five categories, commonly abbreviated PARCC: precision, accuracy, representativeness, completeness, and comparability [@EPA2001QAPP]. The specific numeric acceptance criteria for each (e.g., acceptable precision as relative standard deviation, minimum completeness percentage) are program-specific and should be set in the QAPP itself, in consultation with the laboratory and agencies involved, rather than assumed here. The categories are:
+
+- **Accuracy**: How closely a measurement matches the true value; addressed via calibrated instruments, standard methods, and analytical QC (blanks, duplicates, standards)
+- **Precision**: Reproducibility of repeated measurements; addressed via replicate samples
+- **Completeness**: The proportion of planned, valid measurements actually obtained
+- **Representativeness**: Whether samples reflect the actual conditions of interest, in time, depth, and location
+- **Comparability**: Whether results can be meaningfully compared across sites, times, and agencies, via standard units and methods
+
+---
+
+## Electronic Data Collection
+
+Modern electronic field data entry systems (e.g., Survey123, Kobo Toolbox, mobile apps) allow:
+
+- Real-time data validation (range checks, missing value alerts)
+- Automatic QC flags (e.g., temperature outside seasonal norms)
+- Reduced transcription errors
+- Immediate upload to centralized database
+
+A workflow diagram showing field data collection → validation → archiving should be included in the full QAPP.
+
+---
+
+## Community Training and Capacity Building
+
+The QAPP should include a training component:
+
+1. **Water Technician Training**: Field sampling methods, equipment operation, safety, data quality
+2. **Data Management Training**: Database entry, QC protocols, data security
+3. **Interpretation and Communication**: Results translation to community managers and leadership
+
+---
+
+The next chapter describes data management infrastructure and visualization systems.

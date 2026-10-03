@@ -1,0 +1,59 @@
+---
+title: "Data Sources and Inventory"
+---
+
+## Public Data Repositories
+
+### Water Quality Portal (WQP)
+
+The EPA Water Quality Portal (WQP) aggregates water quality data from multiple sources: EPA's Storage and Retrieval (STORET) system, USGS National Water Information System (NWIS), and state environmental agency databases. For the Nushagak watershed, WQP contains physical and chemical measurements (pH, temperature, conductivity, turbidity), nutrients (nitrogen, phosphorus), trace metals, and biological observations.
+
+**Access**: Queried via the `dataRetrieval` R package using HUC identifiers. Data are current through March 2024.
+
+### USGS National Water Information System (NWIS)
+
+NWIS contains streamflow measurements, continuous water temperature records from deployed sensors, and periodic water chemistry samples collected by USGS. These data often span decades and provide context for long-term trends.
+
+**Access**: Queried via `dataRetrieval::readNWISdata()`. Site identifiers are referenced in WQP but can also be accessed directly.
+
+### Alaska Department of Environmental Conservation (DEC) Water Quality Portal
+
+Alaska DEC maintains ambient water quality monitoring data, Section 303(d) impairment assessments, and reports on grant-funded monitoring projects. Coverage of the Nushagak drainage is variable.
+
+**Access**: Manual browsing of the DEC portal (https://dec.alaska.gov/water/) or direct contact with DEC regional offices for data export.
+
+---
+
+## Secondary Literature and Regulatory Data
+
+### EPA Bristol Bay Watershed Assessment
+
+The EPA's Bristol Bay Watershed Assessment synthesizes data on aquatic ecosystems, fisheries, and water quality across the Bristol Bay region, including the Nushagak drainage. Published reports include summary tables of trace metal concentrations and baseline conditions for comparison.
+
+**Access**: Published reports; data presented in tables and narrative form.
+
+### Pebble Project Environmental Baseline Document
+
+The Pebble Project Environmental Impact Statement included extensive baseline water quality monitoring in the Mulchatna and Koktuli river drainages (tributaries of the Nushagak). These data include surface water chemistry, dissolved and total metals, alkalinity, and stream temperature records.
+
+**Access**: Available through the Pebble Project EIS website; data in PDF tables (may require OCR or manual extraction).
+
+### Academic and Tribal Monitoring
+
+Cook Inletkeeper Foundation, Bristol Bay Native Association (BBNA), and academic researchers have collected water quality and stream temperature data relevant to the watershed. Some data are publicly available; others are held by tribal organizations or require partnership agreements.
+
+**Access**: Variable; direct contact with organizations recommended.
+
+---
+
+## Data Compilation Strategy
+
+This analysis prioritizes directly queryable data (WQP, NWIS) to ensure reproducibility and transparency. Grey literature is referenced to contextualize findings and identify historical patterns, but core analysis focuses on accessible, reproducible data streams.
+
+### Data Quality and Validation
+
+WQP data are submitted by multiple organizations using the EPA's Water Quality eXchange (WQX) standard, but data entry practices and metadata quality vary. For this analysis, we perform basic validation (filtering invalid observations, converting character strings to numeric types) in each chapter where calculations are performed.
+
+For future work or larger-scale data integration, the EPA's **Tools for Automated Data Analysis (TADA)** framework provides a systematic approach to data discovery, validation, and cleaning. TADA includes automated quality control screens, detection limit handling, unit harmonization, and flagging of invalid metadata using EPA's WQX domain validation services. Organizations preparing data submissions to WQP can use TADA to ensure consistency before archival. See the Data Management chapter for a discussion of TADA's role in the proposed monitoring system.
+
+A summary of stations and observation counts by HUC follows in the next chapter.

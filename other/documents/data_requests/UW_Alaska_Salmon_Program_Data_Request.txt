@@ -1,0 +1,75 @@
+Subject: Water Quality Data Request — Nushagak River Watershed Baseline Assessment
+
+---
+
+Dear Alaska Salmon Program Team,
+
+I am writing to request access to water quality and salmon habitat data for the Nushagak River watershed in southwestern Alaska. I am preparing a comprehensive baseline water quality assessment for the Nushagak drainage (USGS HUC6: 190303) to support a collaborative monitoring and data management initiative led by three Alaska Native communities: the Native Village of Ekwok, New Koliganek Village Council, and New Stuyahok Village Council.
+
+**Project Context**
+
+The three partner communities are responding to a Request for Proposal issued in 2026 for the "Nushagak River Collaborative Monitoring & Data Management Project." The initiative has two core goals:
+1. Establish continuous water quality monitoring systems to track baseline conditions across the Nushagak drainage and its five major sub-basins.
+2. Develop integrated data management infrastructure to archive, standardize, and provide access to monitoring data in service of salmon conservation and subsistence management.
+
+To design an effective monitoring strategy, we are compiling all available existing water quality and salmon habitat data for the watershed. This baseline assessment will identify current data gaps and inform the design of the new collaborative monitoring network.
+
+**Data Request**
+
+I would like to inquire whether the Alaska Salmon Program maintains water quality, stream habitat, or salmon population data for any of the following areas:
+
+**Primary Target Watersheds:**
+- Nushagak River mainstem and upper tributaries (HUC8: 19030301)
+- Mulchatna River drainage (HUC8: 19030302)
+- Nuyakuk River drainage (HUC8: 19030303)
+- Wood River drainage (HUC8: 19030304)
+- Snake River / Lower Nushagak (HUC8: 19030305)
+
+**Data Types of Interest:**
+- Stream temperature (continuous monitoring or spot measurements)
+- Water chemistry (pH, dissolved oxygen, nutrients, trace metals)
+- Salmon presence/absence, abundance, run timing, or age composition
+- Stream habitat metrics (substrate, flow, riparian condition)
+- Fish migration or behavior data
+- Any long-term datasets documenting changes over time
+
+**Data Sharing Arrangement**
+
+I understand that some data may be restricted or require a formal data-sharing agreement. I am happy to:
+- Acknowledge the Alaska Salmon Program and data contributors prominently in any resulting publications, reports, or datasets
+- Agree to data use restrictions or citation requirements
+- Discuss co-authorship if appropriate
+- Work with your team on questions or analysis methodology
+
+**Deliverables**
+
+The baseline water quality assessment will be compiled into a public-facing Quarto book (R-based HTML document) that will be distributed to the three partner communities and made available to other researchers and managers interested in the Nushagak watershed. All data sources will be clearly cited and acknowledged.
+
+**Timeline**
+
+I am preparing this baseline assessment for completion by early 2027 to inform the final proposal submission. If the Alaska Salmon Program has relevant data, I would appreciate hearing from you by **[DATE: approximately 2 weeks from sending]** so I can plan data integration and analysis accordingly.
+
+**Contact & Next Steps**
+
+Please reply to this email or contact me directly:
+
+[Your Name]
+[Your Title/Organization]
+[Your Email]
+[Your Phone]
+
+Alternatively, if this request should be directed to a different person or team within the Alaska Salmon Program, please let me know.
+
+Thank you for considering this request. I look forward to hearing from you and to the possibility of collaborating to support salmon conservation in the Nushagak River watershed.
+
+Sincerely,
+
+[Your Name]
+[Your Affiliation]
+
+---
+
+**Attachment Notes:**
+- If you have data, please indicate the format (Excel, CSV, database access, etc.), temporal range, and any associated documentation or metadata.
+- If you do not maintain original data but can direct me to published reports or repositories where Nushagak data may be archived, please include those references.
+

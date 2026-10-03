@@ -1,0 +1,58 @@
+[ 1/13] index.qmd
+[WARNING] Could not fetch resource ./01_intro.html
+[ 2/13] 01_intro.qmd
+[WARNING] Could not fetch resource ./02_data_sources.html
+[WARNING] Could not fetch resource https://fonts.gstatic.com/s/sourcesanspro/v24/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vAkA.ttf: HttpExceptionRequest Request {
+    host                 = "fonts.gstatic.com"
+    port                 = 443
+    secure               = True
+    requestHeaders       = []
+    path                 = "/s/sourcesanspro/v24/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vAkA.ttf"
+    queryString          = ""
+    method               = "GET"
+    proxy                = Nothing
+    rawBody              = False
+    redirectCount        = 10
+    responseTimeout      = ResponseTimeoutDefault
+    requestVersion       = HTTP/1.1
+    proxySecureMode      = ProxySecureWithConnect
+  }
+   (InternalException (HostCannotConnect "fonts.gstatic.com" [Network.Socket.connect: <socket: 676>: failed (Connection timed out (WSAETIMEDOUT))]))
+[ 3/13] 02_data_sources.qmd
+[WARNING] Could not fetch resource ./03_spatial_coverage.html
+[ 4/13] 03_spatial_coverage.qmd
+
+
+processing file: 03_spatial_coverage.qmd
+  |                                                           |                                                   |   0%  |                                                           |......                                             |  11%                     |                                                           |...........                                        |  22% [setup]             |                                                           |.................                                  |  33%                     |                                                           |.......................                            |  44% [map]               |                                                           |............................                       |  56%                     |                                                           |..................................                 |  67% [summary_table]     |                                                           |........................................           |  78%                     |                                                           |.............................................      |  89% [provider_summary]  |                                                           |...................................................| 100%                                                                                                                                
+output file: 03_spatial_coverage.knit.md
+
+[WARNING] Could not fetch resource ./04_parameters_summary.html
+[ 5/13] 04_parameters_summary.qmd
+
+
+processing file: 04_parameters_summary.qmd
+  |                                                                 |                                                         |   0%  |                                                                 |...........                                              |  20%               |                                                                 |.......................                                  |  40% [setup]       |                                                                 |..................................                       |  60%               |                                                                 |..............................................           |  80% [param_freq]  |                                                                 |.........................................................| 100%                                                                                                                    
+output file: 04_parameters_summary.knit.md
+
+[WARNING] Could not fetch resource ./05_physical_chemical.html
+[ 6/13] 05_physical_chemical.qmd
+
+
+processing file: 05_physical_chemical.qmd
+  |                                                               |                                                       |   0%  |                                                               |.....                                                  |   9%                 |                                                               |..........                                             |  18% [setup]         |                                                               |...............                                        |  27%                 |                                                               |....................                                   |  36% [temp_summary]  |                                                               |.........................                              |  45%                 |                                                               |..............................                         |  55% [pH_summary]    |                                                               |...................................                    |  64%                 |                                                               |........................................               |  73% [DO_summary]    |                                                               |.............................................          |  82%                 |                                                               |..................................................     |  91% [cond_summary]  |                                                               |.......................................................| 100%                                                                                                                        
+output file: 05_physical_chemical.knit.md
+
+[WARNING] Could not fetch resource ./06_metals_contaminants.html
+[ 7/13] 06_metals_contaminants.qmd
+
+
+processing file: 06_metals_contaminants.qmd
+  |                                                         |                                                 |   0%  |                                                         |.....                                            |  11%                       |                                                         |...........                                      |  22% [setup]               |                                                         |................                                 |  33%                       |                                                         |......................                           |  44% [metals_freq]         |                                                         |...........................                      |  56%                       |                                                         |.................................                |  67% [copper_summary]      |                                                         |......................................           |  78%                       |                                                         |............................................     |  89% [other_metals_table]  |                                                         |.................................................| 100%                                                                                                                                    
+output file: 06_metals_contaminants.knit.md
+
+[WARNING] Could not fetch resource ./07_nutrients_salmon.html
+[ 8/13] 07_nutrients_salmon.qmd
+[WARNING] Could not fetch resource ./08_gaps_and_needs.html
+[ 9/13] 08_gaps_and_needs.qmd
+[WARNING] Could not fetch resource ./09_community_focus.html

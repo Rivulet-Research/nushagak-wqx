@@ -1,0 +1,51 @@
+---
+title: "References"
+---
+
+## Data Sources and Documentation
+
+### Public Data Repositories
+
+EPA Water Quality Portal. https://www.waterqualitydata.us/. Accessed October 2026.
+
+USGS National Water Information System (NWIS). https://waterdata.usgs.gov/nwis. Accessed October 2026.
+
+Alaska Department of Environmental Conservation. Water Quality Monitoring Portal. https://dec.alaska.gov/water/. Accessed October 2026.
+
+### R Packages for Data Access
+
+De Cicco, L.A., Hirsch, R.M., and Lorenz, D.L., 2024, dataRetrieval: R packages for discovering and retrieving water resources data: U.S. Geological Survey Techniques and Methods, book 4, chap. A10, 18 p. https://doi.org/10.3133/tm4A10
+
+### Scientific and Regulatory References
+
+EPA (U.S. Environmental Protection Agency). 2016. Aquatic Life Ambient Freshwater Quality Criteria. https://www.epa.gov/wqc. Accessed October 2026.
+
+EPA Bristol Bay Watershed Assessment. https://www.epa.gov/bristolbay. Accessed October 2026.
+
+Alaska Department of Fish and Game. Division of Sport Fish. Salmon Resources. https://www.adfg.alaska.gov/index.cfm?adfg=fishingbyarea.main. Accessed October 2026.
+
+### QAPP and Quality Assurance Guidance
+
+EPA. 2001. Guidance for Quality Assurance Project Plans (EPA QA/G-5). EPA/240/R-02/009. https://www.epa.gov/quality.
+
+EPA. 2006. Guidance on Systematic Planning Using the Data Quality Objectives (DQO) Process (EPA QA/G-4). EPA/240/B-06/001.
+
+USGS. 2006. Techniques of Water-Resources Investigations. Book 1, Chapter A3: General Introduction and Hydrologic Concepts. https://pubs.usgs.gov/twri/
+
+---
+
+## Additional Resources
+
+### Community-Based Monitoring and Tribal Data Governance
+
+Alaska Native Science Commission. Indigenous Data Sovereignty in Alaska. https://www.ansci.org/
+
+TCIC & First Nations Technology Council. Building Capacity for Indigenous Data Governance. https://firstnationstechnologycouncil.com/
+
+Bristol Bay Native Association. Natural Resources Division. https://www.bbna.com/
+
+---
+
+## Note on Data Currency
+
+Water Quality Portal and NWIS data presented in this document are current as of March 2024. The Nushagak River baseline assessment is a living document and should be updated annually as new monitoring data become available.

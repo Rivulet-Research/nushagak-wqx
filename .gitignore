@@ -40,11 +40,16 @@ vignettes/*.pdf
 .Renviron
 .env
 
-# pkgdown site
-docs/
-
-# translation temp files
-po/*~
+# Quarto build output and generated files
+_book/
+*.docx
+*.pdf
 
 # RStudio Connect folder
 rsconnect/
+
+# Quarto files
+/.quarto/
+
+# Translation temp files
+po/*~
