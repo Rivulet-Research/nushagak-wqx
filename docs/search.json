@@ -1,0 +1,644 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Nushagak River Watershed Water Quality Baseline",
+    "section": "",
+    "text": "Overview\nThis document synthesizes existing water quality data for the Nushagak River watershed (HUC6: 190303) in southwestern Alaska. The watershed supports one of the world’s most significant wild salmon fisheries and is central to the cultural and subsistence economies of communities in the region including Ekwok, New Koliganek, New Stuyahok, Dillingham, and others.\nThe analysis aggregates publicly available monitoring data from the EPA Water Quality Portal (WQP) and USGS National Water Information System (NWIS), supplemented by regulatory and scientific literature. The goal is to establish an understanding of existing water quality conditions across the Nushagak drainage and to identify data gaps where new collaborative monitoring efforts could provide the greatest value.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
+    "title": "Nushagak River Watershed Water Quality Baseline",
+    "section": "Structure",
+    "text": "Structure\nThe document is organized in three parts:\nPart I assembles existing data sources, maps monitoring station coverage, and catalogs what water quality parameters have been measured historically.\nPart II synthesizes key physical, chemical, and biological parameters to characterize baseline conditions: temperature, pH, dissolved oxygen, metals, nutrients, and their relevance to salmon ecology.\nPart III contextualizes this baseline within the RFP’s two core goals: establishing continuous monitoring efforts and enhancing data management systems for the participating tribes.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#scope-and-limitations",
+    "href": "index.html#scope-and-limitations",
+    "title": "Nushagak River Watershed Water Quality Baseline",
+    "section": "Scope and Limitations",
+    "text": "Scope and Limitations\nThis synthesis covers all four HUC8 sub-basins of the Nushagak drainage:\n\n19030301 - Upper Nushagak River\n19030302 - Mulchatna River\n19030303 - Main Nushagak River\n19030304 - Wood River\n\n(See https://water.usgs.gov/themes/hydrologic-units/ for visual details).\nAll data presented derives from public repositories (WQP, NWIS) and published literature. Data completeness varies by location and parameter; gaps are noted throughout. This analysis is current as of March 2024 for WQP/NWIS data.\nPrepared: October 2026\nData current through: March 2024\nAI Disclosure: We used Posit Assistant (Claude Haiku 4.5 and Qwen3 30B) in RStudio to aid in debugging, deployment, and reproducibility of this web report. Content related to watershed monitoring plans and assessment of historic water quality data was drafted by Benjamin Meyer.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html",
+    "href": "chapters/01_intro.html",
+    "title": "Watershed Overview",
+    "section": "",
+    "text": "The Nushagak Drainage\nThe Nushagak River extends over than 280 miles from the Alaska Range to Bristol Bay. The watershed supports fisheries integral to the subsistence, cultural, and economic well-being of the communities in the region.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Watershed Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#participating-communities",
+    "href": "chapters/01_intro.html#participating-communities",
+    "title": "Watershed Overview",
+    "section": "Participating Communities",
+    "text": "Participating Communities\nThree tribes are proposing the collaborative monitoring effort:\n\nNative Village of Ekwok: Located on the Nushagak River mainstem\nNew Koliganek Village Council: Located at the Koliganek River confluence\nNew Stuyahok Village Council: Located on the Mulchatna River\n\nEach community depends on wild salmon runs, and has a direct interest in water quality conditions affecting fishery productivity and food safety.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Watershed Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#why-monitor-water-quality",
+    "href": "chapters/01_intro.html#why-monitor-water-quality",
+    "title": "Watershed Overview",
+    "section": "Why Monitor Water Quality",
+    "text": "Why Monitor Water Quality\nMuch as a physician may make health recommendations based on blood test results, fishery managers may make recommendations for healthy watersheds based on water quality data. Water quality parameters such as temperature, pH, dissolved oxygen, nutrient levels, and contaminant concentrations affect fish survival, growth, and reproduction. Baseline monitoring allows communities to detect changes over time and to make informed management decisions. Collaborative monitoring builds local capacity and ensures that data collected reflects community-defined priorities.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Watershed Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#objectives-of-this-analysis",
+    "href": "chapters/01_intro.html#objectives-of-this-analysis",
+    "title": "Watershed Overview",
+    "section": "Objectives of This Analysis",
+    "text": "Objectives of This Analysis\nThis document provides:\n\nAn inventory of existing water quality data across the Nushagak drainage\nA spatial and temporal summary of what has been measured and where\nA characterization of baseline conditions for key parameters\nIdentification of gaps where new monitoring efforts could be most valuable\nContext for designing monitoring strategies that align with the RFP’s goals\n\nChapters that follow explore each of these objectives in detail.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Watershed Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_data_sources.html",
+    "href": "chapters/02_data_sources.html",
+    "title": "Data Sources and Inventory",
+    "section": "",
+    "text": "Public Data Repositories",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Sources and Inventory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_data_sources.html#public-data-repositories",
+    "href": "chapters/02_data_sources.html#public-data-repositories",
+    "title": "Data Sources and Inventory",
+    "section": "",
+    "text": "Water Quality Portal (WQP)\nThe EPA Water Quality Portal (WQP) aggregates water quality data from multiple sources: EPA’s Storage and Retrieval (STORET) system, USGS National Water Information System (NWIS), and state environmental agency databases. For the Nushagak watershed, WQP contains physical and chemical measurements (pH, temperature, conductivity, turbidity), nutrients (nitrogen, phosphorus), trace metals, and biological observations.\nAccess: Queried via the dataRetrieval R package using HUC identifiers. Data are current through March 2024.\n\n\nUSGS National Water Information System (NWIS)\nNWIS contains streamflow measurements, continuous water temperature records from deployed sensors, and periodic water chemistry samples collected by USGS. These data often span decades and provide context for long-term trends.\nAccess: Queried via dataRetrieval::readNWISdata() in R scripts. Site identifiers are referenced in WQP but can also be accessed directly.\n\n\nAlaska Department of Environmental Conservation (DEC) Water Quality Portal\nAlaska DEC maintains ambient water quality monitoring data, Section 303(d) impairment assessments, and reports on grant-funded monitoring projects. Coverage of the Nushagak drainage is variable.\nAccess: Manual browsing of the DEC portal (https://dec.alaska.gov/water/) or direct contact with DEC regional offices for data export.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Sources and Inventory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_data_sources.html#secondary-literature-and-regulatory-data",
+    "href": "chapters/02_data_sources.html#secondary-literature-and-regulatory-data",
+    "title": "Data Sources and Inventory",
+    "section": "Secondary Literature and Regulatory Data",
+    "text": "Secondary Literature and Regulatory Data\n\nEPA Bristol Bay Watershed Assessment\nThe EPA’s Bristol Bay Watershed Assessment synthesizes data on aquatic ecosystems, fisheries, and water quality across the Bristol Bay region, including the Nushagak drainage. Published reports include summary tables of trace metal concentrations and baseline conditions for comparison.\nAccess: Published reports; data presented in tables and narrative form.\n\n\nPebble Project Environmental Baseline Document\nThe Pebble Project Environmental Impact Statement included extensive baseline water quality monitoring in the Mulchatna and Koktuli river drainages (tributaries of the Nushagak). These data include surface water chemistry, dissolved and total metals, alkalinity, and stream temperature records.\nAccess: Available through the Pebble Project EIS website; data in PDF tables (may require OCR or manual extraction).\n\n\nAcademic and Tribal Monitoring\nCook Inletkeeper, Bristol Bay Native Association (BBNA), and academic researchers have collected water quality and stream temperature data relevant to the watershed. Some data are publicly available (e.g. AKTEMP); others are held by tribal organizations or require partnership agreements.\nAccess: Variable; direct contact with organizations recommended (e.g. University of Washington Alaska Salmon Program)",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Sources and Inventory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_data_sources.html#data-compilation-strategy",
+    "href": "chapters/02_data_sources.html#data-compilation-strategy",
+    "title": "Data Sources and Inventory",
+    "section": "Data Compilation Strategy",
+    "text": "Data Compilation Strategy\nThis analysis prioritizes directly queryable data (WQP, NWIS) to ensure reproducibility and transparency. Grey literature is referenced to contextualize findings and identify historical patterns, but analysis for now focuses on accessible, reproducible data pipelines.\n\nData Quality and Validation\nWQP data are submitted by multiple organizations using the EPA’s Water Quality eXchange (WQX) standard, but data entry practices and metadata quality vary.\nFor future work or larger-scale data integration, the EPA’s Tools for Automated Data Analysis (TADA) framework provides a systematic approach to data discovery, validation, and cleaning. TADA includes automated quality control screens, detection limit handling, unit harmonization, and flagging of invalid metadata using EPA’s WQX domain validation services. Organizations preparing data submissions to WQP can use TADA to ensure consistency before archival. See the Data Management chapter for a discussion of TADA’s role in the proposed monitoring system.\nA summary of stations and observation counts by HUC follows in the next chapter.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Sources and Inventory</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_spatial_coverage.html",
+    "href": "chapters/03_spatial_coverage.html",
+    "title": "Spatial Coverage of Monitoring Stations",
+    "section": "",
+    "text": "Overview\nMonitoring stations in the Nushagak drainage are distributed across streams and lakes in four HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.\nCode\nleaflet(wq_sf) %&gt;%\n  addProviderTiles(providers$Esri.WorldTopoMap, group = \"Topo\") %&gt;%\n  addProviderTiles(providers$Esri.WorldImagery, group = \"Satellite\") %&gt;%\n  addCircleMarkers(\n    radius = 6,\n    color = \"#0072B2\",\n    weight = 1,\n    fillOpacity = 0.7,\n    popup = ~paste0(\n      \"&lt;b&gt;\", MonitoringLocationName, \"&lt;/b&gt;&lt;br&gt;\",\n      \"ID: \", MonitoringLocationIdentifier, \"&lt;br&gt;\",\n      \"Org: \", OrganizationFormalName, \"&lt;br&gt;\",\n      \"Results: \", resultCount\n    ),\n    clusterOptions = markerClusterOptions()\n  ) %&gt;%\n  addLayersControl(\n    baseGroups = c(\"Topo\", \"Satellite\"),\n    options = layersControlOptions(collapsed = FALSE)\n  )",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Spatial Coverage of Monitoring Stations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_spatial_coverage.html#summary-by-huc",
+    "href": "chapters/03_spatial_coverage.html#summary-by-huc",
+    "title": "Spatial Coverage of Monitoring Stations",
+    "section": "Summary by HUC",
+    "text": "Summary by HUC\n\n\nCode\nhuc_summary &lt;- wq_inventory %&gt;%\n  group_by(HUC) %&gt;%\n  summarize(\n    Stations = n_distinct(MonitoringLocationIdentifier),\n    Total_Results = sum(resultCount, na.rm = TRUE),\n    Organizations = n_distinct(OrganizationFormalName),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(HUC) %&gt;%\n  mutate(\n    HUC_Name = case_when(\n      HUC == \"19030301\" ~ \"Upper Nushagak\",\n      HUC == \"19030302\" ~ \"Mulchatna\",\n      HUC == \"19030303\" ~ \"Main Nushagak\",\n      HUC == \"19030304\" ~ \"Wood\",\n      TRUE ~ HUC\n    )\n  ) %&gt;%\n  select(HUC, HUC_Name, Stations, Total_Results, Organizations) %&gt;%\n  rename(\"Sub-basin\" = HUC_Name, \"Monitoring Locations\" = Stations, \"Total Observations\" = Total_Results, \"Data Providers\" = Organizations)\n\nknitr::kable(huc_summary, caption = \"Monitoring Coverage by HUC8 Sub-basin\")\n\n\n\nMonitoring Coverage by HUC8 Sub-basin\n\n\n\n\n\n\n\n\n\nHUC\nSub-basin\nMonitoring Locations\nTotal Observations\nData Providers\n\n\n\n\n19030301\nUpper Nushagak\n20\n1324\n3\n\n\n19030302\nMulchatna\n135\n8311\n3\n\n\n19030303\nMain Nushagak\n221\n6051\n3\n\n\n19030304\nWood\n42\n446\n1",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Spatial Coverage of Monitoring Stations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_spatial_coverage.html#data-provider-distribution",
+    "href": "chapters/03_spatial_coverage.html#data-provider-distribution",
+    "title": "Spatial Coverage of Monitoring Stations",
+    "section": "Data Provider Distribution",
+    "text": "Data Provider Distribution\n\n\nCode\nprovider_summary &lt;- wq_inventory %&gt;%\n  group_by(OrganizationFormalName) %&gt;%\n  summarize(\n    Stations = n_distinct(MonitoringLocationIdentifier),\n    Total_Results = sum(resultCount, na.rm = TRUE),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(desc(Total_Results)) %&gt;%\n  rename(\"Organization\" = OrganizationFormalName, \"Stations\" = Stations, \"Observations\" = Total_Results)\n\nknitr::kable(provider_summary, caption = \"Data Contributions by Organization\")\n\n\n\nData Contributions by Organization\n\n\n\n\n\n\n\nOrganization\nStations\nObservations\n\n\n\n\nUSGS Alaska Water Science Center\n228\n7463\n\n\nNational Park Service Water Resources Division\n104\n5157\n\n\nAlaska Dept of Environmental Conservation - Water Quality\n50\n2523\n\n\nAlaska Soil and Water Conservation District\n36\n989",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Spatial Coverage of Monitoring Stations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_spatial_coverage.html#observations",
+    "href": "chapters/03_spatial_coverage.html#observations",
+    "title": "Spatial Coverage of Monitoring Stations",
+    "section": "Observations",
+    "text": "Observations\nThe coverage varies by sub-basin, with the Upper Nushagak (19030301) and main Nushagak system (19030303) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.\nUSGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.\nData Quality Note: The WQP station inventory includes approximately 212 stations across the Nushagak HUCs that are registered in the system but show zero water quality results in the current API response. These may represent monitoring locations where data collection has occurred but results are not yet integrated into the WQP database, or where records exist in alternate formats. These sites are included in the station count above but do not contribute to the observation totals.\n\nThe next chapter examines what water quality parameters have been measured and identifies temporal and spatial gaps in the existing data.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Spatial Coverage of Monitoring Stations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04_parameters_summary.html",
+    "href": "chapters/04_parameters_summary.html",
+    "title": "Water Quality Parameters: Inventory and Gaps",
+    "section": "",
+    "text": "Parameter Frequency\nThe following parameters have been measured in the Nushagak watershed:\nCode\nparam_freq &lt;- wq_data %&gt;%\n  group_by(CharacteristicName) %&gt;%\n  summarize(\n    Observations = n(),\n    Stations = n_distinct(MonitoringLocationIdentifier),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(desc(Observations)) %&gt;%\n  rename(\"Parameter\" = CharacteristicName, \"Measurements\" = Observations, \"Unique Stations\" = Stations)\n\n# Display top 20 parameters\nknitr::kable(\n  head(param_freq, 20),\n  caption = \"Most Frequently Measured Water Quality Parameters (Top 20)\"\n)\n\n\n\nMost Frequently Measured Water Quality Parameters (Top 20)\n\n\nParameter\nMeasurements\nUnique Stations\n\n\n\n\nStream flow, instantaneous\n940\n10\n\n\nTemperature, water\n902\n196\n\n\nSpecific conductance\n488\n197\n\n\nStream width measure\n452\n21\n\n\npH\n446\n196\n\n\nTemperature, air\n335\n19\n\n\nHeight, gage\n306\n13\n\n\nOxygen\n268\n1\n\n\nTotal dissolved solids\n259\n14\n\n\nAcidity, (H+)\n207\n22\n\n\nIron\n205\n53\n\n\nBarometric pressure\n173\n47\n\n\nManganese\n172\n53\n\n\nTurbidity\n170\n50\n\n\nCalcium\n163\n53\n\n\nMagnesium\n163\n53\n\n\nSodium\n163\n53\n\n\nPotassium\n161\n53\n\n\nUranium\n154\n129\n\n\nDepth\n146\n26\nAdditional parameters also likely exist but are not yet included in this exploratory data assessment (see “Data Sources and Inventory” chapter).",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Water Quality Parameters: Inventory and Gaps</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04_parameters_summary.html#key-parameter-categories",
+    "href": "chapters/04_parameters_summary.html#key-parameter-categories",
+    "title": "Water Quality Parameters: Inventory and Gaps",
+    "section": "Key Parameter Categories",
+    "text": "Key Parameter Categories\n\nPhysical Properties\n\nTemperature: Essential for salmon habitat assessment; continuous monitoring data available from USGS gages\nConductivity & Specific Conductance: Indicates mineralization and ionic composition\nTurbidity: Affects light penetration; high values can indicate erosion or glacial discharge\n\n\n\nChemical Properties\n\npH: Affects aquatic chemistry and organism physiology\nDissolved Oxygen: Critical for salmonid survival\nAlkalinity & Hardness: Buffer capacity against acid inputs\n\n\n\nNutrients\n\nNitrogen (various forms): Nitrate, nitrite, ammonia, total nitrogen\nPhosphorus (various forms): Orthophosphate, total phosphorus\n(Limited frequency in existing data; opportunity for expanded monitoring)\n\n\n\nTrace Elements & Metals\n\nCopper: Abnormal levels can be toxic to aquatic life; relevant to mining activity concerns\nZinc, Lead, Cadmium, Chromium: Other metals detected; relevance context-dependent\nMolybdenum: Associated with geochemistry and mining scenarios\n\n\n\nBiological\n\nAlgal and macroinvertebrate sampling: Limited in frequency; primarily USGS and academic efforts",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Water Quality Parameters: Inventory and Gaps</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04_parameters_summary.html#data-gaps-and-monitoring-opportunities",
+    "href": "chapters/04_parameters_summary.html#data-gaps-and-monitoring-opportunities",
+    "title": "Water Quality Parameters: Inventory and Gaps",
+    "section": "Data Gaps and Monitoring Opportunities",
+    "text": "Data Gaps and Monitoring Opportunities\nBased on the inventory, the following represent priorities for expanded collaborative monitoring:\n\nContinuous Temperature Data: Few sites have high-frequency temperature loggers; salmon thermal habitat monitoring would benefit from denser deployment.\nNutrients (N, P): Few measurements in existing WQP data; baseline nutrient levels are poorly characterized across most of the watershed.\nBiological Metrics: Macroinvertebrate and periphyton sampling is limited. Fish presence/absence and juvenile salmon surveys would complement chemistry data.\nSeasonal and High-Flow Sampling: Most data are episodic; systematic seasonal sampling would reveal temperature, discharge, and contaminant dynamics.\n\n\nThese gaps inform the monitoring design recommendations in Part III.",
+    "crumbs": [
+      "Part I: Watershed Context & Existing Baseline",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Water Quality Parameters: Inventory and Gaps</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_physical_chemical.html",
+    "href": "chapters/05_physical_chemical.html",
+    "title": "Physical and Chemical Baseline",
+    "section": "",
+    "text": "Temperature\nWater temperature is fundamental to salmon ecology. Optimal ranges vary by species and life stage, but most Pacific salmon prefer cool water (≤16°C) and suffer stress at temperatures &gt;20°C.\nCode\ntemp_data &lt;- wq_key %&gt;%\n  filter(CharacteristicName == \"Temperature, water\") %&gt;%\n  select(ResultMeasureValue) %&gt;%\n  mutate(Temperature_C = as.numeric(ResultMeasureValue)) %&gt;%\n  select(-ResultMeasureValue)\n\nif (nrow(temp_data) &gt; 0) {\n  temp_stats &lt;- temp_data %&gt;%\n    summarize(\n      N = n(),\n      Mean = mean(Temperature_C, na.rm = TRUE),\n      Median = median(Temperature_C, na.rm = TRUE),\n      Min = min(Temperature_C, na.rm = TRUE),\n      Max = max(Temperature_C, na.rm = TRUE),\n      SD = sd(Temperature_C, na.rm = TRUE)\n    )\n  \n  knitr::kable(temp_stats, digits = 2, caption = \"Temperature Summary Statistics (°C)\")\n  \n} else {\n  cat(\"Insufficient temperature data for analysis.\\n\")\n}\n\n\n\nTemperature Summary Statistics (°C)\n\n\nN\nMean\nMedian\nMin\nMax\nSD\n\n\n\n\n902\n8.02\n7.9\n0\n21.1\n4.3",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Physical and Chemical Baseline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_physical_chemical.html#ph",
+    "href": "chapters/05_physical_chemical.html#ph",
+    "title": "Physical and Chemical Baseline",
+    "section": "pH",
+    "text": "pH\npH controls the availability of nutrients and toxicity of metals. Salmon thrive in neutral to slightly alkaline waters (pH 6.5–8.0).\n\n\nCode\nph_data &lt;- wq_key %&gt;%\n  filter(CharacteristicName == \"pH\") %&gt;%\n  select(ResultMeasureValue) %&gt;%\n  mutate(pH = as.numeric(ResultMeasureValue)) %&gt;%\n  select(-ResultMeasureValue)\n\nif (nrow(ph_data) &gt; 0) {\n  ph_stats &lt;- ph_data %&gt;%\n    summarize(\n      N = n(),\n      Mean = mean(pH, na.rm = TRUE),\n      Median = median(pH, na.rm = TRUE),\n      Min = min(pH, na.rm = TRUE),\n      Max = max(pH, na.rm = TRUE)\n    )\n  \n  knitr::kable(ph_stats, digits = 2, caption = \"pH Summary Statistics\")\n} else {\n  cat(\"Insufficient pH data for analysis.\\n\")\n}\n\n\n\npH Summary Statistics\n\n\nN\nMean\nMedian\nMin\nMax\n\n\n\n\n446\n7.04\n7.1\n5.5\n8.54",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Physical and Chemical Baseline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_physical_chemical.html#dissolved-oxygen",
+    "href": "chapters/05_physical_chemical.html#dissolved-oxygen",
+    "title": "Physical and Chemical Baseline",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\nDissolved oxygen (DO) is essential for fish respiration. Saturation depends on temperature and atmospheric pressure; cold water holds more oxygen. Salmon typically require &gt;6 mg/L DO.\n\n\nCode\ndo_data &lt;- wq_key %&gt;%\n  filter(CharacteristicName == \"Dissolved oxygen (DO)\") %&gt;%\n  select(ResultMeasureValue) %&gt;%\n  mutate(DO_mg_L = as.numeric(ResultMeasureValue)) %&gt;%\n  select(-ResultMeasureValue)\n\nif (nrow(do_data) &gt; 0) {\n  do_stats &lt;- do_data %&gt;%\n    summarize(\n      N = n(),\n      Mean = mean(DO_mg_L, na.rm = TRUE),\n      Median = median(DO_mg_L, na.rm = TRUE),\n      Min = min(DO_mg_L, na.rm = TRUE),\n      Max = max(DO_mg_L, na.rm = TRUE)\n    )\n  \n  knitr::kable(do_stats, digits = 2, caption = \"Dissolved Oxygen Summary Statistics (mg/L)\")\n} else {\n  cat(\"Insufficient dissolved oxygen data for analysis.\\n\")\n}\n\n\n\nDissolved Oxygen Summary Statistics (mg/L)\n\n\nN\nMean\nMedian\nMin\nMax\n\n\n\n\n106\n11.72\n11.85\n8.6\n13.8",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Physical and Chemical Baseline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_physical_chemical.html#conductivity",
+    "href": "chapters/05_physical_chemical.html#conductivity",
+    "title": "Physical and Chemical Baseline",
+    "section": "Conductivity",
+    "text": "Conductivity\nSpecific conductance reflects the ionic strength of water and varies with geology, precipitation, and human inputs (e.g., road salt, mining).\n\n\nCode\ncond_data &lt;- wq_key %&gt;%\n  filter(CharacteristicName == \"Specific conductance\") %&gt;%\n  select(ResultMeasureValue) %&gt;%\n  mutate(Conductance_uS_cm = as.numeric(ResultMeasureValue)) %&gt;%\n  select(-ResultMeasureValue)\n\nif (nrow(cond_data) &gt; 0) {\n  cond_stats &lt;- cond_data %&gt;%\n    summarize(\n      N = n(),\n      Mean = mean(Conductance_uS_cm, na.rm = TRUE),\n      Median = median(Conductance_uS_cm, na.rm = TRUE),\n      Min = min(Conductance_uS_cm, na.rm = TRUE),\n      Max = max(Conductance_uS_cm, na.rm = TRUE)\n    )\n  \n  knitr::kable(cond_stats, digits = 1, caption = \"Specific Conductance Summary Statistics (µS/cm)\")\n} else {\n  cat(\"Insufficient conductance data for analysis.\\n\")\n}\n\n\n\nSpecific Conductance Summary Statistics (µS/cm)\n\n\nN\nMean\nMedian\nMin\nMax\n\n\n\n\n488\n52\n50\n3\n700",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Physical and Chemical Baseline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_physical_chemical.html#summary",
+    "href": "chapters/05_physical_chemical.html#summary",
+    "title": "Physical and Chemical Baseline",
+    "section": "Summary",
+    "text": "Summary\nThe baseline water quality data show that Nushagak streams are generally cold and well-oxygenated, suitable for salmon. Continued monitoring of these parameters will establish trends and allow early detection of changes that could affect fishery productivity.\n\nThe following chapter examines metals and contaminants, with emphasis on copper and other elements of concern.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Physical and Chemical Baseline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_metals_contaminants.html",
+    "href": "chapters/06_metals_contaminants.html",
+    "title": "Metals and Contaminants",
+    "section": "",
+    "text": "Overview\nTrace metal concentrations are driven by geology, weathering, and, in some contexts, human activities. For the Nushagak watershed, baseline metal levels are important to characterize in light of mining interest in the region.\nCode\nmetal_freq &lt;- metals_data %&gt;%\n  group_by(CharacteristicName) %&gt;%\n  summarize(\n    Observations = n(),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(desc(Observations)) %&gt;%\n  rename(\"Metal/Element\" = CharacteristicName, \"Measurements\" = Observations)\n\nknitr::kable(metal_freq, caption = \"Frequency of Metal/Element Measurements\")\n\n\n\nFrequency of Metal/Element Measurements\n\n\nMetal/Element\nMeasurements\n\n\n\n\nIron\n205\n\n\nManganese\n172\n\n\nArsenic\n139\n\n\nCopper\n136\n\n\nZinc\n135\n\n\nChromium\n133\n\n\nLead\n131\n\n\nCadmium\n129\n\n\nMolybdenum\n68",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Metals and Contaminants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_metals_contaminants.html#copper",
+    "href": "chapters/06_metals_contaminants.html#copper",
+    "title": "Metals and Contaminants",
+    "section": "Copper",
+    "text": "Copper\nCopper is toxic to aquatic organisms at elevated concentrations and is particularly relevant given mining development scenarios. EPA freshwater aquatic life criteria: 13 µg/L (criterion continuous concentration).\n\n\nCode\n# Get complete copper data with sample fraction information\nwq_copper_full &lt;- readWQPdata(huc = nushagak_hucs, characteristicName = \"Copper\", sampleMedia = \"Water\")\n\ncopper_data &lt;- wq_copper_full %&gt;%\n  filter(!is.na(ResultMeasureValue)) %&gt;%\n  mutate(\n    Value = as.numeric(ResultMeasureValue),\n    Form = if_else(is.na(ResultSampleFractionText), \"Unspecified\", ResultSampleFractionText)\n  ) %&gt;%\n  select(Form, Value) %&gt;%\n  filter(!is.na(Value))\n\nif (nrow(copper_data) &gt; 0) {\n  copper_summary &lt;- copper_data %&gt;%\n    group_by(Form) %&gt;%\n    summarize(\n      N = n(),\n      Mean = mean(Value, na.rm = TRUE),\n      Median = median(Value, na.rm = TRUE),\n      Min = min(Value, na.rm = TRUE),\n      Max = max(Value, na.rm = TRUE),\n      .groups = \"drop\"\n    ) %&gt;%\n    arrange(desc(N)) %&gt;%\n    rename(\"Sample Form\" = Form, \"Count\" = N)\n  \n  knitr::kable(copper_summary, digits = 2, caption = \"Copper Concentrations by Sample Form (µg/L)\")\n} else {\n  cat(\"No copper data available in WQP.\\n\")\n}\n\n\n\nCopper Concentrations by Sample Form (µg/L)\n\n\nSample Form\nCount\nMean\nMedian\nMin\nMax\n\n\n\n\nDissolved\n41\n2.02\n1.00\n0.00\n20.00\n\n\nSuspended\n13\n5.69\n3.00\n1.00\n12.00\n\n\nTotal\n8\n1.93\n2.38\n0.37\n3.53\n\n\nRecoverable\n3\n16.67\n20.00\n10.00\n20.00",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Metals and Contaminants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_metals_contaminants.html#other-metals",
+    "href": "chapters/06_metals_contaminants.html#other-metals",
+    "title": "Metals and Contaminants",
+    "section": "Other Metals",
+    "text": "Other Metals\nZinc, lead, cadmium, and chromium have also been measured at some locations. Distribution and frequency vary significantly.\n\n\nCode\nother_metals &lt;- metals_data %&gt;%\n  filter(CharacteristicName %in% c(\"Zinc\", \"Lead\", \"Cadmium\", \"Chromium\")) %&gt;%\n  mutate(Value = as.numeric(ResultMeasureValue)) %&gt;%\n  group_by(CharacteristicName) %&gt;%\n  summarize(\n    N = n(),\n    Mean = mean(Value, na.rm = TRUE),\n    Min = min(Value, na.rm = TRUE),\n    Max = max(Value, na.rm = TRUE),\n    .groups = \"drop\"\n  ) %&gt;%\n  arrange(desc(N)) %&gt;%\n  rename(\"Element\" = CharacteristicName, \"Count\" = N)\n\nif (nrow(other_metals) &gt; 0) {\n  knitr::kable(other_metals, digits = 2, caption = \"Selected Metals: Summary Statistics\")\n} else {\n  cat(\"Limited data available for other metals in WQP.\\n\")\n}\n\n\n\nSelected Metals: Summary Statistics\n\n\nElement\nCount\nMean\nMin\nMax\n\n\n\n\nZinc\n135\n269.08\n0\n5846.26\n\n\nChromium\n133\n3.20\n0\n20.00\n\n\nLead\n131\n2.37\n0\n44.00\n\n\nCadmium\n129\n0.44\n0\n2.00",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Metals and Contaminants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_metals_contaminants.html#data-quality-notes",
+    "href": "chapters/06_metals_contaminants.html#data-quality-notes",
+    "title": "Metals and Contaminants",
+    "section": "Data Quality Notes",
+    "text": "Data Quality Notes\nWQP returns metal concentration measurements as character strings, which must be explicitly converted to numeric type before statistical calculations. This analysis performs that conversion and filters missing values; however, because data submission practices vary, some observations may be incomplete or use unconventional units or detection limit notations. For larger monitoring efforts, the EPA’s TADA (Tools for Automated Data Analysis) framework systematically handles these issues: validating metadata against EPA WQX domain standards, converting between units, and managing censored (below-detection-limit) observations. See the Data Management chapter for details.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Metals and Contaminants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_metals_contaminants.html#data-gaps",
+    "href": "chapters/06_metals_contaminants.html#data-gaps",
+    "title": "Metals and Contaminants",
+    "section": "Data Gaps",
+    "text": "Data Gaps\nPublic metal concentration data in the Nushagak watershed are sparse; though non-public sources not covered yet in this analysis likely exist. Most observations come from targeted research projects rather than systematic monitoring. This represents a significant monitoring opportunity:\n\nDissolved vs. Total Metal: Not all analyses distinguish between dissolved and total concentrations\nSpatial Coverage: Limited sampling outside established USGS gaging stations\nSeasonal Variation: Few multi-season samples; high-flow dynamics unknown\nSpeciation and Acid-Generating Potential: No public baseline assessments in most tributaries\n\n\nThese gaps underscore the value of establishing baseline metal monitoring across the four Nushagak HUC8 sub-basins.\nThe next chapter examines nutrients and biological parameters relevant to salmon productivity.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Metals and Contaminants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_nutrients_salmon.html",
+    "href": "chapters/07_nutrients_salmon.html",
+    "title": "Nutrients and Salmon-Relevant Indicators",
+    "section": "",
+    "text": "Nutrients and Primary Productivity\nNitrogen and phosphorus are essential for aquatic ecosystem productivity. In streams typical of the Nushagak region, seasonal pulses from spawning salmon carcasses contribute to productivity.\nCurrently, the Water Quality Portal contains limited nitrogen and phosphorus measurements for the Nushagak watershed. This represents a significant data gap:\nEstablishing baseline nutrient levels would provide context for understanding:",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nutrients and Salmon-Relevant Indicators</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_nutrients_salmon.html#nutrients-and-primary-productivity",
+    "href": "chapters/07_nutrients_salmon.html#nutrients-and-primary-productivity",
+    "title": "Nutrients and Salmon-Relevant Indicators",
+    "section": "",
+    "text": "Few observations of dissolved nitrate, nitrite, or ammonia\nMinimal phosphorus data (orthophosphate or total phosphorus)\nNo systematic seasonal sampling of nutrient dynamics\n\n\n\nStream productivity and food availability for juvenile salmon\nResponses to changes in land use or climate\nSalmon-driven nutrient pulses during spawning periods",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nutrients and Salmon-Relevant Indicators</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_nutrients_salmon.html#biological-indicators",
+    "href": "chapters/07_nutrients_salmon.html#biological-indicators",
+    "title": "Nutrients and Salmon-Relevant Indicators",
+    "section": "Biological Indicators",
+    "text": "Biological Indicators\n\nFish Sampling\nFish surveys in the Nushagak watershed have been conducted by USGS, Alaska Department of Fish and Game, and tribal entities. Juvenile salmon densities, species composition, and growth rates are key indicators of habitat quality. Some existing data are dispersed among agencies and not centralized in WQP. ADF&G’s Alaska Freshwater Fish Inventory and Anadromous Waters Catalog are logical starting points for data assessment.\n\n\nMacroinvertebrate Communities\nMacroinvertebrate communities reflect water quality and habitat conditions. The Nushagak watershed lacks a continuous monitoring network for aquatic macroinvertebrates.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nutrients and Salmon-Relevant Indicators</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_nutrients_salmon.html#dissolved-oxygen-and-temperature-interactions",
+    "href": "chapters/07_nutrients_salmon.html#dissolved-oxygen-and-temperature-interactions",
+    "title": "Nutrients and Salmon-Relevant Indicators",
+    "section": "Dissolved Oxygen and Temperature Interactions",
+    "text": "Dissolved Oxygen and Temperature Interactions\nDissolved oxygen and temperature are tightly coupled: cold water holds more oxygen, while warm water holds less. For salmon, the combination of warm temperature and low dissolved oxygen creates stress. Continuous monitoring of either or both parameters at key sites would allow assessment of thermal habitat suitability and identification of potential barrier zones.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nutrients and Salmon-Relevant Indicators</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_nutrients_salmon.html#possible-recommendations-for-baseline-monitoring",
+    "href": "chapters/07_nutrients_salmon.html#possible-recommendations-for-baseline-monitoring",
+    "title": "Nutrients and Salmon-Relevant Indicators",
+    "section": "Possible Recommendations for Baseline Monitoring",
+    "text": "Possible Recommendations for Baseline Monitoring\n\nNutrient Sampling: Establish 3–4 baseline sites per HUC8 sub-basin with monthly or bimonthly sampling for dissolved nitrate, ammonia, and orthophosphate.\nContinuous Temperature and DO: Deploy data loggers at 5–8 strategic locations to capture diurnal and seasonal variation.\nFish Sampling: Coordinate with ADF&G and tribal partners to standardize juvenile salmon surveys in spring and fall.\nMacroinvertebrate Sampling: Implement seasonal kick-net sampling at reference stations to establish baseline community composition.\n\n\nThese biological and chemical parameters together form the foundation of ecosystem-based monitoring. The next chapter synthesizes current gaps and priorities for the collaborative monitoring program.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nutrients and Salmon-Relevant Indicators</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08_gaps_and_needs.html",
+    "href": "chapters/08_gaps_and_needs.html",
+    "title": "Data Gaps and Monitoring Priorities",
+    "section": "",
+    "text": "Summary of Baseline Assessment\nThe existing water quality data for the Nushagak watershed provide a partial baseline. Data are dominated by USGS streamflow and periodic chemistry, supplemented by research project sampling.",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Gaps and Monitoring Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08_gaps_and_needs.html#critical-gaps",
+    "href": "chapters/08_gaps_and_needs.html#critical-gaps",
+    "title": "Data Gaps and Monitoring Priorities",
+    "section": "Critical Gaps",
+    "text": "Critical Gaps\n\n1. Spatial Coverage\n\nWood River (19030304) and Nuyakuk River (19030303) drainages have limited established monitoring infrastructure\nTributary streams in all sub-basins are underrepresented\nNo monitoring in headwater reaches where geochemical and thermal conditions differ markedly\n\n\n\n2. Temporal Frequency\n\nMost existing data are episodic grab samples rather than continuous or systematic time series\nNo baseline for seasonal or interannual variation in key parameters\nHigh-flow events are rarely sampled (logistics, accessibility)\n\n\n\n3. Parameter Breadth\n\n\n\n\n\n\n\n\nParameter Class\nStatus\nPriority\n\n\n\n\nTemperature (continuous)\nFew loggers\nHigh\n\n\nDissolved oxygen\nLimited observations\nHigh\n\n\nNutrients (N, P)\nSparse\nHigh\n\n\nTrace metals\nVery limited\nMedium\n\n\nBiological (fish, invertebrates)\nDispersed across agencies\nHigh\n\n\nAcidification potential\nEssentially absent\nMedium\n\n\n\n\n\n4. Data Management and Sharing\n\nLimited standardization of field methods and data entry\nNo real-time or near-real-time data sharing platform among agencies and communities",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Gaps and Monitoring Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08_gaps_and_needs.html#notes-on-monitoring-priorities",
+    "href": "chapters/08_gaps_and_needs.html#notes-on-monitoring-priorities",
+    "title": "Data Gaps and Monitoring Priorities",
+    "section": "Notes on Monitoring Priorities",
+    "text": "Notes on Monitoring Priorities\n\n\n\n\n\n\nThis section intentionally does not prescribe site counts, parameters, or timelines\n\n\n\nDeciding where new monitoring is most valuable requires judgment about tribal priorities, logistics, funding, and risk. This section lays out the structured process by which those choices could be made, and the open questions that need answers before the plan can be finalized.\n\n\n\nHow monitoring priorities should be decided\nThe EPA’s Data Quality Objectives (DQO) process is the standard framework for translating monitoring goals into a defensible sampling design: it specifies the problem, the decision to be made, the data needed to support that decision, and acceptable levels of uncertainty, before site counts or frequencies are chosen (EPA 2006). Any site counts, parameter lists, or sampling frequencies proposed for the Nushagak effort should be the output of this process, run with the three participating tribes, rather than a number proposed in this document.\n\n\nOpen questions requiring community input\n\nWhich sub-basins or reaches do the Native Village of Ekwok, New Koliganek Village Council, and New Stuyahok Village Council consider highest priority, based on local observation and traditional knowledge, not just the spatial coverage gaps identified above?\nWhat specific water quality concerns (e.g., observed changes in fish health, turbidity after development activity, temperature trends) have communities already raised that should drive site placement?\nWhat funding, staffing, and equipment constraints realistically bound the number of sites and the monitoring timeline?\nAre there existing tribal environmental program plans, natural resources priorities, or prior monitoring proposals that should set the baseline design rather than a new one drafted here?\nWhat does the RFP itself specify, in terms of required deliverables, timeline, or budget, that constrains feasible scope?",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Gaps and Monitoring Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/08_gaps_and_needs.html#next-steps",
+    "href": "chapters/08_gaps_and_needs.html#next-steps",
+    "title": "Data Gaps and Monitoring Priorities",
+    "section": "Next Steps",
+    "text": "Next Steps\nPart III describes how a QAPP translates decisions made through the DQO process into a concrete sampling design, once those decisions have been made with community and documented external input.\n\n\n\n\nEPA. 2006. “Guidance on Systematic Planning Using the Data Quality Objectives (DQO) Process (EPA QA/g-4).”",
+    "crumbs": [
+      "Part II: Baseline Water Quality Synthesis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Gaps and Monitoring Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/09_community_focus.html",
+    "href": "chapters/09_community_focus.html",
+    "title": "Community Context and Priorities",
+    "section": "",
+    "text": "The Three Participating Communities\nThe Nushagak River watershed supports three Alaska Native communities whose subsistence and cultural practices are centered on wild salmon:\nEach community has a direct interest in water quality that supports salmon productivity, fishery sustainability, and food security.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Community Context and Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/09_community_focus.html#the-three-participating-communities",
+    "href": "chapters/09_community_focus.html#the-three-participating-communities",
+    "title": "Community Context and Priorities",
+    "section": "",
+    "text": "Native Village of Ekwok: Located on the Nushagak River mainstem, approximately 70 river miles from Bristol Bay\nNew Koliganek Village Council: Located at the confluence of the Koliganek River with the Nushagak\nNew Stuyahok Village Council: Located on the Mulchatna River, the largest tributary of the Nushagak",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Community Context and Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/09_community_focus.html#geographic-priorities",
+    "href": "chapters/09_community_focus.html#geographic-priorities",
+    "title": "Community Context and Priorities",
+    "section": "Geographic Priorities",
+    "text": "Geographic Priorities\n\nEkwok Territory\nThe mainstem Nushagak near Ekwok receives flow from all upstream tributaries. Water quality monitoring at Ekwok serves as an integrator of upstream conditions. Temperature, dissolved oxygen, and contaminant concentrations at this location reflect conditions in the entire watershed above.\nMonitoring emphasis: Mainstem chemistry, fish passage, tributary inflows\n\n\nKoliganek Territory\nThe Koliganek River is a major tributary joining the Nushagak from the north. The confluence zone may represent a mixing zone with distinct water quality characteristics. Exploratory data analysis so far suggests that the Koliganek drainage is less monitored than the Upper Nushagak.\nMonitoring emphasis: Koliganek baseline chemistry\n\n\nNew Stuyahok Territory\nThe Mulchatna River is the largest tributary of the Nushagak, contributing significant discharge and ecological complexity. The Mulchatna has historical gold mining activity and present-day development interest.\nMonitoring emphasis: Metal baseline, geochemistry, headwater conditions\n\nPart III explores how monitoring design, data management systems, and QAPP development support these community goals.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Community Context and Priorities</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html",
+    "href": "chapters/10_monitoring_design.html",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "",
+    "text": "Overview\nA Quality Assurance Project Plan (QAPP) is the foundational technical document that describes how monitoring data will be collected, managed, and assured to meet defined objectives. For the Nushagak collaborative effort, the QAPP will specify:",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#overview",
+    "href": "chapters/10_monitoring_design.html#overview",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "",
+    "text": "Project objectives and data quality objectives (DQOs)\nSampling design: locations, frequency, and parameters\nStandard operating procedures (SOPs) for field and laboratory methods\nQuality control and quality assurance protocols\nData management, validation, and archiving procedures\nRoles and responsibilities of participating agencies and tribes",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#monitoring-station-selection",
+    "href": "chapters/10_monitoring_design.html#monitoring-station-selection",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Monitoring Station Selection",
+    "text": "Monitoring Station Selection\n\n\n\n\n\n\nStation counts and tiers are not prescribed here\n\n\n\nThe DQO process referenced in Chapter 8 is the appropriate mechanism for setting station counts, once monitoring objectives and resource constraints are defined with the participating tribes (EPA 2006).\n\n\nWhat can be stated generally, consistent with standard watershed monitoring design, is that stations are typically organized by monitoring purpose rather than placed uniformly:\n\nIntegrator stations: Mainstem or lower-tributary sites that reflect cumulative upstream conditions\nTributary or headwater stations: Sites targeting sub-basins or reaches identified as data-poor\nSpecial-purpose stations: Sites targeting a specific concern (e.g., geochemistry near areas of mineral development interest)\n\nHow many stations of each type, and exactly where, depends on the decisions described in Chapter 8 and should be documented with reference to tribal input and the final RFP scope, not fixed in advance here.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#candidate-parameters-and-rationale",
+    "href": "chapters/10_monitoring_design.html#candidate-parameters-and-rationale",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Candidate Parameters and Rationale",
+    "text": "Candidate Parameters and Rationale\nThe parameters below are commonly included in salmon-stream water quality monitoring programs; whether to include each, and at what frequency, is a DQO-process decision. Numeric water quality thresholds (e.g., dissolved oxygen criteria protective of salmon) should be taken directly from EPA’s Aquatic Life Ambient Water Quality Criteria rather than restated informally here, since criteria vary by life stage and exposure duration (EPA 2016).\n\n\n\n\n\n\n\n\nParameter\nTypical Monitoring Approach\nRationale\n\n\n\n\nWater Temperature\nContinuous loggers; grab samples\nSalmon thermal habitat; diurnal and seasonal patterns\n\n\nDissolved Oxygen\nContinuous loggers\nSalmon survival threshold; see EPA aquatic life criteria for life-stage-specific values (EPA 2016)\n\n\npH\nPeriodic grab samples\nControls trace metal solubility; salmon physiology\n\n\nConductivity\nPeriodic grab samples\nIndicator of mineralization and baseline geochemistry\n\n\nNitrate + Ammonia\nPeriodic grab, filtered\nPrimary productivity; salmon nutrient contributions\n\n\nOrthophosphate\nPeriodic grab, filtered\nLimiting nutrient in many streams; productivity indicator\n\n\nCopper (dissolved/total)\nPeriodic grab\nMining-related concern; see EPA aquatic life criteria (EPA 2016)\n\n\nZinc, Lead, Cadmium\nPeriodic grab\nContaminant baseline\n\n\nFish Surveys\nSeasonal field observations\nJuvenile salmon density, species composition, health\n\n\nMacroinvertebrates\nPeriodic kick-net sampling\nBioassessment; community response to water quality\n\n\n\nExact sampling frequencies (monthly, quarterly, etc.) are a design decision pending the DQO process; placeholders above have been replaced with “periodic” and “continuous” to avoid presenting unverified choices as recommendations.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#quality-objectives",
+    "href": "chapters/10_monitoring_design.html#quality-objectives",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Quality Objectives",
+    "text": "Quality Objectives\nEPA’s QA/G-5 guidance structures data quality objectives around five categories, commonly abbreviated PARCC: precision, accuracy, representativeness, completeness, and comparability (EPA 2001). The specific numeric acceptance criteria for each (e.g., acceptable precision as relative standard deviation, minimum completeness percentage) are program-specific and should be set in the QAPP itself, in consultation with the laboratory and agencies involved, rather than assumed here. The categories are:\n\nAccuracy: How closely a measurement matches the true value; addressed via calibrated instruments, standard methods, and analytical QC (blanks, duplicates, standards)\nPrecision: Reproducibility of repeated measurements; addressed via replicate samples\nCompleteness: The proportion of planned, valid measurements actually obtained\nRepresentativeness: Whether samples reflect the actual conditions of interest, in time, depth, and location\nComparability: Whether results can be meaningfully compared across sites, times, and agencies, via standard units and methods",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#existing-field-protocols-to-draw-on",
+    "href": "chapters/10_monitoring_design.html#existing-field-protocols-to-draw-on",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Existing Field Protocols to Draw On",
+    "text": "Existing Field Protocols to Draw On\nRather than develop field methods from scratch, the QAPP should adopt established agency protocols already in use for similar salmon-stream monitoring in Alaska:\n\nSample collection: USGS’s National Field Manual (Book 9) describes Equal-Width-Increment and Equal-Discharge-Increment depth-integrated sampling for cross-sectional collection on wide channels such as the Nushagak and Mulchatna mainstems, along with parameter stabilization criteria before recording discrete field values (e.g., temperature within ±0.2°C, pH within ±0.1 units, dissolved oxygen within ±0.2 mg/L) (USGS 2006).\nSonde calibration: Multi-parameter sondes (e.g., YSI EXO, Hydrolab) are typically calibrated with a 2-point pH buffer check (pH 7.0 and 10.0) and a 100%-air-saturation dissolved oxygen calibration, consistent with EPA field monitoring protocols for continuous and discrete sonde deployment.\nContinuous temperature logging: The Stream Temperature Data Collection Standards and Protocol for Alaska, developed by Cook Inletkeeper and the Alaska Natural Heritage Program with agency partners, specifies pre- and post-deployment accuracy checks against a 0°C ice-water bath and a room-temperature bath referenced to a NIST-certified thermometer (±0.2°C tolerance), with hourly continuous logging (Cook Inletkeeper and Alaska Natural Heritage Program, n.d.).\nQAPP structure: EPA Region 10’s Tier 2 tribal QAPP guidance under Clean Water Act Sections 106 and 319 provides the structural template for defining data quality objectives, and the Alaska DEC Division of Water’s generic QAPP template, already approved by EPA Region 10, covers the required EPA QAPP elements adapted to Alaska field logistics (EPA Region 10, n.d.; Alaska Department of Environmental Conservation, n.d.).\n\nAdopting these existing, agency-vetted protocols rather than writing new ones reduces QAPP review time with EPA Region 10 and makes resulting data directly comparable to other Alaska salmon-stream datasets already in WQP and NWIS.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#electronic-data-collection",
+    "href": "chapters/10_monitoring_design.html#electronic-data-collection",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Electronic Data Collection",
+    "text": "Electronic Data Collection\nModern electronic field data entry systems (e.g., Survey123, Field Maps) allow:\n\nReal-time data validation (range checks, missing value alerts)\nAutomatic QC flags (e.g., temperature outside seasonal norms)\nReduced transcription errors\nImmediate upload to centralized database\n\nESRI Survey123 or Field Maps is a practical choice for this setting: it operates offline on tablets in areas without cellular service, which covers most of the Nushagak drainage, and can connect field observations, calibration logs, site photos, and chain-of-custody metadata directly into ArcGIS Online once a connection is available. The form schema should use column and characteristic naming aligned with EPA’s Water Quality eXchange (WQX) standard so that field data move into WQP submission without relabeling.\nA workflow diagram showing field data collection → validation → archiving should be included in the full QAPP.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/10_monitoring_design.html#community-training-and-capacity-building",
+    "href": "chapters/10_monitoring_design.html#community-training-and-capacity-building",
+    "title": "Monitoring Program Design and QAPP Fundamentals",
+    "section": "Community Training and Capacity Building",
+    "text": "Community Training and Capacity Building\nThe QAPP should include a training component:\n\nWater Technician Training: Field sampling methods, equipment operation, safety, data quality\nData Management Training: Database entry, QC protocols, data security\nInterpretation and Communication: Results translation to community managers and leadership\n\n\nThe next chapter describes data management infrastructure and visualization systems.\n\n\n\n\nAlaska Department of Environmental Conservation. n.d. “Division of Water Generic Quality Assurance Project Plan Template.” https://dec.alaska.gov/water/.\n\n\nCook Inletkeeper, and Alaska Natural Heritage Program. n.d. “Stream Temperature Data Collection Standards and Protocol for Alaska.” https://www.inletkeeper.org/.\n\n\nEPA. 2001. “Guidance for Quality Assurance Project Plans (EPA QA/g-5).” https://www.epa.gov/quality.\n\n\n———. 2006. “Guidance on Systematic Planning Using the Data Quality Objectives (DQO) Process (EPA QA/g-4).”\n\n\n———. 2016. “Aquatic Life Ambient Freshwater Quality Criteria.” https://www.epa.gov/wqc.\n\n\nEPA Region 10. n.d. “Tribal Quality Assurance Project Plan Guidance (Tier 2, Clean Water Act Sections 106 and 319).” https://www.epa.gov/quality.\n\n\nUSGS. 2006. “National Field Manual for the Collection of Water-Quality Data (Book 9), Chapters A4 and A6.” https://water.usgs.gov/owq/FieldManual/.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Monitoring Program Design and QAPP Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html",
+    "href": "chapters/11_data_management.html",
+    "title": "Data Management and Visualization Systems",
+    "section": "",
+    "text": "Overview\nThe RFP’s second goal emphasizes establishing systems for secure storage, quality assurance, visualization, and sharing of environmental data. A functional data management system is essential for:",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#overview",
+    "href": "chapters/11_data_management.html#overview",
+    "title": "Data Management and Visualization Systems",
+    "section": "",
+    "text": "Consolidating monitoring data from three separate tribes into a unified database\nEnsuring data quality and traceability (QA/QC audit trails)\nMaking results accessible to tribal leadership, regulators, and community members\nSupporting long-term trend analysis and decision-making",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#data-workflow-architecture",
+    "href": "chapters/11_data_management.html#data-workflow-architecture",
+    "title": "Data Management and Visualization Systems",
+    "section": "Data Workflow Architecture",
+    "text": "Data Workflow Architecture\nA typical workflow includes:\nField Data Collection\n    ↓\nElectronic Entry (ESRI Survey123 or Field Maps)\n    ↓\nAutomated Validation & QC Flagging\n    ↓\nHuman Review & Approval\n    ↓\nDatabase Storage (ArcGIS Online)\n    ↓\nData Visualization (web report) & Sharing (EPA CDX respoitory)\n    ↓\nArchival & Backup (local servers)",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#database-design",
+    "href": "chapters/11_data_management.html#database-design",
+    "title": "Data Management and Visualization Systems",
+    "section": "Database Design",
+    "text": "Database Design\n\nSchema Considerations\nThe database should store:\n\nSite Information: Name, location (lat/lon), HUC, river/tributary, elevation, accessibility\nSample Events: Date, time, observer, field conditions, notes\nMeasurements: Parameter, value, unit, detection limit, method, laboratory (if applicable)\nQA/QC Data: Blanks, duplicates, standards, reference samples, flag comments\n\nThe database template should use standardized column names identical to those in use in the destination repository (e.g. EPA CDX), following EPA’s Water Quality eXchange (WQX) data standards for monitoring location identifiers, activity types, characteristic names, measurement units, and analytical methods. Designing the mobile field form and the database schema around WQX naming from the outset avoids a later relabeling step before WQP submission.\n\n\nTechnology Options\n\n\n\n\n\n\n\n\n\nPlatform\nPros\nCons\nFit\n\n\n\n\nArcGIS Online\nIntuitive; ESRI support; hosted\nLicense cost; less customizable\nGood for visualization-focused systems\n\n\nGoogle Sheets + Shiny\nLow cost; familiar to many\nLimited scalability; security concerns\nSuitable for pilot phase\n\n\nEPA TADA Framework\nFree and open-source; WQX-certified; integrated QA/QC; national visibility\nRequires R knowledge; WQP-specific (not other data sources)\nExcellent for data validation and submission workflow\n\n\n\n\n\nData Validation and WQP Submission: TADA Framework\nThe EPA’s Tools for Automated Data Analysis (TADA) is a free, open-source toolkit specifically designed for organizations submitting water quality data to the EPA Water Quality Portal (WQP).\nTADA can be used either as a web-based interface (no coding required) or as an R package (EPATADA) for integration into custom workflows. For the Nushagak collaborative monitoring program, TADA should be incorporated into the data submission workflow: after field QC and database entry, data are processed through TADA’s validation screens before uploading to WQP. This ensures that data meet EPA standards and are compatible with national visualization tools (e.g., “How’s My Waterway?”).\n\n\nRecommendation\nA phased approach is pragmatic: start with accessible tools for data collection and management (e.g., ArcGIS Online and/or Google Sheets), then route data through TADA’s validation workflows before final submission to WQP. As the program matures and data volumes grow, consider investing in a dedicated database administrator and GIS specialist to manage the full pipeline (collection → TADA validation → WQP → archival).",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#data-sharing-and-visualization",
+    "href": "chapters/11_data_management.html#data-sharing-and-visualization",
+    "title": "Data Management and Visualization Systems",
+    "section": "Data Sharing and Visualization",
+    "text": "Data Sharing and Visualization\n\nReal-Time or Near-Real-Time Dashboard\nA web-based dashboard (built with ESRI apps or R Shiny) should display:\n\nCurrent Conditions: Latest temperature, DO, and chemistry readings at each site\nTime Series: Graphs of each parameter over the baseline period\nInteractive Map: Monitoring locations, site information, access to raw data\nAlert System: Automated flags if measurements exceed thresholds (e.g., DO &lt;5 mg/L, temperature &gt;18°C)\n\nNote: data properly archived in the EPA CDX will display in the interactive online interface, “How’s My Waterway?” At present, not all historic data in the EPA CDX properly displays in this interface due to historic naming conventions. One optional bonus goal of data management for this project could be to work towards seeing that existing historic water quality data properly displays in this interface.\n\n\nData Download and Integration\nThe system should allow:\n\nBulk download of data in standard formats (CSV, GeoJSON, Excel)\nIntegration with the EPA Water Quality Portal for national visibility",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#quality-assurance-and-data-certification",
+    "href": "chapters/11_data_management.html#quality-assurance-and-data-certification",
+    "title": "Data Management and Visualization Systems",
+    "section": "Quality Assurance and Data Certification",
+    "text": "Quality Assurance and Data Certification\n\nData Review Process\n\nField QC: Duplicate samples, field blanks, replicate measurements\nLaboratory QC (if samples are analyzed): Blanks, matrix spikes, standard curves\nData Review: Comparison against historical ranges, seasonal patterns, and other sites\nCertification: Designate “approved” data once QC is complete; note any flags or caveats\n\n\n\nMetadata Documentation\nAll data should include:\n\nMethod references (EPA, USGS SOPs; Alaska DEC’s Ambient Water Quality Monitoring System SOPs for sample hold-time limits, preservation, and chain-of-custody tracking where laboratory samples are involved)\nAnalytical laboratory accreditation (if applicable)\nQC summary (% duplicates, passing QC criteria)\nValidation notes (e.g., “sample collected during high-flow event”)",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/11_data_management.html#governance-and-data-sharing-agreements",
+    "href": "chapters/11_data_management.html#governance-and-data-sharing-agreements",
+    "title": "Data Management and Visualization Systems",
+    "section": "Governance and Data Sharing Agreements",
+    "text": "Governance and Data Sharing Agreements\n\nMulti-Tribal Data Governance\nEstablish agreements clarifying:\n\nOwnership: Who owns the raw data? (typically, the collecting organization)\nSharing: Under what conditions are data shared with co-implementers, EPA, USGS, public?\nAttribution: How will data providers be credited?\nConfidentiality: Are any sensitive tribal data withheld or restricted?\n\n\n\nRecommended Practice\nData collected using public funding (EPA, USGS) should be made publicly available (e.g., via WQP, NWIS, or dedicated portal) within 1–2 years of collection, with exception for sensitive cultural or proprietary information.",
+    "crumbs": [
+      "Part III: RFP Context & Monitoring Strategy",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Management and Visualization Systems</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Data Sources and Documentation",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#data-sources-and-documentation",
+    "href": "references.html#data-sources-and-documentation",
+    "title": "References",
+    "section": "",
+    "text": "Public Data Repositories\nEPA Water Quality Portal. https://www.waterqualitydata.us/. Accessed October 2026.\nUSGS National Water Information System (NWIS). https://waterdata.usgs.gov/nwis. Accessed October 2026.\nAlaska Department of Environmental Conservation. Water Quality Monitoring Portal. https://dec.alaska.gov/water/. Accessed October 2026.\n\n\nR Packages for Data Access\nDe Cicco, L.A., Hirsch, R.M., and Lorenz, D.L., 2024, dataRetrieval: R packages for discovering and retrieving water resources data: U.S. Geological Survey Techniques and Methods, book 4, chap. A10, 18 p. https://doi.org/10.3133/tm4A10\n\n\nScientific and Regulatory References\nEPA (U.S. Environmental Protection Agency). 2016. Aquatic Life Ambient Freshwater Quality Criteria. https://www.epa.gov/wqc. Accessed October 2026.\nEPA Bristol Bay Watershed Assessment. https://www.epa.gov/bristolbay. Accessed October 2026.\nAlaska Department of Fish and Game. Division of Sport Fish. Salmon Resources. https://www.adfg.alaska.gov/index.cfm?adfg=fishingbyarea.main. Accessed October 2026.\n\n\nQAPP and Quality Assurance Guidance\nEPA. 2001. Guidance for Quality Assurance Project Plans (EPA QA/G-5). EPA/240/R-02/009. https://www.epa.gov/quality.\nEPA. 2006. Guidance on Systematic Planning Using the Data Quality Objectives (DQO) Process (EPA QA/G-4). EPA/240/B-06/001.\nUSGS. 2006. Techniques of Water-Resources Investigations. Book 1, Chapter A3: General Introduction and Hydrologic Concepts. https://pubs.usgs.gov/twri/",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#additional-resources",
+    "href": "references.html#additional-resources",
+    "title": "References",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nCommunity-Based Monitoring and Tribal Data Governance\nAlaska Native Science Commission. Indigenous Data Sovereignty in Alaska. https://www.ansci.org/\nTCIC & First Nations Technology Council. Building Capacity for Indigenous Data Governance. https://firstnationstechnologycouncil.com/\nBristol Bay Native Association. Natural Resources Division. https://www.bbna.com/",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#note-on-data-currency",
+    "href": "references.html#note-on-data-currency",
+    "title": "References",
+    "section": "Note on Data Currency",
+    "text": "Note on Data Currency\nWater Quality Portal and NWIS data presented in this document are current as of March 2024. The Nushagak River baseline assessment is a living document and should be updated annually as new monitoring data become available.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>References</span>"
+    ]
+  }
+]

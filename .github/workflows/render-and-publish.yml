@@ -38,19 +38,10 @@ jobs:
       - name: Render book (DOCX)
         run: quarto render --to docx
 
-      - name: Move docx to HTML output
+      - name: Commit and push docs/ to main
         run: |
-          mv _book/nushagak-wqx.docx _book/ 2>/dev/null || true
-          ls -la _book/
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '_book'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/
+          git commit -m "Auto-render book on $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push origin main

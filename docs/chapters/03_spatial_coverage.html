@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Spatial Coverage of Monitoring Stations – Nushagak River Watershed Water Quality Baseline</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/04_parameters_summary.html" rel="next">
+<link href="../chapters/02_data_sources.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="../site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+
+<script src="../site_libs/leaflet-providers-3.0.0/leaflet-providers.js"></script>
+
+<script src="../site_libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
+
+<link href="../site_libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet">
+
+<link href="../site_libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet">
+
+<script src="../site_libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+
+<script src="../site_libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+
+<script src="../site_libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01_intro.html">Part I: Watershed Context &amp; Existing Baseline</a></li><li class="breadcrumb-item"><a href="../chapters/03_spatial_coverage.html"><span class="chapter-title">Spatial Coverage of Monitoring Stations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Nushagak River Watershed Water Quality Baseline</a> 
+        <div class="sidebar-tools-main">
+    <a href="../Nushagak-River-Watershed-Water-Quality-Baseline.docx" title="Download DOCX" class="quarto-navigation-tool px-1" aria-label="Download DOCX"><i class="bi bi-cloud-download"></i></a>
+    <a href="https://github.com/Rivulet-Research/nushagak-wqx" title="GitHub Repository" class="quarto-navigation-tool px-1" aria-label="GitHub Repository"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: Watershed Context &amp; Existing Baseline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Watershed Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02_data_sources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources and Inventory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03_spatial_coverage.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Spatial Coverage of Monitoring Stations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04_parameters_summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Water Quality Parameters: Inventory and Gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: Baseline Water Quality Synthesis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05_physical_chemical.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Physical and Chemical Baseline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06_metals_contaminants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Metals and Contaminants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07_nutrients_salmon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nutrients and Salmon-Relevant Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08_gaps_and_needs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Gaps and Monitoring Priorities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: RFP Context &amp; Monitoring Strategy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09_community_focus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Community Context and Priorities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10_monitoring_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Monitoring Program Design and QAPP Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11_data_management.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Management and Visualization Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#summary-by-huc" id="toc-summary-by-huc" class="nav-link" data-scroll-target="#summary-by-huc">Summary by HUC</a></li>
+  <li><a href="#data-provider-distribution" id="toc-data-provider-distribution" class="nav-link" data-scroll-target="#data-provider-distribution">Data Provider Distribution</a></li>
+  <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations">Observations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01_intro.html">Part I: Watershed Context &amp; Existing Baseline</a></li><li class="breadcrumb-item"><a href="../chapters/03_spatial_coverage.html"><span class="chapter-title">Spatial Coverage of Monitoring Stations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Spatial Coverage of Monitoring Stations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dataRetrieval)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Four HUC8s draining into the Nushagak River. HUC8 19030305 (Togiak River)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># drains separately into Bristol Bay and is excluded; see Observations below.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>nushagak_hucs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"19030301"</span>, <span class="st">"19030302"</span>, <span class="st">"19030303"</span>, <span class="st">"19030304"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch station inventory</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Querying WQP for the four Nushagak HUC8 sub-basins..."</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>wq_inventory <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (huc <span class="cf">in</span> nushagak_hucs) {</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> <span class="fu">whatWQPdata</span>(<span class="at">huc =</span> huc)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  temp<span class="sc">$</span>HUC <span class="ot">&lt;-</span> huc</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  wq_inventory <span class="ot">&lt;-</span> <span class="fu">rbind</span>(wq_inventory, temp)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to spatial object</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>wq_sf <span class="ot">&lt;-</span> wq_inventory <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lon), <span class="sc">!</span><span class="fu">is.na</span>(lat)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Monitoring stations in the Nushagak drainage are distributed across streams and lakes in four HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(wq_sf) <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Esri.WorldTopoMap, <span class="at">group =</span> <span class="st">"Topo"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Esri.WorldImagery, <span class="at">group =</span> <span class="st">"Satellite"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">radius =</span> <span class="dv">6</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#0072B2"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">weight =</span> <span class="dv">1</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fillOpacity =</span> <span class="fl">0.7</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">popup =</span> <span class="sc">~</span><span class="fu">paste0</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;b&gt;"</span>, MonitoringLocationName, <span class="st">"&lt;/b&gt;&lt;br&gt;"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ID: "</span>, MonitoringLocationIdentifier, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Org: "</span>, OrganizationFormalName, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Results: "</span>, resultCount</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">clusterOptions =</span> <span class="fu">markerClusterOptions</span>()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLayersControl</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">baseGroups =</span> <span class="fu">c</span>(<span class="st">"Topo"</span>, <span class="st">"Satellite"</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">layersControlOptions</span>(<span class="at">collapsed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-34f6f952b4ba6a82c661" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-34f6f952b4ba6a82c661">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Topo",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"Satellite",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[60.1539944,59.93483,59.7548056,59.7548889,59.7444444,59.9977778,59.73209,59.73053,59.7361111,59.7345833,59.7361111,59.7361111,59.7361111,59.7361111,59.7361111,59.7345833,59.7345833,59.7345833,59.7345833,59.7345833,60.6646105,59.7926376,59.8424682,59.8376227,59.8090115,60.4917,60.5117,60.5181,60.5261,60.5694,60.6017,60.5514,60.5153,60.4978,60.545,60.5711,60.6239,60.6614,60.6981,60.8025,60.795,60.8469,60.8561,60.7975,60.8519,60.8467,60.8739,60.9044,60.8864,60.8408,60.8586,60.8519,60.8769,60.8306,60.8453,60.7983,60.7644,60.7553,60.8061,60.8047,60.7736,60.8047,60.7944,60.7183,60.7261,60.6581,60.6503,60.6269,60.6122,60.5883,60.5819,60.5369,60.5467,60.4997,60.4878,60.4783,60.4642,60.7167,60.7381,60.7047,60.695,60.6669,60.6731,60.6606,60.6611,60.6644,60.6539,60.6386,60.6069,60.5775,60.5839,60.6764,60.6933,60.745,60.7861,60.7969,60.7694,60.7736,60.7683,60.7275,60.745,60.7097,60.6436,60.6758,60.7147,60.7003,60.7542,60.7519,60.7253,60.6547,60.6342,60.6283,60.59,60.5642,60.5228,60.5028,60.5211,60.4622,60.4711,60.5217,60.5672,60.6683,60.6339,60.5989,60.5353,60.5017,60.6219,60.6222,59.9581,60.4358,60.8388,60.6891,59.9125,59.6317,60.6641,60.4948,60.8599,60.5052,60.1314,60.6462,60.6971,60.3361,60.5637,60.6967,60.4424,59.7566,59.8253,59.7977,59.8161,59.8105,59.882,59.8877,59.7978,59.949964,59.66745,59.3484391,59.1653083,59.1649972,59.41755,59.415,58.9050958,59.0006417,59.0064751,59.0064751,59.0070306,59.0095307,59.0095307,59.0267535,59.0267535,59.0267534,59.0273089,59.028698,59.0295311,59.0336981,59.0339758,59.0345314,59.0348092,59.0348092,59.0348092,59.0348091,59.0348091,59.0348091,59.0348091,59.035087,59.0356432,59.0356432,59.0370317,59.037587,59.037587,59.0384213,59.03842,59.03842,59.0389769,59.0395318,59.0395317,59.0395312,59.0395312,59.0395311,59.0398102,59.0400879,59.0400874,59.0400867,59.0400867,59.0403649,59.0403649,59.0403649,59.0403649,59.0403649,59.0403645,59.0403645,59.0403645,59.0406435,59.0409202,59.04092,59.04092,59.0411991,59.0411991,59.041477,59.041477,59.0414769,59.0417535,59.0417534,59.0420319,59.0420319,59.0420317,59.0423097,59.042309,59.0425873,59.0428659,59.0428653,59.0428653,59.0428647,59.0428646,59.0428646,59.0428646,59.0431429,59.0431424,59.0434214,59.0436987,59.0436986,59.0439765,59.0439763,59.0439756,59.0439756,59.0442543,59.0442542,59.0448103,59.0448098,59.0448089,59.0450876,59.0442541,59.0461979,59.0461979,59.0461979,59.0461979,59.0475869,59.0475868,59.0475868,59.0475866,59.0481422,59.0461979,59.0461979,59.048698,59.0492534,59.0492534,59.0495311,59.049531,59.0498088,59.0498088,59.0498088,59.0500869,59.0500868,59.0500868,59.0509201,59.051198,59.051198,59.0520313,59.0520311,59.052309,59.0528645,59.0528645,59.0534201,59.05342,59.0539756,59.0542534,59.0548089,59.0550868,59.05592,59.0556423,59.0559201,59.05592,59.0561991,59.0561991,59.056198,59.0561978,59.0567547,59.0567547,59.0586991,59.0592547,59.0614756,59.0628644,59.0670312,59.0673089,59.0681423,59.0692535,59.0698091,59.0706424,59.0706424,59.0717535,59.0742536,59.3476057,59.3478835,59.3487169,59.3487168,59.3492724,59.3495501,59.3503836,59.3503836,59.3512169,59.3545504,59.4506648,59.4506648,59.4506648,59.4537205,59.4539982,59.4086111,59.03,59.0591667,59.0347222,59.0425,59.0028897,59.62221,59.44092,59.15601,58.91524,58.91774,58.90524,59.34866,59.6222222,59.4408888,59.4409166,58.9180555,58.91525,58.91525,58.91775,58.9052222,58.90525,58.90525,59.0374329,59.0378615,59.6222222,59.6222222,59.6222222,59.6222222,59.6222222,59.4408888,59.4408888,59.4409166,60.4409166,59.4408888,58.9180555,58.9180555,58.91525,58.91525,58.9180555,58.91775,58.91775,58.91775,58.91775,58.91775,58.9052222,58.9052222,58.90525,58.90525,58.9052222,59.3486666,59.7945449,59.6034216,59.2777972,59.2742566,59.2253657,59.2064767,59.0409215,59.0420326,59.0431437,59.0434215,59.0459215,59.0581438,59.0661999,59.0661999,59.0684222,59.067311,59.0687,59.0695334,59.0695334,59.0712001,59.0798094,59.0798094,59.0806428,59.081476,59.081476,59.081476,59.0831428,59.2267547,59.2664782,59.2667556,59.268145,59.2681448,59.2684226,59.2684225,59.2692559,59.2739784,59.2767562,59.2767561,59.2775895,59.2795339,59.349254,59.0602778],[-158.7366923,-158.1900062,-157.448111,-157.4478056,-157.2952778,-159.0558333,-157.29866,-157.27261,-157.2725833,-157.3013333,-157.2725833,-157.2725833,-157.2725833,-157.2725833,-157.2725833,-157.3013333,-157.3013333,-157.3013333,-157.3013333,-157.3013333,-154.0458672,-155.5246895,-155.7185564,-156.6938693,-156.6669229,-154.9089,-154.8772,-154.9,-154.8758,-154.8489,-154.7719,-154.7308,-154.7736,-154.7069,-154.6914,-154.6556,-154.6533,-154.6658,-154.69,-154.7461,-154.6611,-154.7356,-154.6369,-153.8911,-154.0078,-154.0806,-154.0756,-154.7847,-154.7256,-154.5422,-154.4744,-154.3589,-154.2561,-154.2661,-154.2236,-154.2333,-154.2103,-154.2861,-154.3061,-154.4086,-154.4081,-154.4553,-154.5492,-154.3131,-154.2536,-154.2569,-154.3417,-154.2867,-154.2406,-154.2531,-154.2819,-154.3197,-154.2258,-154.2344,-154.3342,-154.4208,-154.4628,-153.67,-153.6208,-153.5625,-153.6,-153.7086,-153.7983,-153.9008,-153.9161,-153.9989,-154.0542,-154.0883,-154.1603,-154.1547,-154.0686,-154.1317,-154.1378,-154.1564,-154.0256,-153.9872,-153.855,-153.9831,-154.0356,-154.0072,-154.0033,-154.0794,-153.8036,-154.4108,-154.4081,-154.4911,-154.5653,-154.7014,-154.5806,-154.4992,-154.4619,-154.3711,-154.4303,-154.4711,-154.4739,-154.4556,-154.3694,-154.3528,-154.3053,-154.1611,-153.9844,-154.5697,-154.5911,-154.5917,-154.5825,-154.5736,-153.8944,-153.9258,-155.2244,-155.8475,-154.2456,-154.863,-155.8505,-156.2704,-155.2163,-154.385,-154.6964,-155.2678,-156.2132,-154.8063,-153.6165,-155.4202,-154.2797,-154.2296,-155.2078,-156.0019,-155.3551,-155.5098,-155.7649,-155.6119,-155.2912,-155.283,-155.831,-155.330607,-157.06916,-157.4752426,-158.0191083,-158.0189056,-157.8016583,-157.8041667,-157.743831,-158.5380199,-158.5366313,-158.538298,-158.5452426,-158.5432982,-158.5432982,-158.5277432,-158.5277432,-158.533021,-158.538299,-158.5252432,-158.5377435,-158.5235768,-158.5285769,-158.5285769,-158.5224657,-158.5224657,-158.5241324,-158.531077,-158.5327437,-158.5327437,-158.5327437,-158.5260769,-158.4821872,-158.4821872,-158.508021,-158.5288549,-158.5288549,-158.4680205,-158.5507998,-158.5507998,-158.4632982,-158.5063545,-158.5155214,-158.550522,-158.550522,-158.554411,-158.4688539,-158.4732984,-158.5024656,-158.5541332,-158.5541332,-158.5252438,-158.5252438,-158.5252438,-158.5271883,-158.5271883,-158.550522,-158.5524665,-158.5524665,-158.4680206,-158.5421886,-158.5524666,-158.5524666,-158.4671873,-158.4671873,-158.4591316,-158.4591316,-158.469965,-158.5482999,-158.550522,-158.5024657,-158.5038546,-158.5144103,-158.5013546,-158.5510777,-158.5124659,-158.4644095,-158.4974656,-158.5002435,-158.5424665,-158.544411,-158.548022,-158.548022,-158.5099659,-158.5466332,-158.4655207,-158.4941323,-158.5019102,-158.4977435,-158.5099659,-158.5535778,-158.5535778,-158.4941323,-158.5010769,-158.463854,-158.4994102,-158.5569113,-158.4977435,-158.5102437,-158.557189,-158.557189,-158.557189,-158.557189,-158.5505224,-158.5524669,-158.5524669,-158.5660783,-158.566356,-158.5555224,-158.5555224,-158.5505225,-158.5591338,-158.5591338,-158.569134,-158.5710784,-158.5710785,-158.5733007,-158.5733007,-158.552467,-158.5591338,-158.5608005,-158.5608005,-158.5535782,-158.5569116,-158.5569116,-158.5694119,-158.564134,-158.5671896,-158.5671896,-158.5674674,-158.569134,-158.5671897,-158.569412,-158.5708009,-158.5671897,-158.573301,-158.5735788,-158.5691343,-158.573301,-158.484966,-158.4877439,-158.564412,-158.5730232,-158.4832994,-158.4880217,-158.4880218,-158.4880218,-158.5805236,-158.5869127,-158.5852462,-158.5874685,-158.5852462,-158.5852463,-158.5808018,-158.5808018,-158.5808018,-158.5849686,-158.5852465,-157.477187,-157.481076,-157.4744093,-157.482465,-157.4752426,-157.4830206,-157.4741316,-157.4741316,-157.4727427,-157.468854,-157.3105242,-157.3105242,-157.3105242,-157.3021909,-157.3077466,-157.2733333,-158.4975,-158.5119444,-158.536111,-158.4952778,-158.5329718,-157.10503,-157.31445,-157.72077,-157.75339,-157.72197,-157.74316,-157.47411,-157.1050277,-157.3188888,-157.3144444,-157.7533611,-157.7533888,-157.7533611,-157.7219722,-157.7566666,-157.7431666,-157.7431666,-158.4747797,-158.4606696,-157.1050277,-157.1050277,-157.1050277,-157.1050277,-157.1050277,-157.3188888,-157.3188888,-157.3144444,-158.3144444,-157.3188888,-157.7533611,-157.7533611,-157.7533888,-157.7533611,-157.7533611,-157.7219722,-157.7219722,-157.7219722,-157.7219722,-157.7219722,-157.7566666,-157.7566666,-157.7431666,-157.7431666,-157.7566666,-157.4740833,-158.5541729,-159.1161079,-158.5952444,-158.5958113,-158.674699,-158.6694205,-158.457187,-158.4591316,-158.459965,-158.4619095,-158.4641319,-158.4738549,-158.4496882,-158.4496882,-158.4482994,-158.4482994,-158.4466327,-158.4405216,-158.4405216,-158.4421883,-158.573302,-158.5752466,-158.5733022,-158.57858,-158.57858,-158.5802468,-158.5730245,-158.671088,-158.6258112,-158.6480338,-158.6208112,-158.6341447,-158.6316447,-158.6369225,-158.633867,-158.6210892,-158.6219227,-158.6233116,-158.6238672,-158.6247006,-158.8272066,-158.4783333],6,null,null,{"interactive":true,"className":"","stroke":true,"color":"#0072B2","weight":1,"opacity":0.5,"fill":true,"fillColor":"#0072B2","fillOpacity":0.7},{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["<b>ALLEN R NR ALEKNAGIK AK<\/b><br>ID: USGS-15301500<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>NUYAKUK R NR DILLINGHAM AK<\/b><br>ID: USGS-15302000<br>Org: USGS Alaska Water Science Center<br>Results: 750","<b>NAPOTOLI C TRIB NR MOUTH NR DILLINGHAM AK<\/b><br>ID: USGS-15302069<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>NAPOTOLI C 4 MI AB NUSHAGAK R NR DILLINGHAM AK<\/b><br>ID: USGS-15302070<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>KOLIGANEK WATER SYSTEM<\/b><br>ID: USGS-90207000002<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>MANOKOTAK WATER SYSTEM<\/b><br>ID: USGS-90207000004<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>Lower Nushagak River Control Site<\/b><br>ID: AKDECWQ-LNG-0<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River Below Koliganek<\/b><br>ID: AKDECWQ-LNG-1<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Below Koliganek<\/b><br>ID: AKDECWQ-LNR-1<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 140","<b>Control<\/b><br>ID: AKDECWQ-LNR-C<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 147","<b>Below Koliganek<\/b><br>ID: ALASSWCD-LNR-1<br>Org: Alaska Soil and Water Conservation District<br>Results: 94","<b>Below Koliganek, subsite a<\/b><br>ID: ALASSWCD-LNR-1A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>Below Koliganek, subsite b<\/b><br>ID: ALASSWCD-LNR-1B<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Below Koliganek, subsite c<\/b><br>ID: ALASSWCD-LNR-1C<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Below Koliganek, subsite d<\/b><br>ID: ALASSWCD-LNR-1D<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Control<\/b><br>ID: ALASSWCD-LNR-C<br>Org: Alaska Soil and Water Conservation District<br>Results: 94","<b>Control, subsite a<\/b><br>ID: ALASSWCD-LNR-CA<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>Control, subsite b<\/b><br>ID: ALASSWCD-LNR-CB<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Control, subsite c<\/b><br>ID: ALASSWCD-LNR-CC<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Control, subsite d<\/b><br>ID: ALASSWCD-LNR-CD<br>Org: Alaska Soil and Water Conservation District<br>Results: 18","<b>CHILIKADROTNA R NR PORT ALSWORTH AK<\/b><br>ID: USGS-15302100<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>KOKTULI R NR ILIAMNA AK<\/b><br>ID: USGS-15302200<br>Org: USGS Alaska Water Science Center<br>Results: 941","<b>NF KOKTULI R NR ILIAMNA AK<\/b><br>ID: USGS-15302250<br>Org: USGS Alaska Water Science Center<br>Results: 779","<b>MULCHATNA R AB STUYAHOK R NR NEW STUYAHOK AK<\/b><br>ID: USGS-15302300<br>Org: USGS Alaska Water Science Center<br>Results: 42","<b>STUYAHOK R NR NEW STUYAHOK AK<\/b><br>ID: USGS-15302320<br>Org: USGS Alaska Water Science Center<br>Results: 42","<b>420772<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0164<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420773<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0165<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420774<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0166<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420775<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0167<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420776<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0168<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420786<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0169<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420787<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0170<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420788<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0171<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420789<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0172<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420790<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0173<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420791<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0174<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420792<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0175<br>Org: National Park Service Water Resources Division<br>Results: 42","<b>420793<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0176<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420794<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0177<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420809<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0178<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420810<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0179<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420811<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0180<br>Org: National Park Service Water Resources Division<br>Results: 49","<b>420812<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0181<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420845<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0214<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420846<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0215<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420847<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0216<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420848<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0217<br>Org: National Park Service Water Resources Division<br>Results: 40","<b>420857<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0226<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420864<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0227<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420865<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0228<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420868<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0231<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420869<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0232<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420871<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0234<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420872<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0235<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420874<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0237<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420875<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0238<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420876<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0239<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420877<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0240<br>Org: National Park Service Water Resources Division<br>Results: 6","<b>420878<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0241<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420879<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0242<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420880<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0243<br>Org: National Park Service Water Resources Division<br>Results: 49","<b>420881<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0244<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420882<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0245<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420883<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0246<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420884<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0247<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420885<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0248<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420886<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0249<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420887<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0250<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420888<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0251<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420889<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0252<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420890<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0253<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420891<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0254<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420892<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0255<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420893<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0256<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420894<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0257<br>Org: National Park Service Water Resources Division<br>Results: 7","<b>420895<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0258<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420896<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0259<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420897<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0260<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420898<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0261<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420899<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0262<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420900<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0263<br>Org: National Park Service Water Resources Division<br>Results: 39","<b>420901<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0264<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420902<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0265<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420903<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0266<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420904<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0267<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420905<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0268<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420906<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0269<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420907<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0270<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420908<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0271<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420909<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0272<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420910<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0273<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420911<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0274<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420912<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0275<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420913<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0276<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420914<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0277<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420915<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0278<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420916<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0279<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420917<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0280<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420918<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0281<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420919<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0282<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420920<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0283<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420921<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0284<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420977<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0340<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420978<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0341<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420979<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0342<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420980<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0343<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420981<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0344<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420982<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0345<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>420983<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0346<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420984<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0347<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420985<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0348<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420986<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0349<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420987<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0350<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420988<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0351<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420989<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0352<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420990<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0353<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420991<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0354<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420992<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0355<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>420993<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0356<br>Org: National Park Service Water Resources Division<br>Results: 42","<b>420999<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0362<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421000<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0363<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421001<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0364<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421002<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0365<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421003<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0366<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421004<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0367<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421005<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0368<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421013<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0376<br>Org: National Park Service Water Resources Division<br>Results: 50","<b>421014<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0377<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>421259<\/b><br>ID: 11NPSWRD_WQX-LACL_NURE_0576<br>Org: National Park Service Water Resources Division<br>Results: 51","<b>Tributary to Mulchatna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-003<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Summit Creek-Mulchatna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-007<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Victoria Creek<\/b><br>ID: AKDECWQ-2019UAA_AKBB-011<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Koktuli River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-013<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Stuyuhok River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-017<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Big Bonanza Creek-Mulchatna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-019<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Little Mulchatna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-020<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Mulchatna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-023<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Dummy Creek<\/b><br>ID: AKDECWQ-2019UAA_AKBB-024<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to North Fork Swan River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-025<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Victoria Creek<\/b><br>ID: AKDECWQ-2019UAA_AKBB-027<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Twin Lakes-Chilikadrotna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-030<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Tutna Lake-Nikadavna Creek-Chilchitna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-032<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Chilikadrotna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-036<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Chilikadrotna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-039<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Chilchitna River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-040<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Stuyahok River<\/b><br>ID: AKDECWQ-2019UAA_AKBB-041<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to South Fork Koktuli River<\/b><br>ID: AKDECWQ-2019UAA_MUEKM23<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to South Fork Koktuli River<\/b><br>ID: AKDECWQ-2019UAA_MUSSM15<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to S. F. Koktuli<\/b><br>ID: AKDECWQ-2019UAA_MUTSK02<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to South Fork Koktuli River<\/b><br>ID: AKDECWQ-2019UAA_MUTSK09<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to South Fork Koktuli  River (above Frying Pan Lake)<\/b><br>ID: AKDECWQ-2019UAA_MUTSK35<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to South Fork Koktuli  River (above Frying Pan Lake)<\/b><br>ID: AKDECWQ-2019UAA_MUTSK36<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to Stuyahok River<\/b><br>ID: AKDECWQ-2019UAA_MUTST63<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Tributary to North Fork Koktuli River (outlet of Wiggly Lakes)<\/b><br>ID: AKDECWQ-2019UAA_WIGGLY OUTLET<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 54","<b>Mulchatna River<\/b><br>ID: AKDECWQ-LNG-9<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>NUSHAGAK R AT EKWOK AK<\/b><br>ID: USGS-15302500<br>Org: USGS Alaska Water Science Center<br>Results: 4041","<b>IOWITHLA R TRIB NR DILLINGHAM, AK<\/b><br>ID: USGS-15302524<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>IOWITHLA R NR DILLINGHAM, AK<\/b><br>ID: USGS-15302525<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>KOKWOK R TRIB NO 12 AT MOUTH NR EKWOK AK<\/b><br>ID: USGS-15302810<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>KOKWOK R 22 MI AB NUSHAGAK R NR EKWOK AK<\/b><br>ID: USGS-15302812<br>Org: USGS Alaska Water Science Center<br>Results: 80","<b>NUSHAGAK R AT PORTAGE C NR DILLINGHAM AK<\/b><br>ID: USGS-585421157443000<br>Org: USGS Alaska Water Science Center<br>Results: 26","<b>SC01305636DCDA1  006<\/b><br>ID: USGS-590005158320901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305636ADCC1  005<\/b><br>ID: USGS-590026158320401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305636ACDD1  004<\/b><br>ID: USGS-590026158321001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305636BDDD1  001<\/b><br>ID: USGS-590028158323501<br>Org: USGS Alaska Water Science Center<br>Results: 12","<b>SC01305636ACBB1  003<\/b><br>ID: USGS-590037158322801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305636ACBB2  003<\/b><br>ID: USGS-590037158322802<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305530BBAC1  001<\/b><br>ID: USGS-590139158313201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305530BBAC2  001<\/b><br>ID: USGS-590139158313202<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305625AAAC1  002<\/b><br>ID: USGS-590139158315101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305625ABAD1  001<\/b><br>ID: USGS-590141158321001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CCDD1  014<\/b><br>ID: USGS-590146158312301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624DCDA1  012<\/b><br>ID: USGS-590149158320801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CACB1  002<\/b><br>ID: USGS-590204158311701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CBBD1  013<\/b><br>ID: USGS-590205158313501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CBBA1  012<\/b><br>ID: USGS-590207158313501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CABB2  004<\/b><br>ID: USGS-590208158311301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CABB3  004<\/b><br>ID: USGS-590208158311302<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CABB1  004<\/b><br>ID: USGS-590208158311901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624DAAA1  010<\/b><br>ID: USGS-590208158314401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624DAAB1  011<\/b><br>ID: USGS-590208158315001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624DAAB2  011<\/b><br>ID: USGS-590208158315002<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624DAAB3  011<\/b><br>ID: USGS-590208158315003<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519CBAA1  001<\/b><br>ID: USGS-590209158312601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305520ADCC1  004<\/b><br>ID: USGS-590211158284801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305520ADCC2  004<\/b><br>ID: USGS-590211158284802<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519ADCA1  006<\/b><br>ID: USGS-590216158302101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BCBD1  011<\/b><br>ID: USGS-590218158313601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BCBD2  011<\/b><br>ID: USGS-590218158313602<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BDBB1  003<\/b><br>ID: USGS-590221158275701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BDBB1  009<\/b><br>ID: USGS-590221158325501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BDBB2  009<\/b><br>ID: USGS-590221158325502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BDAB1  009<\/b><br>ID: USGS-590223158274001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519AADC1  003<\/b><br>ID: USGS-590225158301501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519ABCD1  005<\/b><br>ID: USGS-590225158304801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BACC1  004<\/b><br>ID: USGS-590225158325401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BACC2  004<\/b><br>ID: USGS-590225158325402<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBDC1  008<\/b><br>ID: USGS-590225158330801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BACC1  010<\/b><br>ID: USGS-590226158280001<br>Org: USGS Alaska Water Science Center<br>Results: 11","<b>SC01305521BBCD1  013<\/b><br>ID: USGS-590227158281601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305520BBCC1  001<\/b><br>ID: USGS-590227158300101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBDB1  007<\/b><br>ID: USGS-590227158330701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBDB2  007<\/b><br>ID: USGS-590227158330702<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BBDA1  009<\/b><br>ID: USGS-590228158312301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BBDA2  009<\/b><br>ID: USGS-590228158312302<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BBDA3  009<\/b><br>ID: USGS-590228158312303<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BBDB1  010<\/b><br>ID: USGS-590228158313001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519BBDB2  010<\/b><br>ID: USGS-590228158313002<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BACB1  003<\/b><br>ID: USGS-590228158325401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBDA1  006<\/b><br>ID: USGS-590228158330101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBDA2  006<\/b><br>ID: USGS-590228158330102<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BACB1  011<\/b><br>ID: USGS-590229158275701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624ABCB1  013<\/b><br>ID: USGS-590230158322401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBAD1  005<\/b><br>ID: USGS-590230158330101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BBAD2  005<\/b><br>ID: USGS-590230158330102<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BABD1  006<\/b><br>ID: USGS-590231158275401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BABD2  006<\/b><br>ID: USGS-590231158275402<br>Org: USGS Alaska Water Science Center<br>Results: 63","<b>SC01305521ABBD3  001<\/b><br>ID: USGS-590232158272501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521ABBD2  001<\/b><br>ID: USGS-590232158272502<br>Org: USGS Alaska Water Science Center<br>Results: 42","<b>SC01305521BBAD1  012<\/b><br>ID: USGS-590232158280401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BABA1  002<\/b><br>ID: USGS-590233158324601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BABB2  001<\/b><br>ID: USGS-590233158325401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305520BBBB1  003<\/b><br>ID: USGS-590234158300101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519AAAA1  007<\/b><br>ID: USGS-590234158300601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305519ABBA1  008<\/b><br>ID: USGS-590234158304401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305520BBBA1  002<\/b><br>ID: USGS-590235158295701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305624BABB1  001<\/b><br>ID: USGS-590235158325601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305518DCDC1  004<\/b><br>ID: USGS-590236158303701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521BAAB1  007<\/b><br>ID: USGS-590237158274401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCDD1  011<\/b><br>ID: USGS-590237158294301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCCD1  010<\/b><br>ID: USGS-590237158295301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613DCCC1  015<\/b><br>ID: USGS-590237158322501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CDDD1  014<\/b><br>ID: USGS-590237158323201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CDCD1  012<\/b><br>ID: USGS-590237158324501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CDCD2  012<\/b><br>ID: USGS-590237158324502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305518DDCC1  002<\/b><br>ID: USGS-590238158302801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CDDC1  013<\/b><br>ID: USGS-590238158324001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305516CDCD1  004<\/b><br>ID: USGS-590239158274801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CDCA2  003<\/b><br>ID: USGS-590240158293101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCCB1  009<\/b><br>ID: USGS-590240158295901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCDA1  007<\/b><br>ID: USGS-590241158294401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305518DDCB1  003<\/b><br>ID: USGS-590241158302801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CCDB1  011<\/b><br>ID: USGS-590241158330501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CCDB2  011<\/b><br>ID: USGS-590241158330502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CDCA1  003<\/b><br>ID: USGS-590242158293101<br>Org: USGS Alaska Water Science Center<br>Results: 13","<b>SC01305517CCCA1  001<\/b><br>ID: USGS-590242158295601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305516CDAC1  002<\/b><br>ID: USGS-590244158274201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCAC1  006<\/b><br>ID: USGS-590244158295001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CCBC1  010<\/b><br>ID: USGS-590244158331701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517CCAD1  005<\/b><br>ID: USGS-590245158294401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305518DCDA1  001<\/b><br>ID: USGS-590248158302301<br>Org: USGS Alaska Water Science Center<br>Results: 10","<b>SC01305613CBBC1  007<\/b><br>ID: USGS-590249158331801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBBC2  007<\/b><br>ID: USGS-590249158331802<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBBC3  007<\/b><br>ID: USGS-590249158331803<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBBC4  007<\/b><br>ID: USGS-590249158331804<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CACB1  006<\/b><br>ID: USGS-590254158325401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBDA1  009<\/b><br>ID: USGS-590254158330101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBDA2  009<\/b><br>ID: USGS-590254158330102<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DBDA1  008<\/b><br>ID: USGS-590254158335001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DBAD1  020<\/b><br>ID: USGS-590256158335101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBBD1  008<\/b><br>ID: USGS-590257158331201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CBBD2  008<\/b><br>ID: USGS-590257158331202<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613CABC1  005<\/b><br>ID: USGS-590258158325401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DAAA1  019<\/b><br>ID: USGS-590300158332501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DAAA2  019<\/b><br>ID: USGS-590300158332502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DBBA1  006<\/b><br>ID: USGS-590301158340101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614DBBB1  005<\/b><br>ID: USGS-590301158340801<br>Org: USGS Alaska Water Science Center<br>Results: 13","<b>SC01305614DBBB2  005<\/b><br>ID: USGS-590302158340801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614CAAA1  002<\/b><br>ID: USGS-590302158341601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614CAAA2  002<\/b><br>ID: USGS-590302158341602<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613BCDD1  004<\/b><br>ID: USGS-590303158330101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ADDD1  017<\/b><br>ID: USGS-590303158332501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ADDC1  016<\/b><br>ID: USGS-590303158333101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ADDB1  015<\/b><br>ID: USGS-590306158333101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613BCDB1  003<\/b><br>ID: USGS-590307158330501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613BCCB1  002<\/b><br>ID: USGS-590307158331701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305613BCBC1  001<\/b><br>ID: USGS-590310158331701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ACBD1  013<\/b><br>ID: USGS-590310158340201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ADBC1  014<\/b><br>ID: USGS-590311158334301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ACAB1  012<\/b><br>ID: USGS-590313158335401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ACAB2  012<\/b><br>ID: USGS-590313158335402<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABDC2  009<\/b><br>ID: USGS-590315158335502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABCD2  004<\/b><br>ID: USGS-590315158340101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABDC1  009<\/b><br>ID: USGS-590317158335401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABCD1  004<\/b><br>ID: USGS-590318158340201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABCB1  003<\/b><br>ID: USGS-590320158340701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABAC1  011<\/b><br>ID: USGS-590321158335401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614BAAD2  001<\/b><br>ID: USGS-590323158341601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614BAAD3  001<\/b><br>ID: USGS-590323158341701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614ABBD1  007<\/b><br>ID: USGS-590324158340101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614BAAD1  001<\/b><br>ID: USGS-590324158341601<br>Org: USGS Alaska Water Science Center<br>Results: 13","<b>SC01305517ABAB1  008<\/b><br>ID: USGS-590325158285801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517ABBB2  002<\/b><br>ID: USGS-590325158290801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614AABB1  010<\/b><br>ID: USGS-590325158334401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305614BAAA1  018<\/b><br>ID: USGS-590325158341501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517ABAA1  004<\/b><br>ID: USGS-590327158285201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305517ABBB1  002<\/b><br>ID: USGS-590327158290901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305508DCCB1  001<\/b><br>ID: USGS-590334158290901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305508DCBC1  002<\/b><br>ID: USGS-590336158290901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611CBDD1  001<\/b><br>ID: USGS-590344158344201<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305610DAAD1  002<\/b><br>ID: USGS-590349158350501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BCBB1  006<\/b><br>ID: USGS-590404158345901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305610ADAA1  001<\/b><br>ID: USGS-590405158350701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BBCC1  005<\/b><br>ID: USGS-590408158345901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BBCB1  004<\/b><br>ID: USGS-590412158345901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BBAD1  003<\/b><br>ID: USGS-590414158344301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BBAA1  002<\/b><br>ID: USGS-590417158344301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305611BBAA2  002<\/b><br>ID: USGS-590417158344302<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602CCCC1  008<\/b><br>ID: USGS-590421158345801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602CCBB1  007<\/b><br>ID: USGS-590430158345901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DDCB1  004<\/b><br>ID: USGS-592054157283001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DCDB1  006<\/b><br>ID: USGS-592055157284401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DDBC1  003<\/b><br>ID: USGS-592058157282001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DCBD1  005<\/b><br>ID: USGS-592058157284901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DDBA1  002<\/b><br>ID: USGS-592100157282301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DCBA1  001<\/b><br>ID: USGS-592101157285101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DADC1  008<\/b><br>ID: USGS-592104157281901<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DADC2  008<\/b><br>ID: USGS-592104157281902<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904935DADA1  007<\/b><br>ID: USGS-592107157281401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00904936BCCA1  001<\/b><br>ID: USGS-592119157280001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC00804729DBCD1  001<\/b><br>ID: USGS-592705157183001<br>Org: USGS Alaska Water Science Center<br>Results: 30","<b>SC00804729DBCD2  001<\/b><br>ID: USGS-592705157183002<br>Org: USGS Alaska Water Science Center<br>Results: 57","<b>SC00804729DBCD3  001<\/b><br>ID: USGS-592705157183003<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>NUSHAGAK R AT NEW STUYAHOK AK<\/b><br>ID: USGS-592716157180000<br>Org: USGS Alaska Water Science Center<br>Results: 26","<b>NUSHAGAK R TR AT NEW STUYAHOK AK<\/b><br>ID: USGS-592717157182000<br>Org: USGS Alaska Water Science Center<br>Results: 26","<b>NEW STUYAHOK WATER SYSTEM<\/b><br>ID: USGS-90207000011<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>BBAHC-KANAKANAK HOSPITAL<\/b><br>ID: USGS-90207000014<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>BAYVIEW TERRACE<\/b><br>ID: USGS-90207000016<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>NINA NICHOLSON SUBDIVISION<\/b><br>ID: USGS-90207000020<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>BINGMAN'S APARTMENTS<\/b><br>ID: USGS-90207000021<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>Kanakanak Beach<\/b><br>ID: AKDECWQ-Kanakanak<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 66","<b>Lower Nushagak River below mouth of Mulchatna River<\/b><br>ID: AKDECWQ-LNG-2<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River below New Stuyahok<\/b><br>ID: AKDECWQ-LNG-3<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River Above Keeper's Cutoff<\/b><br>ID: AKDECWQ-LNG-4<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River Above Portage Creek, West channel<\/b><br>ID: AKDECWQ-LNG-5<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River Above Portage Creek, East channel<\/b><br>ID: AKDECWQ-LNG-6<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River, confluence of  West & East channels<\/b><br>ID: AKDECWQ-LNG-7<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Lower Nushagak River Above Ekwok<\/b><br>ID: AKDECWQ-LNG-8<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 0","<b>Below Mulchatna<\/b><br>ID: AKDECWQ-LNR-2<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 148","<b>Below New Stuyahok<\/b><br>ID: AKDECWQ-LNR-3<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 147","<b>LNR-3B<\/b><br>ID: AKDECWQ-LNR-3B<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 8","<b>Above Portage Creek West<\/b><br>ID: AKDECWQ-LNR-5<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 118","<b>LNR-5B<\/b><br>ID: AKDECWQ-LNR-5B<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 8","<b>LNR-5C<\/b><br>ID: AKDECWQ-LNR-5C<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 8","<b>Above Portage Creek East<\/b><br>ID: AKDECWQ-LNR-6<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 125","<b>Below Portage Creek<\/b><br>ID: AKDECWQ-LNR-7<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 116","<b>LNR-7B<\/b><br>ID: AKDECWQ-LNR-7B<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 8","<b>LNR-7C<\/b><br>ID: AKDECWQ-LNR-7C<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 8","<b>Scandinavian Beach<\/b><br>ID: AKDECWQ-Scandinavian<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 62","<b>Snag Point Beach<\/b><br>ID: AKDECWQ-Snag Point<br>Org: Alaska Dept of Environmental Conservation - Water Quality<br>Results: 64","<b>Below Mulchatna<\/b><br>ID: ALASSWCD-LNR-2<br>Org: Alaska Soil and Water Conservation District<br>Results: 95","<b>Below Mulchatna, subsite a<\/b><br>ID: ALASSWCD-LNR-2A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>Below Mulchatna, subsite b<\/b><br>ID: ALASSWCD-LNR-2B<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Below Mulchatna, subsite c<\/b><br>ID: ALASSWCD-LNR-2C<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Below Mulchatna, subsite d<\/b><br>ID: ALASSWCD-LNR-2D<br>Org: Alaska Soil and Water Conservation District<br>Results: 18","<b>Below New Stuyahok<\/b><br>ID: ALASSWCD-LNR-3<br>Org: Alaska Soil and Water Conservation District<br>Results: 123","<b>Below New Stuyahok, subsite a<\/b><br>ID: ALASSWCD-LNR-3A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>LNR-3B<\/b><br>ID: ALASSWCD-LNR-3B<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-3C<\/b><br>ID: ALASSWCD-LNR-3C<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>Below New Stuyahok, subsite d<\/b><br>ID: ALASSWCD-LNR-3D<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Above Portage Creek West<\/b><br>ID: ALASSWCD-LNR-5<br>Org: Alaska Soil and Water Conservation District<br>Results: 94","<b>Above Portage Creek West, subsite a<\/b><br>ID: ALASSWCD-LNR-5A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>LNR-5B<\/b><br>ID: ALASSWCD-LNR-5B<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-5C<\/b><br>ID: ALASSWCD-LNR-5C<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>Above Portage Creek West, subsite d<\/b><br>ID: ALASSWCD-LNR-5D<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>Above Portage Creek East<\/b><br>ID: ALASSWCD-LNR-6<br>Org: Alaska Soil and Water Conservation District<br>Results: 93","<b>LNR-6A<\/b><br>ID: ALASSWCD-LNR-6A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>LNR-6B<\/b><br>ID: ALASSWCD-LNR-6B<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-6C<\/b><br>ID: ALASSWCD-LNR-6C<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-6D<\/b><br>ID: ALASSWCD-LNR-6D<br>Org: Alaska Soil and Water Conservation District<br>Results: 3","<b>Below Portage Creek<\/b><br>ID: ALASSWCD-LNR-7<br>Org: Alaska Soil and Water Conservation District<br>Results: 92","<b>LNR-7A<\/b><br>ID: ALASSWCD-LNR-7A<br>Org: Alaska Soil and Water Conservation District<br>Results: 13","<b>LNR-7B<\/b><br>ID: ALASSWCD-LNR-7B<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-7C<\/b><br>ID: ALASSWCD-LNR-7C<br>Org: Alaska Soil and Water Conservation District<br>Results: 8","<b>LNR-7D<\/b><br>ID: ALASSWCD-LNR-7D<br>Org: Alaska Soil and Water Conservation District<br>Results: 11","<b>LNR-8<\/b><br>ID: ALASSWCD-LNR-8<br>Org: Alaska Soil and Water Conservation District<br>Results: 0","<b>GRANT LK OUTLET NR ALEKNAGIK AK<\/b><br>ID: USGS-15302800<br>Org: USGS Alaska Water Science Center<br>Results: 30","<b>ELVA LK OUTLET NR ALEKNAGIK AK<\/b><br>ID: USGS-15302840<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>MOODY C AT ALEKNAGIK AK<\/b><br>ID: USGS-15302900<br>Org: USGS Alaska Water Science Center<br>Results: 27","<b>WOOD R NR ALEKNAGIK AK<\/b><br>ID: USGS-15303000<br>Org: USGS Alaska Water Science Center<br>Results: 224","<b>SILVER SALMON C NR ALEKNAGIK AK<\/b><br>ID: USGS-15303010<br>Org: USGS Alaska Water Science Center<br>Results: 107","<b>WOOD R TR NR ALEKNAGIK AK<\/b><br>ID: USGS-15303011<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521ABAC1  002<\/b><br>ID: USGS-590230158271801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305521ABBD1  001    80121 PHS NO 2 DILLINGHAM<\/b><br>ID: USGS-590234158272501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305516DCCC1  003<\/b><br>ID: USGS-590238158272801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305516CDDD1  005<\/b><br>ID: USGS-590239158273501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305516CDAB1  001<\/b><br>ID: USGS-590244158273701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305509CCCB1  004<\/b><br>ID: USGS-590332158281801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305509ADAC1  003<\/b><br>ID: USGS-590401158265101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305509ADAC2  003<\/b><br>ID: USGS-590401158265102<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305509AADD1  001<\/b><br>ID: USGS-590409158264601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305509ADAA1  002<\/b><br>ID: USGS-590409158264602<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305510BBCC1  002<\/b><br>ID: USGS-590410158264001<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305510BABC1  003<\/b><br>ID: USGS-590413158261801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305510BABC2  003<\/b><br>ID: USGS-590413158261802<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305510BBAA1S<\/b><br>ID: USGS-590419158262401<br>Org: USGS Alaska Water Science Center<br>Results: 9","<b>SC01305602BDDA1  005<\/b><br>ID: USGS-590450158341601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BDDB1  006<\/b><br>ID: USGS-590450158342301<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BDAD1  003<\/b><br>ID: USGS-590453158341601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BDBB1  004<\/b><br>ID: USGS-590456158343501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BDBB2  004<\/b><br>ID: USGS-590456158343502<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BCAA1  002<\/b><br>ID: USGS-590456158344101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01305602BADD1  001<\/b><br>ID: USGS-590502158341501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01105614BDBB1  001<\/b><br>ID: USGS-591339158400801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005636DABA1  001<\/b><br>ID: USGS-591602158372501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005636CBBA1  004<\/b><br>ID: USGS-591603158384501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005531BCCA1  002<\/b><br>ID: USGS-591608158370701<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005636ACCA1  002<\/b><br>ID: USGS-591608158375501<br>Org: USGS Alaska Water Science Center<br>Results: 11","<b>SC01005636ACDB1  006<\/b><br>ID: USGS-591609158374601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005636BDDA1S<\/b><br>ID: USGS-591609158380501<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005636ACBD1S<\/b><br>ID: USGS-591612158375401<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005531BBBA1  001<\/b><br>ID: USGS-591629158370801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005530CCBC1  001<\/b><br>ID: USGS-591639158371101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005625DDAD1  001<\/b><br>ID: USGS-591639158371601<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005625DDAA1  003<\/b><br>ID: USGS-591642158371801<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>SC01005625DADB1S<\/b><br>ID: USGS-591649158372101<br>Org: USGS Alaska Water Science Center<br>Results: 0","<b>ALEKNAGIK LK NR ALEKNAGIK AK<\/b><br>ID: USGS-592100158493000<br>Org: USGS Alaska Water Science Center<br>Results: 38","<b>DILLINGHAM WATER SYSTEM<\/b><br>ID: USGS-90207000006<br>Org: USGS Alaska Water Science Center<br>Results: 0"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Topo","Satellite"],[],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[58.9050958,60.9044],"lng":[-159.1161079,-153.5625]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="summary-by-huc" class="level2">
+<h2 class="anchored" data-anchor-id="summary-by-huc">Summary by HUC</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>huc_summary <span class="ot">&lt;-</span> wq_inventory <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(HUC) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Stations =</span> <span class="fu">n_distinct</span>(MonitoringLocationIdentifier),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Results =</span> <span class="fu">sum</span>(resultCount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Organizations =</span> <span class="fu">n_distinct</span>(OrganizationFormalName),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(HUC) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">HUC_Name =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      HUC <span class="sc">==</span> <span class="st">"19030301"</span> <span class="sc">~</span> <span class="st">"Upper Nushagak"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      HUC <span class="sc">==</span> <span class="st">"19030302"</span> <span class="sc">~</span> <span class="st">"Mulchatna"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      HUC <span class="sc">==</span> <span class="st">"19030303"</span> <span class="sc">~</span> <span class="st">"Main Nushagak"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      HUC <span class="sc">==</span> <span class="st">"19030304"</span> <span class="sc">~</span> <span class="st">"Wood"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> HUC</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HUC, HUC_Name, Stations, Total_Results, Organizations) <span class="sc">%&gt;%</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"Sub-basin"</span> <span class="ot">=</span> HUC_Name, <span class="st">"Monitoring Locations"</span> <span class="ot">=</span> Stations, <span class="st">"Total Observations"</span> <span class="ot">=</span> Total_Results, <span class="st">"Data Providers"</span> <span class="ot">=</span> Organizations)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(huc_summary, <span class="at">caption =</span> <span class="st">"Monitoring Coverage by HUC8 Sub-basin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Monitoring Coverage by HUC8 Sub-basin</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 18%">
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">HUC</th>
+<th style="text-align: left;">Sub-basin</th>
+<th style="text-align: right;">Monitoring Locations</th>
+<th style="text-align: right;">Total Observations</th>
+<th style="text-align: right;">Data Providers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">19030301</td>
+<td style="text-align: left;">Upper Nushagak</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">1324</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">19030302</td>
+<td style="text-align: left;">Mulchatna</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">8311</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">19030303</td>
+<td style="text-align: left;">Main Nushagak</td>
+<td style="text-align: right;">221</td>
+<td style="text-align: right;">6051</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">19030304</td>
+<td style="text-align: left;">Wood</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">446</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-provider-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="data-provider-distribution">Data Provider Distribution</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>provider_summary <span class="ot">&lt;-</span> wq_inventory <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(OrganizationFormalName) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Stations =</span> <span class="fu">n_distinct</span>(MonitoringLocationIdentifier),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_Results =</span> <span class="fu">sum</span>(resultCount, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Total_Results)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"Organization"</span> <span class="ot">=</span> OrganizationFormalName, <span class="st">"Stations"</span> <span class="ot">=</span> Stations, <span class="st">"Observations"</span> <span class="ot">=</span> Total_Results)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(provider_summary, <span class="at">caption =</span> <span class="st">"Data Contributions by Organization"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Data Contributions by Organization</caption>
+<colgroup>
+<col style="width: 72%">
+<col style="width: 11%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Organization</th>
+<th style="text-align: right;">Stations</th>
+<th style="text-align: right;">Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">USGS Alaska Water Science Center</td>
+<td style="text-align: right;">228</td>
+<td style="text-align: right;">7463</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">National Park Service Water Resources Division</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">5157</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alaska Dept of Environmental Conservation - Water Quality</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">2523</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alaska Soil and Water Conservation District</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">989</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="observations" class="level2">
+<h2 class="anchored" data-anchor-id="observations">Observations</h2>
+<p>The coverage varies by sub-basin, with the Upper Nushagak (19030301) and main Nushagak system (19030303) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.</p>
+<p>USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.</p>
+<p><strong>Data Quality Note</strong>: The WQP station inventory includes approximately 212 stations across the Nushagak HUCs that are registered in the system but show zero water quality results in the current API response. These may represent monitoring locations where data collection has occurred but results are not yet integrated into the WQP database, or where records exist in alternate formats. These sites are included in the station count above but do not contribute to the observation totals.</p>
+<hr>
+<p>The next chapter examines what water quality parameters have been measured and identifies temporal and spatial gaps in the existing data.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/02_data_sources.html" class="pagination-link" aria-label="Data Sources and Inventory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Data Sources and Inventory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/04_parameters_summary.html" class="pagination-link" aria-label="Water Quality Parameters: Inventory and Gaps">
+        <span class="nav-page-text"><span class="chapter-title">Water Quality Parameters: Inventory and Gaps</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

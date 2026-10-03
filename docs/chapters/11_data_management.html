@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Management and Visualization Systems – Nushagak River Watershed Water Quality Baseline</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../references.html" rel="next">
+<link href="../chapters/10_monitoring_design.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/09_community_focus.html">Part III: RFP Context &amp; Monitoring Strategy</a></li><li class="breadcrumb-item"><a href="../chapters/11_data_management.html"><span class="chapter-title">Data Management and Visualization Systems</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Nushagak River Watershed Water Quality Baseline</a> 
+        <div class="sidebar-tools-main">
+    <a href="../Nushagak-River-Watershed-Water-Quality-Baseline.docx" title="Download DOCX" class="quarto-navigation-tool px-1" aria-label="Download DOCX"><i class="bi bi-cloud-download"></i></a>
+    <a href="https://github.com/Rivulet-Research/nushagak-wqx" title="GitHub Repository" class="quarto-navigation-tool px-1" aria-label="GitHub Repository"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: Watershed Context &amp; Existing Baseline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Watershed Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02_data_sources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Sources and Inventory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03_spatial_coverage.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Spatial Coverage of Monitoring Stations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04_parameters_summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Water Quality Parameters: Inventory and Gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: Baseline Water Quality Synthesis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05_physical_chemical.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Physical and Chemical Baseline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06_metals_contaminants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Metals and Contaminants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07_nutrients_salmon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nutrients and Salmon-Relevant Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08_gaps_and_needs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Gaps and Monitoring Priorities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: RFP Context &amp; Monitoring Strategy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09_community_focus.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Community Context and Priorities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10_monitoring_design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Monitoring Program Design and QAPP Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11_data_management.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Data Management and Visualization Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#data-workflow-architecture" id="toc-data-workflow-architecture" class="nav-link" data-scroll-target="#data-workflow-architecture">Data Workflow Architecture</a></li>
+  <li><a href="#database-design" id="toc-database-design" class="nav-link" data-scroll-target="#database-design">Database Design</a></li>
+  <li><a href="#data-sharing-and-visualization" id="toc-data-sharing-and-visualization" class="nav-link" data-scroll-target="#data-sharing-and-visualization">Data Sharing and Visualization</a></li>
+  <li><a href="#quality-assurance-and-data-certification" id="toc-quality-assurance-and-data-certification" class="nav-link" data-scroll-target="#quality-assurance-and-data-certification">Quality Assurance and Data Certification</a></li>
+  <li><a href="#governance-and-data-sharing-agreements" id="toc-governance-and-data-sharing-agreements" class="nav-link" data-scroll-target="#governance-and-data-sharing-agreements">Governance and Data Sharing Agreements</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/09_community_focus.html">Part III: RFP Context &amp; Monitoring Strategy</a></li><li class="breadcrumb-item"><a href="../chapters/11_data_management.html"><span class="chapter-title">Data Management and Visualization Systems</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Data Management and Visualization Systems</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The RFP’s second goal emphasizes establishing systems for secure storage, quality assurance, visualization, and sharing of environmental data. A functional data management system is essential for:</p>
+<ul>
+<li>Consolidating monitoring data from three separate tribes into a unified database</li>
+<li>Ensuring data quality and traceability (QA/QC audit trails)</li>
+<li>Making results accessible to tribal leadership, regulators, and community members</li>
+<li>Supporting long-term trend analysis and decision-making</li>
+</ul>
+<hr>
+</section>
+<section id="data-workflow-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="data-workflow-architecture">Data Workflow Architecture</h2>
+<p>A typical workflow includes:</p>
+<pre><code>Field Data Collection
+    ↓
+Electronic Entry (ESRI Survey123 or Field Maps)
+    ↓
+Automated Validation &amp; QC Flagging
+    ↓
+Human Review &amp; Approval
+    ↓
+Database Storage (ArcGIS Online)
+    ↓
+Data Visualization (web report) &amp; Sharing (EPA CDX respoitory)
+    ↓
+Archival &amp; Backup (local servers)</code></pre>
+<hr>
+</section>
+<section id="database-design" class="level2">
+<h2 class="anchored" data-anchor-id="database-design">Database Design</h2>
+<section id="schema-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="schema-considerations">Schema Considerations</h3>
+<p>The database should store:</p>
+<ol type="1">
+<li><strong>Site Information</strong>: Name, location (lat/lon), HUC, river/tributary, elevation, accessibility</li>
+<li><strong>Sample Events</strong>: Date, time, observer, field conditions, notes</li>
+<li><strong>Measurements</strong>: Parameter, value, unit, detection limit, method, laboratory (if applicable)</li>
+<li><strong>QA/QC Data</strong>: Blanks, duplicates, standards, reference samples, flag comments</li>
+</ol>
+<p>The database template should use standardized column names identical to those in use in the destination repository (e.g.&nbsp;EPA CDX), following EPA’s Water Quality eXchange (WQX) data standards for monitoring location identifiers, activity types, characteristic names, measurement units, and analytical methods. Designing the mobile field form and the database schema around WQX naming from the outset avoids a later relabeling step before WQP submission.</p>
+</section>
+<section id="technology-options" class="level3">
+<h3 class="anchored" data-anchor-id="technology-options">Technology Options</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Pros</th>
+<th>Cons</th>
+<th>Fit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ArcGIS Online</strong></td>
+<td>Intuitive; ESRI support; hosted</td>
+<td>License cost; less customizable</td>
+<td>Good for visualization-focused systems</td>
+</tr>
+<tr class="even">
+<td><strong>Google Sheets + Shiny</strong></td>
+<td>Low cost; familiar to many</td>
+<td>Limited scalability; security concerns</td>
+<td>Suitable for pilot phase</td>
+</tr>
+<tr class="odd">
+<td><strong>EPA TADA Framework</strong></td>
+<td>Free and open-source; WQX-certified; integrated QA/QC; national visibility</td>
+<td>Requires R knowledge; WQP-specific (not other data sources)</td>
+<td>Excellent for data validation and submission workflow</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-validation-and-wqp-submission-tada-framework" class="level3">
+<h3 class="anchored" data-anchor-id="data-validation-and-wqp-submission-tada-framework">Data Validation and WQP Submission: TADA Framework</h3>
+<p>The EPA’s <strong>Tools for Automated Data Analysis (TADA)</strong> is a free, open-source toolkit specifically designed for organizations submitting water quality data to the EPA Water Quality Portal (WQP).</p>
+<p>TADA can be used either as a web-based interface (no coding required) or as an R package (<code>EPATADA</code>) for integration into custom workflows. For the Nushagak collaborative monitoring program, TADA should be incorporated into the data submission workflow: after field QC and database entry, data are processed through TADA’s validation screens before uploading to WQP. This ensures that data meet EPA standards and are compatible with national visualization tools (e.g., “How’s My Waterway?”).</p>
+</section>
+<section id="recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="recommendation">Recommendation</h3>
+<p>A phased approach is pragmatic: start with accessible tools for data collection and management (e.g., ArcGIS Online and/or Google Sheets), then route data through TADA’s validation workflows before final submission to WQP. As the program matures and data volumes grow, consider investing in a dedicated database administrator and GIS specialist to manage the full pipeline (collection → TADA validation → WQP → archival).</p>
+<hr>
+</section>
+</section>
+<section id="data-sharing-and-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="data-sharing-and-visualization">Data Sharing and Visualization</h2>
+<section id="real-time-or-near-real-time-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="real-time-or-near-real-time-dashboard">Real-Time or Near-Real-Time Dashboard</h3>
+<p>A web-based dashboard (built with ESRI apps or R Shiny) should display:</p>
+<ul>
+<li><strong>Current Conditions</strong>: Latest temperature, DO, and chemistry readings at each site</li>
+<li><strong>Time Series</strong>: Graphs of each parameter over the baseline period</li>
+<li><strong>Interactive Map</strong>: Monitoring locations, site information, access to raw data</li>
+<li><strong>Alert System</strong>: Automated flags if measurements exceed thresholds (e.g., DO &lt;5 mg/L, temperature &gt;18°C)</li>
+</ul>
+<p>Note: data properly archived in the EPA CDX will display in the interactive online interface, “<a href="https://mywaterway.epa.gov/">How’s My Waterway?</a>” At present, not all historic data in the EPA CDX properly displays in this interface due to historic naming conventions. One optional bonus goal of data management for this project could be to work towards seeing that existing historic water quality data properly displays in this interface.</p>
+</section>
+<section id="data-download-and-integration" class="level3">
+<h3 class="anchored" data-anchor-id="data-download-and-integration">Data Download and Integration</h3>
+<p>The system should allow:</p>
+<ul>
+<li>Bulk download of data in standard formats (CSV, GeoJSON, Excel)</li>
+<li>Integration with the EPA Water Quality Portal for national visibility</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="quality-assurance-and-data-certification" class="level2">
+<h2 class="anchored" data-anchor-id="quality-assurance-and-data-certification">Quality Assurance and Data Certification</h2>
+<section id="data-review-process" class="level3">
+<h3 class="anchored" data-anchor-id="data-review-process">Data Review Process</h3>
+<ol type="1">
+<li><strong>Field QC</strong>: Duplicate samples, field blanks, replicate measurements</li>
+<li><strong>Laboratory QC</strong> (if samples are analyzed): Blanks, matrix spikes, standard curves</li>
+<li><strong>Data Review</strong>: Comparison against historical ranges, seasonal patterns, and other sites</li>
+<li><strong>Certification</strong>: Designate “approved” data once QC is complete; note any flags or caveats</li>
+</ol>
+</section>
+<section id="metadata-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="metadata-documentation">Metadata Documentation</h3>
+<p>All data should include:</p>
+<ul>
+<li>Method references (EPA, USGS SOPs; Alaska DEC’s Ambient Water Quality Monitoring System SOPs for sample hold-time limits, preservation, and chain-of-custody tracking where laboratory samples are involved)</li>
+<li>Analytical laboratory accreditation (if applicable)</li>
+<li>QC summary (% duplicates, passing QC criteria)</li>
+<li>Validation notes (e.g., “sample collected during high-flow event”)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="governance-and-data-sharing-agreements" class="level2">
+<h2 class="anchored" data-anchor-id="governance-and-data-sharing-agreements">Governance and Data Sharing Agreements</h2>
+<section id="multi-tribal-data-governance" class="level3">
+<h3 class="anchored" data-anchor-id="multi-tribal-data-governance">Multi-Tribal Data Governance</h3>
+<p>Establish agreements clarifying:</p>
+<ul>
+<li><strong>Ownership</strong>: Who owns the raw data? (typically, the collecting organization)</li>
+<li><strong>Sharing</strong>: Under what conditions are data shared with co-implementers, EPA, USGS, public?</li>
+<li><strong>Attribution</strong>: How will data providers be credited?</li>
+<li><strong>Confidentiality</strong>: Are any sensitive tribal data withheld or restricted?</li>
+</ul>
+</section>
+<section id="recommended-practice" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-practice">Recommended Practice</h3>
+<p>Data collected using public funding (EPA, USGS) should be made publicly available (e.g., via WQP, NWIS, or dedicated portal) within 1–2 years of collection, with exception for sensitive cultural or proprietary information.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/10_monitoring_design.html" class="pagination-link" aria-label="Monitoring Program Design and QAPP Fundamentals">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Monitoring Program Design and QAPP Fundamentals</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text"><span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -42,7 +42,7 @@ vignettes/*.pdf
 
 # Quarto build output and generated files
 _book/
-*.docx
+# docs/ is committed for GitHub Pages deployment
 *.pdf
 
 # RStudio Connect folder
