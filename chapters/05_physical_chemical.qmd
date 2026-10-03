@@ -8,13 +8,12 @@ execute:
 ```{r setup}
 library(dataRetrieval)
 library(dplyr)
-library(ggplot2)
 
 # Key parameters for physical/chemical baseline
 key_params <- c("pH", "Temperature, water", "Dissolved oxygen (DO)", 
                 "Specific conductance", "Turbidity")
 
-nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304")
 
 # Fetch data for key parameters
 message("Querying WQP for key physical/chemical parameters...")
@@ -50,14 +49,6 @@ if (nrow(temp_data) > 0) {
   
   knitr::kable(temp_stats, digits = 2, caption = "Temperature Summary Statistics (°C)")
   
-  ggplot(temp_data, aes(x = Temperature_C)) +
-    geom_histogram(bins = 30, fill = "#0072B2", alpha = 0.7, color = "black") +
-    labs(
-      title = "Distribution of Water Temperature Measurements",
-      x = "Temperature (°C)",
-      y = "Frequency"
-    ) +
-    theme_minimal()
 } else {
   cat("Insufficient temperature data for analysis.\n")
 }
@@ -92,7 +83,7 @@ if (nrow(ph_data) > 0) {
 
 ## Dissolved Oxygen
 
-Dissolved oxygen (DO) is essential for fish respiration. Saturation depends on temperature and atmospheric pressure; cold water holds more oxygen. Salmon typically require >6 mg/L DO, with stress occurring below 5 mg/L.
+Dissolved oxygen (DO) is essential for fish respiration. Saturation depends on temperature and atmospheric pressure; cold water holds more oxygen. Salmon typically require >6 mg/L DO.
 
 ```{r DO_summary}
 do_data <- wq_key %>%
@@ -146,7 +137,7 @@ if (nrow(cond_data) > 0) {
 
 ## Summary
 
-The baseline water quality data show that Nushagak streams are generally cold and well-oxygenated, suitable for salmon. pH and conductivity values are consistent with the region's geology. Continued monitoring of these parameters will establish trends and allow early detection of changes that could affect fishery productivity.
+The baseline water quality data show that Nushagak streams are generally cold and well-oxygenated, suitable for salmon. Continued monitoring of these parameters will establish trends and allow early detection of changes that could affect fishery productivity.
 
 ---
 

@@ -40,3 +40,37 @@ additional notes 3
 - i want the root level of this repo to be less messy. restructure to place all chapters inside a "chapters" folder and any other modifications towards this goal
 
 - do not bother to try to render this report as a pdf
+
+additional notes 4
+
+- all code chunks should be shown as folded up in the html, with a "Show the Code" arrow button to show code clicking
+
+- i am not confident in your choice of hucs that compose the Nushagak river drainage. from visually examining the huc8 units at <https://water.usgs.gov/themes/hydrologic-units/>, it is not apparant that all channels within the huc8s you suggested (**19030301**, **19030302**, **19030303**, **19030304**, **19030305**) actually drain in to the nushagak. the rfp is explicit about focusing on the nushagak. assess this quetsion and update the report appropriately to the reduced set of huc8s if needed. see an image that visually defines all areas that drain in to the nushagak watershed at [https://www.researchgate.net/profile/Christian-Zimmerman/publication/276365886/figure/fig1/AS:613883022675968\@1523372526040/Map-of-the-Nushagak-River-SIGs-and-sampling-sites-for-juvenile-Chinook-salmon-and.png](https://www.researchgate.net/profile/Christian-Zimmerman/publication/276365886/figure/fig1/AS:613883022675968@1523372526040/Map-of-the-Nushagak-River-SIGs-and-sampling-sites-for-juvenile-Chinook-salmon-and.png)
+
+- provide citation for "The Nushagak River extends more than 280 miles from the Alaska Range to Bristol Bay, draining approximately 8,500 square miles of southwestern Alaska" in 01_intro.qmd as this is a numeric claim/description.
+
+- in the "Spatial Coverage of Monitoring Stations" chapter, for some locations in the leaflet map, there are zero results. it is not intuitive why this is the case. perhaps it s the case that the location (e.g. station) exists in the repo, but some formatting error does not allow results to be associated with the station? we don't necessarily need to fully solve this problem now, but if my suspicion is correct, we should note it
+
+- the table titled, "monitoring coverage by Huc8 sub basin" in the "Spatial Coverage of Monitoring Stations" chapter does not render properly. seems like also it should be kable instead of just text since results will update with new results
+
+additional notes 6
+
+- i want this map image to be on the first page at the top of the report, credited to Alaska Department of Fish and Game: <https://npr.brightspotcdn.com/dims4/default/70f34b3/2147483647/strip/true/crop/586x797+0+0/resize/1760x2394!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fkdlg%2Ffiles%2F202103%2Fadf_g_map.jpg>
+
+- see other/documents/existing_protocols_and_sops_guide.qmd, integrate knowledge throughout this report as appropriate
+
+- it appears that the map in the spatial_coverage chapter is still including data points right near togiak. i believe that this is outside the huc8s that drain in to the nushagak. include only locations within the nushagak watershed (drain in to the nushagak river)
+
+- the table titled, "monitoring coverage by Huc8 sub basin" in the "Spatial Coverage of Monitoring Stations" chapter STILL does not render properly. seems like also it should be kable instead of just text since results will update with new results
+
+additional notes 7
+
+- in physical_chemical.qmd, make the temperature data summary as a table rather than as a plot; same as for the other parameters in that chapter
+
+- in metals_contaminants.qmd, the copper data should be displayed in a table, same as other parameters. for all metals where appropriate, we shoudl distinguish between there forms when recorded (e.g. total vs dissolved)
+
+additional notes 8
+
+- in order to publish to github pages i think i need the book content in folder in the root called "docs". it looks like you rendered all the book content to "\_book" and miscellneous thnigs in "docs." i need that fixed
+
+- all the miscellaneous accessory .md documents (except readme) should not be stored at the root level, but instead in a sub folder. and some of those newly generated md documents appear to full of AI-bloat style content, with check boxes and "welcome aboard" messages and things that a human would be very unlikely to create. this contradicts my previous instructions. make style choices that are consistent with my request to avoid AI tropes

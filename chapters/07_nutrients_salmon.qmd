@@ -4,7 +4,7 @@ title: "Nutrients and Salmon-Relevant Indicators"
 
 ## Nutrients and Primary Productivity
 
-Nitrogen and phosphorus are essential for aquatic ecosystem productivity. In oligotrophic (nutrient-poor) streams typical of the Nushagak region, nutrient concentrations are often low, and seasonal pulses from spawning salmon contribute to productivity.
+Nitrogen and phosphorus are essential for aquatic ecosystem productivity. In streams typical of the Nushagak region, seasonal pulses from spawning salmon carcasses contribute to productivity.
 
 Currently, the Water Quality Portal contains limited nitrogen and phosphorus measurements for the Nushagak watershed. This represents a significant data gap:
 
@@ -13,42 +13,43 @@ Currently, the Water Quality Portal contains limited nitrogen and phosphorus mea
 - No systematic seasonal sampling of nutrient dynamics
 
 Establishing baseline nutrient levels would provide context for understanding:
+
 - Stream productivity and food availability for juvenile salmon
+
 - Responses to changes in land use or climate
+
 - Salmon-driven nutrient pulses during spawning periods
 
----
+------------------------------------------------------------------------
 
 ## Biological Indicators
 
 ### Fish Sampling
 
-Fish surveys in the Nushagak watershed have been conducted by USGS, Alaska Department of Fish and Game, and tribal entities. Juvenile salmon densities, species composition, and growth rates are key indicators of habitat quality. Existing data are dispersed among agencies and not centralized in WQP.
+Fish surveys in the Nushagak watershed have been conducted by USGS, Alaska Department of Fish and Game, and tribal entities. Juvenile salmon densities, species composition, and growth rates are key indicators of habitat quality. Some existing data are dispersed among agencies and not centralized in WQP. ADF&G's Alaska Freshwater Fish Inventory and Anadromous Waters Catalog are logical starting points for data assessment.
 
 ### Macroinvertebrate Communities
 
-Macroinvertebrate communities reflect water quality and habitat conditions. While Alaska has standardized bioassessment methods, the Nushagak watershed lacks a continuous monitoring network for aquatic macroinvertebrates.
+Macroinvertebrate communities reflect water quality and habitat conditions. The Nushagak watershed lacks a continuous monitoring network for aquatic macroinvertebrates.
 
----
+------------------------------------------------------------------------
 
 ## Dissolved Oxygen and Temperature Interactions
 
-Dissolved oxygen and temperature are tightly coupled: cold water holds more oxygen, while warm water holds less. For salmon, the combination of warm temperature and low dissolved oxygen creates stress.
+Dissolved oxygen and temperature are tightly coupled: cold water holds more oxygen, while warm water holds less. For salmon, the combination of warm temperature and low dissolved oxygen creates stress. Continuous monitoring of either or both parameters at key sites would allow assessment of thermal habitat suitability and identification of potential barrier zones.
 
-Continuous monitoring of both parameters at key sites would allow assessment of thermal habitat suitability and identification of potential barrier zones.
+------------------------------------------------------------------------
 
----
+## Possible Recommendations for Baseline Monitoring
 
-## Recommendations for Baseline Monitoring
+1.  **Nutrient Sampling**: Establish 3–4 baseline sites per HUC8 sub-basin with monthly or bimonthly sampling for dissolved nitrate, ammonia, and orthophosphate.
 
-1. **Nutrient Sampling**: Establish 3–4 baseline sites per HUC8 sub-basin with monthly or bimonthly sampling for dissolved nitrate, ammonia, and orthophosphate.
+2.  **Continuous Temperature and DO**: Deploy data loggers at 5–8 strategic locations to capture diurnal and seasonal variation.
 
-2. **Continuous Temperature and DO**: Deploy data loggers at 5–8 strategic locations to capture diurnal and seasonal variation.
+3.  **Fish Sampling**: Coordinate with ADF&G and tribal partners to standardize juvenile salmon surveys in spring and fall.
 
-3. **Fish Sampling**: Coordinate with ADFG and tribal partners to standardize juvenile salmon surveys in spring and fall.
+4.  **Macroinvertebrate Sampling**: Implement seasonal kick-net sampling at reference stations to establish baseline community composition.
 
-4. **Macroinvertebrate Sampling**: Implement seasonal kick-net sampling at reference stations to establish baseline community composition.
-
----
+------------------------------------------------------------------------
 
 These biological and chemical parameters together form the foundation of ecosystem-based monitoring. The next chapter synthesizes current gaps and priorities for the collaborative monitoring program.

@@ -13,11 +13,12 @@ library(sf)
 library(leaflet)
 library(ggplot2)
 
-# All five HUC8s in the Nushagak drainage
-nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+# Four HUC8s draining into the Nushagak River. HUC8 19030305 (Togiak River)
+# drains separately into Bristol Bay and is excluded; see Observations below.
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304")
 
 # Fetch station inventory
-message("Querying WQP for all five HUC8 sub-basins...")
+message("Querying WQP for the four Nushagak HUC8 sub-basins...")
 wq_inventory <- data.frame()
 
 for (huc in nushagak_hucs) {
@@ -34,7 +35,7 @@ wq_sf <- wq_inventory %>%
 
 ## Overview
 
-Monitoring stations in the Nushagak drainage are distributed across streams and lakes in five HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.
+Monitoring stations in the Nushagak drainage are distributed across streams and lakes in four HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.
 
 ```{r map}
 #| eval: !expr knitr::is_html_output()
@@ -76,14 +77,13 @@ huc_summary <- wq_inventory %>%
     HUC_Name = case_when(
       HUC == "19030301" ~ "Upper Nushagak",
       HUC == "19030302" ~ "Mulchatna",
-      HUC == "19030303" ~ "Nuyakuk",
+      HUC == "19030303" ~ "Main Nushagak",
       HUC == "19030304" ~ "Wood",
-      HUC == "19030305" ~ "Lower Nushagak/Snake",
       TRUE ~ HUC
     )
   ) %>%
   select(HUC, HUC_Name, Stations, Total_Results, Organizations) %>%
-  rename("Sub-basin" = HUC_Name, "Monitoring\nLocations" = Stations, "Total\nObservations" = Total_Results, "Data\nProviders" = Organizations)
+  rename("Sub-basin" = HUC_Name, "Monitoring Locations" = Stations, "Total Observations" = Total_Results, "Data Providers" = Organizations)
 
 knitr::kable(huc_summary, caption = "Monitoring Coverage by HUC8 Sub-basin")
 ```
@@ -106,9 +106,11 @@ knitr::kable(provider_summary, caption = "Data Contributions by Organization")
 
 ## Observations
 
-The coverage varies by sub-basin, with the Upper Nushagak (19030301) and Lower Nushagak/Snake (19030305) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Nuyakuk and Wood River drainages (19030303, 19030304) have fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
+The coverage varies by sub-basin, with the Upper Nushagak (19030301) and main Nushagak system (19030303) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
 
 USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.
+
+**Data Quality Note**: The WQP station inventory includes approximately 212 stations across the Nushagak HUCs that are registered in the system but show zero water quality results in the current API response. These may represent monitoring locations where data collection has occurred but results are not yet integrated into the WQP database, or where records exist in alternate formats. These sites are included in the station count above but do not contribute to the observation totals.
 
 ------------------------------------------------------------------------
 

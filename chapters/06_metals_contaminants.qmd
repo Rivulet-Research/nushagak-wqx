@@ -8,9 +8,8 @@ execute:
 ```{r setup}
 library(dataRetrieval)
 library(dplyr)
-library(ggplot2)
 
-nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304")
 
 # Key metals and trace elements
 metals <- c("Copper", "Zinc", "Lead", "Cadmium", "Chromium", "Molybdenum", 
@@ -47,20 +46,33 @@ knitr::kable(metal_freq, caption = "Frequency of Metal/Element Measurements")
 Copper is toxic to aquatic organisms at elevated concentrations and is particularly relevant given mining development scenarios. EPA freshwater aquatic life criteria: 13 µg/L (criterion continuous concentration).
 
 ```{r copper_summary}
-copper_data <- metals_data %>%
-  filter(CharacteristicName == "Copper") %>%
-  pull(ResultMeasureValue) %>%
-  as.numeric()
+# Get complete copper data with sample fraction information
+wq_copper_full <- readWQPdata(huc = nushagak_hucs, characteristicName = "Copper", sampleMedia = "Water")
 
-copper_data <- copper_data[!is.na(copper_data)]
+copper_data <- wq_copper_full %>%
+  filter(!is.na(ResultMeasureValue)) %>%
+  mutate(
+    Value = as.numeric(ResultMeasureValue),
+    Form = if_else(is.na(ResultSampleFractionText), "Unspecified", ResultSampleFractionText)
+  ) %>%
+  select(Form, Value) %>%
+  filter(!is.na(Value))
 
-if (length(copper_data) > 0) {
-  cat("**Copper Observations:**\n")
-  cat("Count:", length(copper_data), "\n")
-  cat("Mean:", round(mean(copper_data), 2), "µg/L\n")
-  cat("Median:", round(median(copper_data), 2), "µg/L\n")
-  cat("Min:", round(min(copper_data), 2), "µg/L\n")
-  cat("Max:", round(max(copper_data), 2), "µg/L\n")
+if (nrow(copper_data) > 0) {
+  copper_summary <- copper_data %>%
+    group_by(Form) %>%
+    summarize(
+      N = n(),
+      Mean = mean(Value, na.rm = TRUE),
+      Median = median(Value, na.rm = TRUE),
+      Min = min(Value, na.rm = TRUE),
+      Max = max(Value, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(desc(N)) %>%
+    rename("Sample Form" = Form, "Count" = N)
+  
+  knitr::kable(copper_summary, digits = 2, caption = "Copper Concentrations by Sample Form (µg/L)")
 } else {
   cat("No copper data available in WQP.\n")
 }
@@ -98,15 +110,15 @@ WQP returns metal concentration measurements as character strings, which must be
 
 ## Data Gaps
 
-Metal concentration data in the Nushagak watershed are sparse. Most observations come from targeted research projects rather than systematic monitoring. This represents a significant monitoring opportunity:
+Public metal concentration data in the Nushagak watershed are sparse; though non-public sources not covered yet in this analysis likely exist. Most observations come from targeted research projects rather than systematic monitoring. This represents a significant monitoring opportunity:
 
-- **Dissolved vs. Total Metal**: Few analyses distinguish between dissolved and total concentrations
+- **Dissolved vs. Total Metal**: Not all analyses distinguish between dissolved and total concentrations
 - **Spatial Coverage**: Limited sampling outside established USGS gaging stations
 - **Seasonal Variation**: Few multi-season samples; high-flow dynamics unknown
-- **Speciation and Acid-Generating Potential**: No baseline assessments in most tributaries
+- **Speciation and Acid-Generating Potential**: No public baseline assessments in most tributaries
 
 ---
 
-These gaps underscore the value of establishing baseline metal monitoring across the five HUC8 sub-basins, particularly in the Mulchatna and upper tributaries where geochemical variation is highest.
+These gaps underscore the value of establishing baseline metal monitoring across the four Nushagak HUC8 sub-basins.
 
 The next chapter examines nutrients and biological parameters relevant to salmon productivity.

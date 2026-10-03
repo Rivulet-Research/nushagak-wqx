@@ -4,8 +4,8 @@ project:
 
 book:
   title: "Nushagak River Watershed Water Quality Baseline"
-  subtitle: "Synthesis of Existing Data in Support of Collaborative Monitoring"
-  author: "Benjamin Meyer, Prepared for Tributary Research and Consulting"
+  subtitle: "Synthesis of Existing Data - Collaborative Monitoring Proposal"
+  author: "Benjamin Meyer (rivuletresearch@gmail.com)\nPrepared for Tributary Research and Consulting"
   date: "October 2026"
   sidebar:
     tools:
@@ -45,10 +45,11 @@ format:
     toc-depth: 2
     number-sections: false
     embed-resources: false
+    code-fold: true
   docx:
     number-sections: true
     toc: true
     toc-depth: 2
     prefer-html: true
-  pdf:
-    documentclass: scrbook
+
+

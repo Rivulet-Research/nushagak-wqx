@@ -22,34 +22,14 @@ The mainstem Nushagak near Ekwok receives flow from all upstream tributaries. Wa
 **Monitoring emphasis**: Mainstem chemistry, fish passage, tributary inflows
 
 ### Koliganek Territory
-The Koliganek River is a major tributary joining the Nushagak from the north. The confluence zone may represent a mixing zone with distinct water quality characteristics. The Koliganek drainage is less studied than the Upper Nushagak.
+The Koliganek River is a major tributary joining the Nushagak from the north. The confluence zone may represent a mixing zone with distinct water quality characteristics. Exploratory data analysis so far suggests that the Koliganek drainage is less monitored than the Upper Nushagak.
 
-**Monitoring emphasis**: Koliganek baseline chemistry, tributary health indicators
+**Monitoring emphasis**: Koliganek baseline chemistry
 
-### Stuyahok Territory
+### New Stuyahok Territory
 The Mulchatna River is the largest tributary of the Nushagak, contributing significant discharge and ecological complexity. The Mulchatna has historical gold mining activity and present-day development interest.
 
 **Monitoring emphasis**: Metal baseline, geochemistry, headwater conditions
-
----
-
-## Community-Defined Priorities
-
-Water quality monitoring designed with community input will address local knowledge and priorities:
-
-1. **Salmon productivity**: Temperature, dissolved oxygen, and nutrient conditions that support salmon survival and growth
-2. **Contaminant concerns**: Baseline metal levels to detect future changes from development activity
-3. **Subsistence and food safety**: Water quality standards relevant to traditional food use
-4. **Capacity building**: Training and equipment that develops local technical expertise
-5. **Data accessibility**: Monitoring results shared transparently and in formats meaningful to community management decisions
-
----
-
-## Recommended Community-Specific Strategies
-
-- **Ekwok**: Establish mainstem monitoring hub with continuous temperature/DO loggers, seasonal chemistry, and fish surveys
-- **Koliganek**: Build baseline understanding of Koliganek River chemistry; support tributary health assessments
-- **Stuyahok**: Lead metal and geochemical monitoring in Mulchatna drainage; mentor training for Water Technicians
 
 ---
 

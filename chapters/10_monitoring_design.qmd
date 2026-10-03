@@ -20,7 +20,7 @@ A Quality Assurance Project Plan (QAPP) is the foundational technical document t
 ::: {.callout-important}
 ## Station counts and tiers are not prescribed here
 
-Earlier drafts specified exact numbers of stations per tier (e.g., "5-8 core stations"). Those counts were not derived from any cited source or community decision, so they have been removed. The DQO process referenced in Chapter 8 is the appropriate mechanism for setting station counts, once monitoring objectives and resource constraints are defined with the participating tribes [@EPA2006DQO].
+The DQO process referenced in Chapter 8 is the appropriate mechanism for setting station counts, once monitoring objectives and resource constraints are defined with the participating tribes [@EPA2006DQO].
 :::
 
 What can be stated generally, consistent with standard watershed monitoring design, is that stations are typically organized by monitoring purpose rather than placed uniformly:
@@ -66,14 +66,29 @@ EPA's QA/G-5 guidance structures data quality objectives around five categories,
 
 ---
 
+## Existing Field Protocols to Draw On
+
+Rather than develop field methods from scratch, the QAPP should adopt established agency protocols already in use for similar salmon-stream monitoring in Alaska:
+
+- **Sample collection**: USGS's National Field Manual (Book 9) describes Equal-Width-Increment and Equal-Discharge-Increment depth-integrated sampling for cross-sectional collection on wide channels such as the Nushagak and Mulchatna mainstems, along with parameter stabilization criteria before recording discrete field values (e.g., temperature within ±0.2°C, pH within ±0.1 units, dissolved oxygen within ±0.2 mg/L) [@USGS_NFM_Book9].
+- **Sonde calibration**: Multi-parameter sondes (e.g., YSI EXO, Hydrolab) are typically calibrated with a 2-point pH buffer check (pH 7.0 and 10.0) and a 100%-air-saturation dissolved oxygen calibration, consistent with EPA field monitoring protocols for continuous and discrete sonde deployment.
+- **Continuous temperature logging**: The Stream Temperature Data Collection Standards and Protocol for Alaska, developed by Cook Inletkeeper and the Alaska Natural Heritage Program with agency partners, specifies pre- and post-deployment accuracy checks against a 0°C ice-water bath and a room-temperature bath referenced to a NIST-certified thermometer (±0.2°C tolerance), with hourly continuous logging [@CookInletkeeper_StreamTemp].
+- **QAPP structure**: EPA Region 10's Tier 2 tribal QAPP guidance under Clean Water Act Sections 106 and 319 provides the structural template for defining data quality objectives, and the Alaska DEC Division of Water's generic QAPP template, already approved by EPA Region 10, covers the required EPA QAPP elements adapted to Alaska field logistics [@EPARegion10_TribalQAPP; @ADEC_QAPP_Template].
+
+Adopting these existing, agency-vetted protocols rather than writing new ones reduces QAPP review time with EPA Region 10 and makes resulting data directly comparable to other Alaska salmon-stream datasets already in WQP and NWIS.
+
+---
+
 ## Electronic Data Collection
 
-Modern electronic field data entry systems (e.g., Survey123, Kobo Toolbox, mobile apps) allow:
+Modern electronic field data entry systems (e.g., Survey123, Field Maps) allow:
 
 - Real-time data validation (range checks, missing value alerts)
 - Automatic QC flags (e.g., temperature outside seasonal norms)
 - Reduced transcription errors
 - Immediate upload to centralized database
+
+ESRI Survey123 or Field Maps is a practical choice for this setting: it operates offline on tablets in areas without cellular service, which covers most of the Nushagak drainage, and can connect field observations, calibration logs, site photos, and chain-of-custody metadata directly into ArcGIS Online once a connection is available. The form schema should use column and characteristic naming aligned with EPA's Water Quality eXchange (WQX) standard so that field data move into WQP submission without relabeling.
 
 A workflow diagram showing field data collection → validation → archiving should be included in the full QAPP.
 

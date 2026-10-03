@@ -46,7 +46,7 @@ The database should store:
 3.  **Measurements**: Parameter, value, unit, detection limit, method, laboratory (if applicable)
 4.  **QA/QC Data**: Blanks, duplicates, standards, reference samples, flag comments
 
-The database template should use standardized column names identical to those in use in the destination repository (e.g. EPA CDX).
+The database template should use standardized column names identical to those in use in the destination repository (e.g. EPA CDX), following EPA's Water Quality eXchange (WQX) data standards for monitoring location identifiers, activity types, characteristic names, measurement units, and analytical methods. Designing the mobile field form and the database schema around WQX naming from the outset avoids a later relabeling step before WQP submission.
 
 ### Technology Options
 
@@ -58,19 +58,13 @@ The database template should use standardized column names identical to those in
 
 ### Data Validation and WQP Submission: TADA Framework
 
-The EPA's **Tools for Automated Data Analysis (TADA)** is a free, open-source toolkit specifically designed for organizations submitting water quality data to the EPA Water Quality Portal (WQP). TADA includes three integrated modules:
-
-1. **Module 1 (TADAShiny)**: Automated data discovery, cleaning, and validation. Screens for invalid metadata using EPA WQX domain standards, handles unit conversion, manages censored (detection limit) observations, and flags suspect or incomplete entries.
-
-2. **Module 2 (TADAShinyJoinToAU)**: Links monitoring locations to EPA assessment units and designated uses (aquatic life support, recreation, subsistence), ensuring data are properly contextualized for regulatory analysis.
-
-3. **Module 3 (TADAShinyAnalyze)**: Compares data against applicable water quality standards and supports assessment-level analysis.
+The EPA's **Tools for Automated Data Analysis (TADA)** is a free, open-source toolkit specifically designed for organizations submitting water quality data to the EPA Water Quality Portal (WQP).
 
 TADA can be used either as a web-based interface (no coding required) or as an R package (`EPATADA`) for integration into custom workflows. For the Nushagak collaborative monitoring program, TADA should be incorporated into the data submission workflow: after field QC and database entry, data are processed through TADA's validation screens before uploading to WQP. This ensures that data meet EPA standards and are compatible with national visualization tools (e.g., "How's My Waterway?").
 
 ### Recommendation
 
-A phased approach is pragmatic: start with accessible tools for data collection and management (e.g., ArcGIS Online, Google Sheets), then route data through TADA's validation workflows before final submission to WQP. As the program matures and data volumes grow, consider investing in a dedicated database administrator and GIS specialist to manage the full pipeline (collection → TADA validation → WQP → archival).
+A phased approach is pragmatic: start with accessible tools for data collection and management (e.g., ArcGIS Online and/or Google Sheets), then route data through TADA's validation workflows before final submission to WQP. As the program matures and data volumes grow, consider investing in a dedicated database administrator and GIS specialist to manage the full pipeline (collection → TADA validation → WQP → archival).
 
 ------------------------------------------------------------------------
 
@@ -109,7 +103,7 @@ The system should allow:
 
 All data should include:
 
-- Method references (EPA, USGS SOPs)
+- Method references (EPA, USGS SOPs; Alaska DEC's Ambient Water Quality Monitoring System SOPs for sample hold-time limits, preservation, and chain-of-custody tracking where laboratory samples are involved)
 - Analytical laboratory accreditation (if applicable)
 - QC summary (% duplicates, passing QC criteria)
 - Validation notes (e.g., "sample collected during high-flow event")
@@ -130,14 +124,3 @@ Establish agreements clarifying:
 ### Recommended Practice
 
 Data collected using public funding (EPA, USGS) should be made publicly available (e.g., via WQP, NWIS, or dedicated portal) within 1–2 years of collection, with exception for sensitive cultural or proprietary information.
-
-------------------------------------------------------------------------
-
-## Capacity Building and Technical Support
-
-The program should budget for:
-
-1.  **Database Administrator**: Part-time or full-time support for system maintenance and backups
-2.  **Data Quality Coordinator**: Reviews data, coordinates QC across sites, manages metadata
-3.  **GIS/Visualization Specialist**: Maintains dashboard, produces summary reports, trains users
-

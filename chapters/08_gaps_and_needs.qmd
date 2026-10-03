@@ -4,7 +4,7 @@ title: "Data Gaps and Monitoring Priorities"
 
 ## Summary of Baseline Assessment
 
-The existing water quality data for the Nushagak watershed provide a partial baseline, concentrated in the Upper Nushagak and Lower Nushagak/Snake sub-basins with less coverage in the Mulchatna, Nuyakuk, and Wood River drainages. Data are dominated by USGS streamflow and periodic chemistry, supplemented by research project sampling.
+The existing water quality data for the Nushagak watershed provide a partial baseline. Data are dominated by USGS streamflow and periodic chemistry, supplemented by research project sampling.
 
 ## Critical Gaps
 
@@ -33,37 +33,30 @@ The existing water quality data for the Nushagak watershed provide a partial bas
 
 ### 4. Data Management and Sharing
 
-- No centralized repository for tribal monitoring data
 - Limited standardization of field methods and data entry
 - No real-time or near-real-time data sharing platform among agencies and communities
 
 ---
 
-## Monitoring Priorities: An Open Decision, Not an AI Recommendation
+## Notes on Monitoring Priorities
 
 ::: {.callout-important}
 ## This section intentionally does not prescribe site counts, parameters, or timelines
 
-Deciding where new monitoring is most valuable requires judgment about tribal priorities, logistics, funding, and risk, not a judgment Posit Assistant is positioned to make. The numbers that appeared in earlier drafts of this chapter (specific site counts, a fixed year-by-year schedule) were generated without citation or community input and have been removed. This section instead lays out the structured process by which those choices should be made, and the open questions that need answers from the user and from documented external sources before the plan can be finalized.
+Deciding where new monitoring is most valuable requires judgment about tribal priorities, logistics, funding, and risk. This section lays out the structured process by which those choices could be made, and the open questions that need answers before the plan can be finalized.
 :::
 
 ### How monitoring priorities should be decided
 
 The EPA's Data Quality Objectives (DQO) process is the standard framework for translating monitoring goals into a defensible sampling design: it specifies the problem, the decision to be made, the data needed to support that decision, and acceptable levels of uncertainty, before site counts or frequencies are chosen [@EPA2006DQO]. Any site counts, parameter lists, or sampling frequencies proposed for the Nushagak effort should be the output of this process, run with the three participating tribes, rather than a number proposed in this document.
 
-### Open questions requiring user and community input
+### Open questions requiring community input
 
 - Which sub-basins or reaches do the Native Village of Ekwok, New Koliganek Village Council, and New Stuyahok Village Council consider highest priority, based on local observation and traditional knowledge, not just the spatial coverage gaps identified above?
 - What specific water quality concerns (e.g., observed changes in fish health, turbidity after development activity, temperature trends) have communities already raised that should drive site placement?
 - What funding, staffing, and equipment constraints realistically bound the number of sites and the monitoring timeline?
-- Are there existing tribal environmental program plans, BBNA natural resources priorities, or prior monitoring proposals that should set the baseline design rather than a new one drafted here?
+- Are there existing tribal environmental program plans, natural resources priorities, or prior monitoring proposals that should set the baseline design rather than a new one drafted here?
 - What does the RFP itself specify, in terms of required deliverables, timeline, or budget, that constrains feasible scope?
-
-### What this document can responsibly contribute
-
-- The spatial and temporal gaps summarized above, which are derived from the data inventory in earlier chapters
-- Citation of established regulatory frameworks (DQO process, QAPP guidance) that structure *how* priorities should be set
-- A record of open questions to bring to tribal partners and funders, rather than pre-filled answers
 
 ---
 

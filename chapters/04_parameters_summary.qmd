@@ -10,8 +10,8 @@ library(dataRetrieval)
 library(dplyr)
 library(ggplot2)
 
-# Fetch parameter data for all five HUCs
-nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304", "19030305")
+# Fetch parameter data for all four Nushagak HUCs
+nushagak_hucs <- c("19030301", "19030302", "19030303", "19030304")
 
 message("Querying WQP for parameter observations...")
 wq_data <- data.frame()
@@ -49,6 +49,8 @@ knitr::kable(
 )
 ```
 
+Additional parameters also likely exist but are not yet included in this exploratory data assessment (see "Data Sources and Inventory" chapter).
+
 ## Key Parameter Categories
 
 ### Physical Properties
@@ -60,7 +62,7 @@ knitr::kable(
 ### Chemical Properties
 
 - **pH**: Affects aquatic chemistry and organism physiology
-- **Dissolved Oxygen**: Critical for salmonid survival; cold, well-oxygenated water preferred
+- **Dissolved Oxygen**: Critical for salmonid survival
 - **Alkalinity & Hardness**: Buffer capacity against acid inputs
 
 ### Nutrients
@@ -89,11 +91,9 @@ Based on the inventory, the following represent priorities for expanded collabor
 
 2.  **Nutrients (N, P)**: Few measurements in existing WQP data; baseline nutrient levels are poorly characterized across most of the watershed.
 
-3.  **Spatial Coverage in Wood River and Nuyakuk Drainages**: Fewer historical stations in these sub-basins; new effort could establish baseline for comparison.
+3.  **Biological Metrics**: Macroinvertebrate and periphyton sampling is limited. Fish presence/absence and juvenile salmon surveys would complement chemistry data.
 
-4.  **Biological Metrics**: Macroinvertebrate and periphyton sampling is limited. Fish presence/absence and juvenile salmon surveys would complement chemistry data.
-
-5.  **Seasonal and High-Flow Sampling**: Most data are episodic; systematic seasonal sampling would reveal temperature, discharge, and contaminant dynamics.
+4.  **Seasonal and High-Flow Sampling**: Most data are episodic; systematic seasonal sampling would reveal temperature, discharge, and contaminant dynamics.
 
 ------------------------------------------------------------------------
 

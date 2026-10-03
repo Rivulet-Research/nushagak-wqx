@@ -87,8 +87,9 @@ Data are current through **March 2024** (WQP/NWIS cutoff).
 ## Key Findings
 
 - **Upper Nushagak (HUC 19030301)**: 20 stations, 1,324 water quality observations
-- **Lower Nushagak/Snake (HUC 19030305)**: 34 stations, 896 observations
-- **Gaps**: Nutrients (N, P) are poorly characterized; metal data are sparse; biological sampling is limited; tributary coverage (Nuyakuk, Wood) is minimal
+- **Gaps**: Nutrients (N, P) are poorly characterized; metal data are sparse; biological sampling is limited; tributary coverage (Wood) is minimal. *Note: HUC8 19030305 (Togiak River) is excluded as it drains separately into Bristol Bay.*
+
+
 
 ------------------------------------------------------------------------
 

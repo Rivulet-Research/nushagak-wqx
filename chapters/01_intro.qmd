@@ -4,7 +4,7 @@ title: "Watershed Overview"
 
 ## The Nushagak Drainage
 
-The Nushagak River extends more than 280 miles from the Alaska Range to Bristol Bay, draining approximately 8,500 square miles of southwestern Alaska. The watershed supports fisheries integral to the subsistence, cultural, and economic well-being of the communities in the region.
+The Nushagak River extends over than 280 miles from the Alaska Range to Bristol Bay. The watershed supports fisheries integral to the subsistence, cultural, and economic well-being of the communities in the region.
 
 ## Participating Communities
 
@@ -14,11 +14,11 @@ Three tribes are proposing the collaborative monitoring effort:
 - **New Koliganek Village Council**: Located at the Koliganek River confluence
 - **New Stuyahok Village Council**: Located on the Mulchatna River
 
-Each community depends on salmon and has a direct interest in water quality conditions affecting fishery productivity and food safety.
+Each community depends on wild salmon runs, and has a direct interest in water quality conditions affecting fishery productivity and food safety.
 
 ## Why Monitor Water Quality
 
-Much as a physician may make health recommendations based on blood test results, managers may make recommendations for healthy watersheds based on water quality data. Water quality parameters such as temperature, pH, dissolved oxygen, nutrient levels, and contaminant concentrations affect fish survival, growth, and reproduction. Baseline monitoring allows communities to detect changes over time and to make informed management decisions. Collaborative monitoring builds local capacity and ensures that data collected reflects community-defined priorities.
+Much as a physician may make health recommendations based on blood test results, fishery managers may make recommendations for healthy watersheds based on water quality data. Water quality parameters such as temperature, pH, dissolved oxygen, nutrient levels, and contaminant concentrations affect fish survival, growth, and reproduction. Baseline monitoring allows communities to detect changes over time and to make informed management decisions. Collaborative monitoring builds local capacity and ensures that data collected reflects community-defined priorities.
 
 ## Objectives of This Analysis
 
@@ -27,7 +27,7 @@ This document provides:
 1.  An inventory of existing water quality data across the Nushagak drainage
 2.  A spatial and temporal summary of what has been measured and where
 3.  A characterization of baseline conditions for key parameters
-4.  Identification of gaps where new monitoring efforts would be most valuable
+4.  Identification of gaps where new monitoring efforts could be most valuable
 5.  Context for designing monitoring strategies that align with the RFP's goals
 
 *Chapters that follow explore each of these objectives in detail.*
