@@ -17,12 +17,12 @@ A Quarto book project synthesizing existing water quality data in the Nushagak R
 - New Koliganek Village Council
 - New Stuyahok Village Council
 
-**Five HUC8 sub-basins (Nushagak drainage, HUC6: 190303):**
+**Five HUC8 sub-basins (Nushagak drainage, HUC6: 190303), names per the official USGS Watershed Boundary Dataset (confirmed via `nhdplusTools::get_huc()`):**
 - 19030301 — Upper Nushagak River (20 stations, 1,324 WQP results)
 - 19030302 — Mulchatna River
-- 19030303 — Nuyakuk River
+- 19030303 — Lower Nushagak River (includes the Nuyakuk River tributary; not to be confused with the Nuyakuk itself)
 - 19030304 — Wood River
-- 19030305 — Snake River / Lower Nushagak (34 stations, 896 WQP results)
+- 19030305 — Togiak (excluded from the four-HUC Nushagak drainage analysis; drains separately into Bristol Bay)
 
 **RFP Goal 1**: Establish continuous monitoring efforts (QAPP development, equipment, field training, 3-year baseline dataset)
 

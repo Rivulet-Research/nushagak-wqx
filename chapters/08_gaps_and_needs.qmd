@@ -10,7 +10,7 @@ The existing water quality data for the Nushagak watershed provide a partial bas
 
 ### 1. Spatial Coverage
 
-- **Wood River (19030304)** and **Nuyakuk River (19030303)** drainages have limited established monitoring infrastructure
+- **Wood River (19030304)** has limited established monitoring infrastructure; within the Lower Nushagak sub-basin (19030303), the **Nuyakuk River** tributary specifically is undersampled relative to mainstem gauges in that same HUC8 (see Spatial Coverage chapter)
 - Tributary streams in all sub-basins are underrepresented
 - No monitoring in headwater reaches where geochemical and thermal conditions differ markedly
 

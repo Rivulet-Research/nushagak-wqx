@@ -74,3 +74,19 @@ additional notes 8
 - in order to publish to github pages i think i need the book content in folder in the root called "docs". it looks like you rendered all the book content to "\_book" and miscellneous thnigs in "docs." i need that fixed
 
 - all the miscellaneous accessory .md documents (except readme) should not be stored at the root level, but instead in a sub folder. and some of those newly generated md documents appear to full of AI-bloat style content, with check boxes and "welcome aboard" messages and things that a human would be very unlikely to create. this contradicts my previous instructions. make style choices that are consistent with my request to avoid AI tropes
+
+10/5/2026
+
+notes 9
+
+- here is an example of surface water data from the pebble project: <https://pebbleresearch.com/wp-content/uploads/2014/03/ch_09_water_quality_bb.pdf>. it would obviously be much better if data were published as csvs, but instead we have thousands of pages of pdfs. i am interested in trying to distinguish which data is relevant to the nushagak river watershed, eg which data is from sites that flow in to the nushagak? if this question must begin with a massive OCR intake, i want to ensure it is not a process that consumes an insane amount of tokens, it should instead be performed on my local pc
+
+notes 10
+
+- the way i want to identify which data points to include from the pebble monitoring data is: is the location within the HUC8 units defined in this project? presumably each data point in the pebble data is associated with a set of coordinates. retain only data associated with coordinates within the four nushagak river drainage huc8 units
+
+10/4/2026
+
+notes 11
+
+- Streamlined the "Pebble Project Environmental Baseline Document" section in `chapters/02_data_sources.qmd`: removed ~35 lines of procedural detail (Python venv setup, bash commands, technical workflow explanations) and condensed to 3 concise paragraphs. All technical extraction instructions now referenced in `scripts/README.md`, keeping the main narrative clean and reader-focused. Book remains focused on *what* data is available, not *how* to extract it. Reproducibility preserved via script documentation.

@@ -26,7 +26,7 @@ This synthesis covers all four HUC8 sub-basins of the Nushagak drainage:
 
 - **19030301** - Upper Nushagak River
 - **19030302** - Mulchatna River
-- **19030303** - Main Nushagak River
+- **19030303** - Lower Nushagak River
 - **19030304** - Wood River
 
 (See <https://water.usgs.gov/themes/hydrologic-units/> for visual details).

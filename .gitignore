@@ -53,3 +53,14 @@ rsconnect/
 
 # Translation temp files
 po/*~
+
+# Large input PDFs (users must download separately from https://pebbleresearch.com/)
+other/input/pebble/
+
+# Python virtualenv for scripts/python
+scripts/python/.venv/
+__pycache__/
+*.pyc
+
+# Generated extraction output (regenerate from scripts/python)
+other/output/

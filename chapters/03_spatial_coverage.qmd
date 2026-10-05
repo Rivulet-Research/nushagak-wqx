@@ -77,7 +77,7 @@ huc_summary <- wq_inventory %>%
     HUC_Name = case_when(
       HUC == "19030301" ~ "Upper Nushagak",
       HUC == "19030302" ~ "Mulchatna",
-      HUC == "19030303" ~ "Main Nushagak",
+      HUC == "19030303" ~ "Lower Nushagak",
       HUC == "19030304" ~ "Wood",
       TRUE ~ HUC
     )
@@ -106,7 +106,7 @@ knitr::kable(provider_summary, caption = "Data Contributions by Organization")
 
 ## Observations
 
-The coverage varies by sub-basin, with the Upper Nushagak (19030301) and main Nushagak system (19030303) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
+The coverage varies by sub-basin, with the Upper Nushagak (19030301) and the lower Nushagak mainstem (19030303, officially named "Lower Nushagak River" in the USGS Watershed Boundary Dataset; it includes the Nuyakuk River tributary) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
 
 USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.
 

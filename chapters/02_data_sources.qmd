@@ -36,7 +36,7 @@ The EPA's [Bristol Bay Watershed Assessment](https://www.epa.gov/bristolbay) syn
 
 The Pebble Project Environmental Impact Statement included extensive baseline water quality monitoring in the Mulchatna and Koktuli river drainages (tributaries of the Nushagak). These data include surface water chemistry, dissolved and total metals, alkalinity, and stream temperature records.
 
-**Access**: Available through the Pebble Project EIS website; data in PDF tables (may require OCR or manual extraction).
+**Access**: Available through the Pebble Project EIS website (e.g. [ch_09_water_quality_bb.pdf](https://pebbleresearch.com/wp-content/uploads/2014/03/ch_09_water_quality_bb.pdf)). Data are published as PDF tables across thousands of pages. Extracting Nushagak-relevant sites requires keyword search and spatial validation; see [`scripts/README.md`](https://github.com/Rivulet-Research/nushagak-wqx/blob/main/scripts/README.md) for the reproducible extraction pipeline.
 
 ### Academic and Tribal Monitoring
 

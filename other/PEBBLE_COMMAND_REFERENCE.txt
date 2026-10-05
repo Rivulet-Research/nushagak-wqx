@@ -1,0 +1,182 @@
+================================================================================
+PEBBLE DATA EXTRACTION: COMMAND REFERENCE
+================================================================================
+
+PROJECT DIRECTORY:
+  C:\Users\Benjamin\OneDrive\Documents\GitHub_Local\rivulet\nushagak-wqx
+
+================================================================================
+STAGE 1: PDF SCAN (Locate candidate tables)
+================================================================================
+
+PREREQUISITES (one-time):
+  python -m venv scripts/python/.venv
+  scripts\python\.venv\Scripts\activate
+  pip install -r scripts/python/requirements.txt
+
+RUN THE SCAN:
+  python scripts/python/extract_pebble_nushagak.py \
+      --pdf_dir other/input/pebble \
+      --output other/output/pebble_nushagak_sites.csv
+
+INPUT:
+  ├─ other/input/pebble/pebble-feis_ch3-section-16.pdf
+
+OUTPUT:
+  └─ other/output/pebble_nushagak_sites.csv ← Review this CSV
+
+NEXT STEP:
+  Open the CSV. For each flagged table, open the PDF to that page and find
+  the station-location table (coordinates).
+
+================================================================================
+STAGE 2: MANUAL TRANSCRIPTION (Extract coordinates by hand)
+================================================================================
+
+CREATE THIS FILE:
+  other/input/pebble/pebble_site_coordinates.csv
+
+FORMAT (comma-separated):
+  station_id,lat,lon,source_pdf,page,notes
+  MUL-01,59.452,-156.382,pebble-feis_ch3-section-16.pdf,42,Mulchatna mainstem
+  KOK-05,59.823,-156.110,pebble-feis_ch3-section-16.pdf,45,Koktuli River
+
+TEMPLATE:
+  scripts/R/pebble_site_coordinates_template.csv ← Copy this and fill in
+
+TIPS:
+  • Decimal degrees only (no DMS)
+  • Negative for South & West (Alaska example: -156.38, 59.45)
+  • Station-location table usually separate from results table
+  • Check appendices if not in main chapter
+
+TIME: 1-2 hours
+
+================================================================================
+STAGE 3: SPATIAL VALIDATION (Validate coordinates)
+================================================================================
+
+PREREQUISITES (one-time):
+  R packages: sf, dplyr, nhdplusTools (usually already installed)
+
+RUN THE FILTER:
+  Rscript scripts/R/filter_pebble_by_huc8.R
+
+INPUT:
+  └─ other/input/pebble/pebble_site_coordinates.csv ← You create this in Stage 2
+
+OUTPUT (both gitignored):
+  ├─ other/output/pebble_sites_huc8_check.csv ← All sites with HUC assignment
+  └─ other/output/pebble_nushagak_confirmed_sites.csv ← Only confirmed sites ✓
+
+WHAT IT DOES:
+  • Reads your coordinates CSV
+  • Fetches HUC8 boundaries from USGS (cached)
+  • Tests each coordinate spatially
+  • Writes confirmed sites (used in Stage 4)
+
+CHECK CONSOLE OUTPUT FOR:
+  • Number of confirmed sites
+  • Any excluded sites (fell outside HUCs)
+  • Any missing coordinates
+
+TIME: 2 minutes
+
+================================================================================
+STAGE 4: INTEGRATION (Add to chapter 03)
+================================================================================
+
+FILE TO EDIT:
+  chapters/03_spatial_coverage.qmd
+
+CHANGE 1: Add Pebble loader after line 33 (end of setup chunk)
+  # Load confirmed Pebble sites (only if file exists)
+  pebble_confirmed_file <- "other/output/pebble_nushagak_confirmed_sites.csv"
+  if (file.exists(pebble_confirmed_file)) {
+    pebble_sites <- read.csv(pebble_confirmed_file) %>%
+      select(station_id, lat, lon, huc8)
+    pebble_sf <- pebble_sites %>%
+      st_as_sf(coords = c("lon", "lat"), crs = 4326)
+  } else {
+    pebble_sf <- NULL
+    message("Pebble sites file not found; skipping Pebble layer")
+  }
+
+CHANGE 2: Replace entire map chunk (lines 40-62) with updated code
+  See: other/PEBBLE_INTEGRATION_CODE_TEMPLATES.md
+
+TEST:
+  quarto::quarto_render("chapters/03_spatial_coverage.qmd")
+
+VERIFY:
+  • Open docs/chapters/03_spatial_coverage.html
+  • Should see blue dots (WQP) and orange dots (Pebble)
+  • Click orange dot → popup shows "Pebble: [ID] | HUC8: [code]"
+  • Toggle buttons in top-right control layer visibility
+
+TIME: 30 minutes
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+STAGE 1 - Python won't run:
+  → Verify venv is activated: see "source" or ".venv\Scripts\activate"
+  → Check requirements installed: pip list | findstr pdfplumber pandas
+
+STAGE 2 - Can't find station coordinates:
+  → Check PDF's Table of Contents and Appendices
+  → Look for "Station Locations" or "Monitoring Sites" table
+  → Verify coordinates are lat/lon (not just station names)
+
+STAGE 3 - No confirmed sites:
+  → Check CSV columns match expected: station_id, lat, lon, ...
+  → Verify format: lat/lon must be numeric (not quoted text)
+  → Look at console output: did any sites fall outside HUCs?
+
+STAGE 4 - Map doesn't show Pebble:
+  → Verify file exists: other/output/pebble_nushagak_confirmed_sites.csv
+  → Check CSV has data: at least 1 row (+ header)
+  → Check RStudio console for error messages
+  → Browser console (F12): any JavaScript errors?
+
+================================================================================
+DETAILED DOCUMENTATION
+================================================================================
+
+  other/QUICK_START_PEBBLE.md .................. Fast walkthrough of all stages
+  other/PEBBLE_EXTRACTION_PLAN.md ............. Detailed plan with options
+  other/PEBBLE_INTEGRATION_CODE_TEMPLATES.md .. Alternative map approaches
+  other/PEBBLE_WORKFLOW_SUMMARY.md ........... Workflow overview & decision points
+  scripts/README.md ............................ Technical script docs
+  chapters/02_data_sources.qmd ................ Data source context
+
+================================================================================
+FILE REFERENCE
+================================================================================
+
+INPUTS (You provide):
+  other/input/pebble/pebble-feis_ch3-section-16.pdf ← Already downloaded
+  other/input/pebble/pebble_site_coordinates.csv ← You create in Stage 2
+
+SCRIPTS (Provided):
+  scripts/python/extract_pebble_nushagak.py ... Stage 1 scanner
+  scripts/R/filter_pebble_by_huc8.R ............ Stage 3 filter
+  scripts/python/requirements.txt .............. Python dependencies
+
+OUTPUTS (Auto-generated, gitignored):
+  other/output/pebble_nushagak_sites.csv ..................... Stage 1
+  other/output/pebble_sites_huc8_check.csv .................. Stage 3
+  other/output/pebble_nushagak_confirmed_sites.csv ........... Stage 3 (KEY)
+  other/output/nushagak_huc8_boundary.gpkg .................. Stage 3 (cached)
+
+EDITS (Code changes):
+  chapters/03_spatial_coverage.qmd ← Update map code (Stage 4)
+
+================================================================================
+TOTAL TIME ESTIMATE: 2-2.5 hours
+  Stage 1: 10 min
+  Stage 2: 60-120 min (manual work)
+  Stage 3: 2 min
+  Stage 4: 30 min
+================================================================================
