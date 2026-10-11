@@ -133,8 +133,21 @@ provider_summary <- wq_inventory %>%
     Total_Results = sum(resultCount, na.rm = TRUE),
     .groups = "drop"
   ) %>%
-  arrange(desc(Total_Results)) %>%
   rename("Organization" = OrganizationFormalName, "Stations" = Stations, "Observations" = Total_Results)
+
+if (!is.null(pebble_sf)) {
+  pebble_provider <- pebble_sf %>%
+    st_drop_geometry() %>%
+    summarize(
+      Organization = "Pebble Project EBD (2004-2008 baseline)",
+      Stations = n_distinct(station_id),
+      Observations = sum(n_results, na.rm = TRUE)
+    )
+  provider_summary <- bind_rows(provider_summary, pebble_provider)
+}
+
+provider_summary <- provider_summary %>%
+  arrange(desc(Observations))
 
 knitr::kable(provider_summary, caption = "Data Contributions by Organization")
 ```
@@ -143,11 +156,11 @@ knitr::kable(provider_summary, caption = "Data Contributions by Organization")
 
 The coverage varies by sub-basin, with the Upper Nushagak (19030301) and the lower Nushagak mainstem (19030303, officially named "Lower Nushagak River" in the USGS Watershed Boundary Dataset; it includes the Nuyakuk River tributary) having the most monitoring infrastructure. The Mulchatna (19030302) has moderate coverage, while the Wood River drainage (19030304) has fewer established stations. This distribution reflects historical research emphasis and the availability of USGS gaging stations.
 
-USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.
+Among the WQP-sourced data, USGS contributes the largest share of observations (46% of the WQP total), reflecting the long-term nature of federal streamflow and water chemistry monitoring; Tribal and state efforts are also evident and represent valuable local capacity. However, once the Pebble Project baseline is included, USGS falls to a small fraction (under 10%) of all observations in the dataset: the intensive, short-term Pebble sampling effort (71,037 results, 2004-2008) exceeds the entire WQP inventory (16,132 results across all four organizations) by more than four-fold.
 
 **Data Quality Note**: The WQP station inventory includes approximately 212 stations across the Nushagak HUCs that are registered in the system but show zero water quality results in the current API response. These may represent monitoring locations where data collection has occurred but results are not yet integrated into the WQP database, or where records exist in alternate formats. These sites are included in the station count above but do not contribute to the observation totals.
 
-**Pebble Project baseline sites**: The map also includes 37 Pebble Project monitoring sites (21 stream, 16 seep) from the 2004-2008 Environmental Baseline Document, all located in the Mulchatna River sub-basin (19030302) near the proposed mine site. These predate and are independent of the WQP inventory above; they are not included in the HUC8 or provider summary tables, which reflect WQP data only. See [Data Sources](02_data_sources.qmd) for extraction methodology.
+**Pebble Project baseline sites**: The map also includes 37 Pebble Project monitoring sites (21 stream, 16 seep) from the 2004-2008 Environmental Baseline Document, all located in the Mulchatna River sub-basin (19030302) near the proposed mine site. All 37 sites have associated chemistry records, totaling 1,013 sampling events and 71,037 individual results across 78 distinct parameters, collected between April 2004 and December 2008. These predate and are independent of the WQP inventory above; they are not included in the HUC8 sub-basin summary table (which tallies WQP HUCs only) but do appear as a separate row in the data provider table below. See [Data Sources](02_data_sources.qmd) for extraction methodology.
 
 ------------------------------------------------------------------------
 
