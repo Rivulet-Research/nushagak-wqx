@@ -31,18 +31,31 @@ for (huc in nushagak_hucs) {
 wq_sf <- wq_inventory %>%
   filter(!is.na(lon), !is.na(lat)) %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4326)
+
+# Pebble Project 2004-2008 baseline monitoring sites, restricted to the
+# Nushagak HUC8s (scripts/R/filter_pebble_by_huc8.R) and summarized with
+# their chemistry sampling record (scripts/R/join_pebble_sites_chemistry.R).
+# Gitignored pipeline output; see scripts/README.md to regenerate.
+pebble_csv <- "../other/output/pebble_sites_chemistry_summary.csv"
+pebble_sf <- NULL
+if (file.exists(pebble_csv)) {
+  pebble_sf <- read.csv(pebble_csv, stringsAsFactors = FALSE) %>%
+    filter(!is.na(lon), !is.na(lat)) %>%
+    st_as_sf(coords = c("lon", "lat"), crs = 4326)
+}
 ```
 
 ## Overview
 
-Monitoring stations in the Nushagak drainage are distributed across streams and lakes in four HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP.
+Monitoring stations in the Nushagak drainage are distributed across streams and lakes in four HUC8 sub-basins. The map below displays all stations with water quality data available in the WQP, plus Pebble Project baseline sites (2004-2008) sampled in the Mulchatna River sub-basin ahead of the proposed mine; see [Data Sources](02_data_sources.qmd) for provenance.
 
 ```{r map}
 #| eval: !expr knitr::is_html_output()
-leaflet(wq_sf) %>%
+m <- leaflet() %>%
   addProviderTiles(providers$Esri.WorldTopoMap, group = "Topo") %>%
   addProviderTiles(providers$Esri.WorldImagery, group = "Satellite") %>%
   addCircleMarkers(
+    data = wq_sf,
     radius = 6,
     color = "#0072B2",
     weight = 1,
@@ -54,7 +67,29 @@ leaflet(wq_sf) %>%
       "Results: ", resultCount
     ),
     clusterOptions = markerClusterOptions()
-  ) %>%
+  )
+
+if (!is.null(pebble_sf)) {
+  m <- m %>%
+    addCircleMarkers(
+      data = pebble_sf,
+      radius = 6,
+      color = "#D55E00",
+      weight = 1,
+      fillOpacity = 0.7,
+      popup = ~paste0(
+        "<b>", station_id, "</b> (", type, ")<br>",
+        "Pebble Project 2004-2008 baseline<br>",
+        "Sub-basin: ", huc8_name, "<br>",
+        "Samples: ", ifelse(is.na(n_samples), "none recorded", n_samples), "<br>",
+        "Parameters: ", ifelse(is.na(n_parameters), "-", n_parameters), "<br>",
+        "Date range: ", ifelse(is.na(date_min), "-", paste(date_min, "to", date_max))
+      ),
+      clusterOptions = markerClusterOptions()
+    )
+}
+
+m %>%
   addLayersControl(
     baseGroups = c("Topo", "Satellite"),
     options = layersControlOptions(collapsed = FALSE)
@@ -111,6 +146,8 @@ The coverage varies by sub-basin, with the Upper Nushagak (19030301) and the low
 USGS contributes the majority of observations, reflecting the long-term nature of federal streamflow and water chemistry monitoring. Tribal and state efforts are also evident and represent valuable local capacity.
 
 **Data Quality Note**: The WQP station inventory includes approximately 212 stations across the Nushagak HUCs that are registered in the system but show zero water quality results in the current API response. These may represent monitoring locations where data collection has occurred but results are not yet integrated into the WQP database, or where records exist in alternate formats. These sites are included in the station count above but do not contribute to the observation totals.
+
+**Pebble Project baseline sites**: The map also includes 37 Pebble Project monitoring sites (21 stream, 16 seep) from the 2004-2008 Environmental Baseline Document, all located in the Mulchatna River sub-basin (19030302) near the proposed mine site. These predate and are independent of the WQP inventory above; they are not included in the HUC8 or provider summary tables, which reflect WQP data only. See [Data Sources](02_data_sources.qmd) for extraction methodology.
 
 ------------------------------------------------------------------------
 

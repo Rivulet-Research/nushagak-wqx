@@ -63,7 +63,7 @@ retained sites to the "Spatial Coverage of Monitoring Stations" chapter.
 - Chemistry table parsing: row-by-row filter to confirmed Nushagak sites, not whole-table-block
   retention
 
-### Pipeline status (10/7/2026 session) — Stages 1-4 complete, Stage 5 not started
+### Pipeline status (10/7-11/2026 sessions) — all 5 stages complete
 
 **Stage 1** (`scripts/R/extract_pebble_sites.R`): parses pp. 1011-1012 of the field sampling plan →
 `other/output/pebble_candidate_sites.csv`, 67 candidate sites (39 stream + 28 seep).
@@ -116,11 +116,26 @@ Also canonicalized minor cross-page OCR/line-wrap text-variant duplicates post-p
 Turbidity" → "Turbidity"; "Nitrate + Nitrite" / "Nitrate+ Nitrite" / "Nitrate/ Nitrite" → "Nitrate +
 Nitrite" (same combined determination, confirmed same unit mg/L).
 
-### Next step — Stage 5 (not started)
+### Stage 5 — complete (10/11/2026 session)
 
-Join `other/output/pebble_chemistry_long.csv` to `other/output/pebble_nushagak_confirmed_sites.csv`
-(by `site_id`/`station_id`) and integrate into `chapters/03_spatial_coverage.qmd`'s map: merge into
-the existing station markers (not a separate toggleable layer), with popup text noting "Pebble
-Project 2004-2008 baseline" to keep the source/era distinguishable. Also update
-`chapters/02_data_sources.qmd` (already references `ch_09_water_quality_bb.pdf`) to document the new
-pipeline outputs.
+`scripts/R/join_pebble_sites_chemistry.R` joins `other/output/pebble_chemistry_long.csv` to
+`other/output/pebble_nushagak_confirmed_sites.csv` (by `station_id`/`site_id`), summarizing each
+site's sampling record (n_samples, n_parameters, n_results, date_min, date_max). Output:
+`other/output/pebble_sites_chemistry_summary.csv` (gitignored, 37 sites; sites with no matching
+chemistry records, e.g. unsampled seeps, keep NA summary columns but are still written out).
+
+`chapters/03_spatial_coverage.qmd` reads this summary CSV and adds the 37 Pebble sites as a second
+`addCircleMarkers()` layer (orange `#D55E00`, vs. blue `#0072B2` for WQP stations), merged into the
+same map rather than a separate toggleable layer; popups note "Pebble Project 2004-2008 baseline".
+An `Observations` paragraph documents the 37 sites (21 stream, 16 seep) and clarifies they're
+excluded from the HUC8/provider summary tables (WQP-only). `chapters/02_data_sources.qmd`'s Pebble
+Project entry documents the full pipeline and links `scripts/README.md`.
+
+Full pipeline (all 5 stages) is now complete end-to-end. Book re-rendered successfully
+(`quarto render --to html`) after a mid-render interruption left stray build artifacts outside
+`docs/` (`chapters/*.html`, root `index.html`, `site_libs/`) — these were deleted before re-rendering;
+`quarto render` always cleans and regenerates `docs/` fully, so no manual docs/ edits are needed.
+Work (chapter edits, new join script, regenerated `docs/`) is uncommitted as of end of session.
+
+**Possible follow-ups (not requested yet):** render DOCX (`quarto render --to docx`), commit the
+Stage 5 changes, or render the full book (`quarto render`, both formats).

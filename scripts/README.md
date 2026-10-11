@@ -137,3 +137,128 @@ Both gitignored; regenerate as needed:
 
 Sites with missing coordinates, or coordinates outside the four HUC8s, are
 reported in the console output and excluded from the confirmed file.
+
+## scripts/R/extract_pebble_sites.R
+
+Stage 1: parses the 2008 cumulative station table (pp. 1011-1012 of
+`appx_f_field_sampling_plans.pdf`, "Surface Hydrology and Water-quality
+Stream Station Locations", plus the companion seep-locations table) into a
+candidate site CSV with coordinates.
+
+### Input
+
+`other/input/pebble/appx_f_field_sampling_plans.pdf` (gitignored; download
+separately, see above).
+
+### Output
+
+`other/output/pebble_candidate_sites.csv` (gitignored) - one row per
+candidate site: site_id, longitude, latitude, type (stream/seep),
+source_pdf, source_page, source_table.
+
+### Running
+
+```bash
+Rscript scripts/R/extract_pebble_sites.R
+```
+
+## scripts/R/index_pebble_chemistry_pages.R
+
+Stage 3: locates the chemistry data table pages for each confirmed site
+(Stage 2 output) inside `ch_09_water_quality_bb.pdf` (2,247 pages), using
+exact site-ID text matching rather than keyword search. Caches the full-text
+extraction to disk on first run (~25s) and reuses it on later runs. Raw
+page hits are narrowed to genuine data-table pages via a validated
+heuristic (site ID immediately followed by "Sample Date" on the next line).
+
+Two confirmed sites, SK136A and SK136B, were renamed SK100I and SK100H
+respectively in the chemistry chapter; the script hard-codes this rename
+map to resolve their pages, and Stage 4 maps the result back to the
+original field-plan ID for output.
+
+### Input
+
+- `other/input/pebble/ch_09_water_quality_bb.pdf` (gitignored; download
+  separately, see above)
+- `other/output/pebble_nushagak_confirmed_sites.csv` (Stage 2 output)
+
+### Output
+
+Both gitignored:
+
+- `other/output/ch09_fulltext_cache.rds` - cached full-text extraction,
+  reused on reruns
+- `other/output/pebble_site_chemistry_page_index.csv` - raw site_id/page
+  hits
+- `other/output/pebble_site_chemistry_table_pages.csv` - hits filtered to
+  genuine data-table pages; this is the file Stage 4 reads
+
+### Running
+
+```bash
+Rscript scripts/R/index_pebble_chemistry_pages.R
+```
+
+## scripts/R/parse_pebble_chemistry.R
+
+Stage 4: parses chemistry tables on the flagged pages (Stage 3 output) into
+tidy long-format records, using `pdftools::pdf_data()` word-position
+reconstruction (not `pdf_text()`, because headers wrap across multiple
+lines and value rows have ragged missing data). One shared parser function
+handles both the stream layout (one site per page block) and the seep
+layout (multiple sites stacked per page, split on "Sample"/"Date" header
+detection).
+
+Known source-document and parsing issues corrected here (see
+`other/AGENTS.md` for full detail): a mislabeled Turbidity (NTU) column on
+seep general-chemistry pages that reuses the stream template's second
+"Field Water Temperature" header; parent parameter names for merged
+Total/Dissolved sub-columns backfilled from the left-neighbor column; and
+orphaned header labels (never-sampled parameters with no matching
+value-row token) dropped rather than force-assigned to a neighboring
+column.
+
+### Input
+
+- `other/input/pebble/ch_09_water_quality_bb.pdf` (gitignored; download
+  separately, see above)
+- `other/output/pebble_site_chemistry_table_pages.csv` (Stage 3 output)
+
+### Output
+
+`other/output/pebble_chemistry_long.csv` (gitignored) - one row per
+site/date/parameter: site_id, date, parameter, unit, value,
+label_corrected, source_page.
+
+### Running
+
+```bash
+Rscript scripts/R/parse_pebble_chemistry.R
+```
+
+## scripts/R/join_pebble_sites_chemistry.R
+
+Stage 5: joins the confirmed site coordinates (Stage 2) to the parsed
+chemistry records (Stage 4) and summarizes each site's sampling record
+(sample count, parameter count, date range) for use as a map popup. This
+is the file `chapters/03_spatial_coverage.qmd` reads to add Pebble baseline
+markers to the station map.
+
+### Input
+
+- `other/output/pebble_nushagak_confirmed_sites.csv` (Stage 2 output)
+- `other/output/pebble_chemistry_long.csv` (Stage 4 output)
+
+### Output
+
+`other/output/pebble_sites_chemistry_summary.csv` (gitignored) - one row
+per confirmed site: coordinates, HUC8, n_samples, n_parameters, n_results,
+date_min, date_max. Sites with no matching chemistry records keep NA
+summary columns rather than being dropped, so the map still shows the full
+confirmed-site set.
+
+### Running
+
+```bash
+Rscript scripts/R/join_pebble_sites_chemistry.R
+```
